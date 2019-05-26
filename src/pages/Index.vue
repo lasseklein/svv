@@ -5,7 +5,10 @@
     <g-image alt="Example image" src="~/favicon.png" width="135" />
     
     <h1>Hello, world!</h1>
-   
+    <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
+      {{ edge.node.Krav }}
+    </div>
+
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
     </p>
@@ -31,3 +34,22 @@ export default {
   margin-right: 1rem;
 }
 </style>
+
+
+<page-query>
+  query Krav  {
+    allKrav (filter: { Kapittel:{eq: "B"}}, sortBy: "Nr", order: ASC) {
+      edges {
+        node {
+          Krav
+          Nr
+          Figurref
+          id
+        }
+      }
+    }
+  }
+
+</page-query>
+
+
