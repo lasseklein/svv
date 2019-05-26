@@ -6,5 +6,14 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: []
+  plugins: [
+    {
+      use: '~/src/sources/krav',
+      options: {
+        apiKey: 'keyBL8EdTEVmtAKOn',
+        base: 'app2szVnKxhLteAUt',
+      },
+    },
+  ]
 }
+
