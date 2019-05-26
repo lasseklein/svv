@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d068121a-fdbc-48f4-a670-35493819eb28" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/tailwind.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TitleBlock.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gridsome.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gridsome.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/KravBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KravBlock.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TitleBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TitleBlock.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/About.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,10 +41,10 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="false">
+            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/example/gridsome-graphql-snipcart/src/pages/Index.vue">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="952">
+                  <state relative-caret-position="332">
                     <caret line="56" column="14" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="14" />
                     <folding>
                       <element signature="e#1000#1032#0" expanded="true" />
@@ -60,11 +53,11 @@
                 </provider>
               </entry>
             </file>
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/example/gridsome-graphql-snipcart/src/components/ProductPreview.vue">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="578">
-                    <caret line="34" column="70" lean-forward="true" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
+                    <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
                   </state>
                 </provider>
               </entry>
@@ -77,72 +70,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sources/krav/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="e#471#518#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/layouts/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#143#192#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="237">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/TitleBlock.vue">
+        <entry file="file://$PROJECT_DIR$/src/components/KravBlock.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/layouts/Default.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/About.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="10" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -150,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gridsome.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+            <state relative-caret-position="340">
+              <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -160,10 +100,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/KravBlock.vue">
+        <entry file="file://$PROJECT_DIR$/src/components/TitleBlock.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sources/krav/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2201">
+              <caret line="139" column="1" selection-start-line="124" selection-end-line="139" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/layouts/Default.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,10 +145,10 @@
       <find>contenttype</find>
       <find>$page</find>
       <find>page</find>
-      <find>props</find>
       <find>pageblock</find>
-      <find>KravBlock</find>
       <find>slot</find>
+      <find>props</find>
+      <find>KravBlock</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,22 +161,34 @@
         <option value="$PROJECT_DIR$/src/sources/krav/index.js" />
         <option value="$PROJECT_DIR$/src/components/PageBlock.vue" />
         <option value="$PROJECT_DIR$/src/pages/About.vue" />
-        <option value="$PROJECT_DIR$/gridsome.config.js" />
         <option value="$PROJECT_DIR$/src/assets/tailwind.css" />
-        <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/layouts/Default.vue" />
+        <option value="$PROJECT_DIR$/src/main.js" />
+        <option value="$PROJECT_DIR$/tailwind.config.js" />
+        <option value="$PROJECT_DIR$/gridsome.config.js" />
+        <option value="$PROJECT_DIR$/src/components/TitleBlock.vue" />
         <option value="$PROJECT_DIR$/src/pages/Index.vue" />
         <option value="$PROJECT_DIR$/src/components/KravBlock.vue" />
-        <option value="$PROJECT_DIR$/src/components/TitleBlock.vue" />
       </list>
     </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1762" />
+    <option name="width" value="1626" />
     <option name="height" value="1536" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -238,6 +220,27 @@
             <path>
               <item name="svv" type="b2602c69:ProjectViewProjectNode" />
               <item name="svv" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="gridsome-graphql-snipcart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svv" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="gridsome-graphql-snipcart" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svv" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="gridsome-graphql-snipcart" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svv" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -245,6 +248,13 @@
               <item name="svv" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svv" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="svv" type="b2602c69:ProjectViewProjectNode" />
@@ -263,6 +273,19 @@
               <item name="svv" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svv" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svv" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="krav" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="svv" type="b2602c69:ProjectViewProjectNode" />
@@ -293,13 +316,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/css" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -341,7 +365,7 @@
       <option name="presentableId" value="Default" />
       <updated>1558808558230</updated>
       <workItem from="1558808559555" duration="12490000" />
-      <workItem from="1558861708478" duration="7662000" />
+      <workItem from="1558861708478" duration="14718000" />
     </task>
     <task id="LOCAL-00001" summary="Starting over again">
       <created>1558808706883</created>
@@ -371,16 +395,31 @@
       <option name="project" value="LOCAL" />
       <updated>1558866463212</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Bra start">
+      <created>1558871188394</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558871188394</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Bra start">
+      <created>1558872472688</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558872472688</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20152000" />
+    <option name="totallyTimeSpent" value="27208000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1762" height="1536" extended-state="0" />
+    <frame x="0" y="23" width="1626" height="1536" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24767442" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2689394" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -391,8 +430,8 @@
       <window_info anchor="bottom" id="Messages" weight="0.32963988" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49878934" visible="true" weight="0.23891966" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995309" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49878934" weight="0.23891966" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39889196" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -434,7 +473,26 @@
     <MESSAGE value="Import &amp; graphql working" />
     <MESSAGE value="Rendering krav!" />
     <MESSAGE value="Components work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Components work" />
+    <MESSAGE value="Bra start" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bra start" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/Index.vue</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/KravBlock.vue</url>
+          <line>11</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/example/gridsome-graphql-snipcart/package.json">
@@ -478,16 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/gridsome-graphql-snipcart/src/pages/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="14" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="14" />
-          <folding>
-            <element signature="e#1000#1032#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -518,16 +566,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tailwind.config.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gridsome.config.js">
+    <entry file="file://$PROJECT_DIR$/example/gridsome-graphql-snipcart/src/components/ProductPreview.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="578">
+          <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/tailwind.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tailwind.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -539,66 +595,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/tailwind.css">
+    <entry file="file://$PROJECT_DIR$/src/components/TitleBlock.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gridsome.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#143#192#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Index.vue">
+    <entry file="file://$PROJECT_DIR$/example/gridsome-graphql-snipcart/src/pages/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="332">
+          <caret line="56" column="14" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="14" />
           <folding>
-            <element signature="e#471#518#0" expanded="true" />
+            <element signature="e#1000#1032#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sources/krav/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/layouts/Default.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state relative-caret-position="612">
+          <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sources/krav/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2201">
+          <caret line="139" column="1" selection-start-line="124" selection-end-line="139" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/KravBlock.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/gridsome-graphql-snipcart/src/components/ProductPreview.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="70" lean-forward="true" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TitleBlock.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="10" selection-end-line="15" />
         </state>
       </provider>
     </entry>

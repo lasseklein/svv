@@ -1,7 +1,7 @@
 <template>
     <div>
         <span class="text-xs text-gray-400">{{ block.Nr }}.</span>
-        <h2 class="text-xl"> {{block.Fagtema}}</h2>
+        <h2 class="text-xl mb-4">{{block.Fagtema}}</h2>
     </div>
 </template>
 

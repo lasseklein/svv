@@ -1,21 +1,28 @@
 <template>
     <Layout>
       <template slot="sidebar">
-        Sidebar kommer her
+        <div class="sticky top-0 py-4">
+          Sidebar kommer her
+        </div>
       </template>
 
       <template  slot="content">
-      <h1>N100</h1>
+        <h1>N100</h1>
 
-        <div v-for="edge in $page.allKrav.edges" :key="edge.node.Nr" class="block py-4">
-            <div v-if="edge.node.Type === 'Krav'">
-              <KravBlock :block="edge.node" />
-            </div>
-            <div v-else="edge.node.Type === 'Tittel'">
-              <TitleBlock :block="edge.node" />
-            </div>
-          </div>
+        <template v-for="edge in $page.allKrav.edges">
+
+          <template v-if="edge.node.Type === 'Krav'">
+            <KravBlock :block="edge.node"  />
+          </template>
+
+          <template v-else="edge.node.Type === 'Tittel'">
+            <TitleBlock :block="edge.node" />
+          </template>
+
+        </template>
+
       </template>
+
     </Layout>
 </template>
 
@@ -48,11 +55,11 @@
           id
           Type
           Fagtema
+          Versjon
         }
       }
     }
   }
 
 </page-query>
-
 
