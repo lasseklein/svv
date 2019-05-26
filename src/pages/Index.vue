@@ -4,30 +4,30 @@
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <g-image alt="Example image" src="~/favicon.png" width="135" />
     
-    <h1>Hello, world!</h1>
-    <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
-      {{ edge.node.Krav }}
+    <h1>N100</h1>
+
+    <div v-for="edge in $page.allKrav.edges" :key="edge.node.Nr">
+      <div v-if="edge.node.Type === 'Krav'">
+        <KravBlock :block="edge.node" />
+      </div>
+      <div v-else="edge.node.Type === 'Tittel'">
+
+      </div>
     </div>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
   </Layout>
 </template>
 
+
 <script>
-export default {
-  metaInfo: {
-    title: 'Hello, world!'
-  }
-}
+  import KravBlock from '../components/KravBlock'
+
+  export default {
+    components: {
+      KravBlock,
+    },
+ };
 </script>
+
 
 <style>
 .home-links a {
@@ -45,6 +45,7 @@ export default {
           Nr
           Figurref
           id
+          Type
         }
       }
     }

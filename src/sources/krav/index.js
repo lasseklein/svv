@@ -9,16 +9,13 @@ module.exports = function (api, opts) {
             route: '/krav/:id',
         });
 
-        const figurer = store.addContentType({
-            typeName: 'Figur',
-            route: '/figur/:id',
-        });
-
-        await base('N100').select({view: 'Prototype'}).eachPage((records, fetchNextPage) => {
+         await base('N100').select({view: 'Prototype'}).eachPage((records, fetchNextPage) => {
+            let count = 0;
             records.forEach((record) => {
                 const item = record._rawJson;
 
                 krav.addNode({
+                    sequence: count++,
                     id: item.id,
                     fields: item.fields,
                 });
@@ -27,6 +24,11 @@ module.exports = function (api, opts) {
 
             });
             fetchNextPage();
+        });
+
+        const figurer = store.addContentType({
+            typeName: 'Figur',
+            route: '/figur/:id',
         });
 
         await base('Figurer').select().eachPage((records, fetchNextPage) => {
@@ -39,6 +41,28 @@ module.exports = function (api, opts) {
                 });
 
                 console.log('Retrieved', item.fields.FigurNr);
+
+            });
+            fetchNextPage();
+        });
+
+
+
+        const tabeller = store.addContentType({
+            typeName: 'Tabell',
+            route: '/tabell/:id',
+        });
+
+        await base('Tabellinjer').select().eachPage((records, fetchNextPage) => {
+            records.forEach((record) => {
+                const item = record._rawJson;
+
+                tabeller.addNode({
+                    id: item.id,
+                    fields: item.fields,
+                });
+
+                console.log('Retrieved', item.fields.Value);
 
             });
             fetchNextPage();
