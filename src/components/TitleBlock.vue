@@ -1,14 +1,14 @@
 <template>
-    <div class="border-r">
+    <div>
         <span class="text-xs text-gray-400">{{ block.Nr }}.</span>
-        <p>{{block.Krav}}</p>
+        <h2 class="text-xl"> {{block.Fagtema}}</h2>
     </div>
 </template>
 
 
 <script>
     export default {
-        name: 'KravBlock',
+        name: 'TitleBlock',
         props: ['block'],
     };
 </script>
