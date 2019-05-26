@@ -9,7 +9,22 @@ module.exports = function (api, opts) {
             route: '/krav/:id',
         });
 
-         await base('N100').select({view: 'Prototype'}).eachPage((records, fetchNextPage) => {
+        const figurer = store.addContentType({
+            typeName: 'Figur',
+            route: '/figur/:id',
+        });
+
+        const tabeller = store.addContentType({
+            typeName: 'Tabell',
+            route: '/tabell/:id',
+        });
+
+
+
+
+
+
+        await base('N100').select({view: 'Prototype'}).eachPage((records, fetchNextPage) => {
             let count = 0;
             records.forEach((record) => {
                 const item = record._rawJson;
@@ -26,12 +41,7 @@ module.exports = function (api, opts) {
             fetchNextPage();
         });
 
-        const figurer = store.addContentType({
-            typeName: 'Figur',
-            route: '/figur/:id',
-        });
-
-        await base('Figurer').select().eachPage((records, fetchNextPage) => {
+         await base('Figurer').select().eachPage((records, fetchNextPage) => {
             records.forEach((record) => {
                 const item = record._rawJson;
 
@@ -48,12 +58,7 @@ module.exports = function (api, opts) {
 
 
 
-        const tabeller = store.addContentType({
-            typeName: 'Tabell',
-            route: '/tabell/:id',
-        });
-
-        await base('Tabellinjer').select().eachPage((records, fetchNextPage) => {
+         await base('Tabellinjer').select().eachPage((records, fetchNextPage) => {
             records.forEach((record) => {
                 const item = record._rawJson;
 

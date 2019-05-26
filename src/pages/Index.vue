@@ -12,7 +12,7 @@
         <template v-for="edge in $page.allKrav.edges">
 
           <template v-if="edge.node.Type === 'Krav'">
-            <KravBlock :block="edge.node"  />
+            <KravBlock :block="edge.node" />
           </template>
 
           <template v-else="edge.node.Type === 'Tittel'">
@@ -51,7 +51,7 @@
         node {
           Krav
           Nr
-          Figurref
+          Figur
           id
           Type
           Fagtema
