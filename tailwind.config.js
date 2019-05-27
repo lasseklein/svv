@@ -54,6 +54,8 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Lucida Grande',
+        'Lucida Sans Unicode',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',

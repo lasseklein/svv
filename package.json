@@ -7,8 +7,10 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^1.2.0",
     "airtable": "^0.6.0",
-    "gridsome": "^0.6.0"
+    "gridsome": "^0.6.0",
+    "tailwindcss": "^1.0.2"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^2.2.6",

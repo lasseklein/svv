@@ -10,7 +10,7 @@
         </div>
 
         <div v-if="block.figref.length" class="FIGURE" >
-            <a @click="onClick('fig')"><i class="fas fa-angle-right"></i> Figurer</a>
+            <a @click="onClick('fig')"><i class="fas fa-angle-right"></i> Figurer ({{block.figref.length}})</a>
             <div v-bind:id="'ref-'+block.Nr" ref="veiledning" v-bind:class="{hidden: fighidden}">
                 <div v-for="figref in block.figref" class="text-sm text-gray-800">
                    Figur {{figref.FigurNr }}: {{ figref.Tekst }}

@@ -18,8 +18,6 @@
       </template>
 
       <template  slot="content">
-        <h1>N100</h1>
-
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
           <a v-bind:id="'refid-'+edge.node.Nr"></a>
           <template v-if="edge.node.Type === 'Krav'">
