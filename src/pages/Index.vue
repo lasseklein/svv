@@ -3,7 +3,7 @@
 
       <template slot="sidebar">
         <div class="sticky top-0 py-4 h-screen">
-          <h3 class="px-2 px-4 text-2xl">Håndbok N100</h3>
+          <h3 class="px-4 pb-6 text-2xl">Håndbok N100</h3>
           <div class="h-full overflow-y-auto">
             <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
               <template v-if="edge.node.Avsnitt.length === 1">
@@ -18,7 +18,7 @@
       </template>
 
       <template  slot="content">
-        <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
+        <div v-for="edge in $page.allKrav.edges" :key="edge.node.id" class="block">
           <a v-bind:id="'refid-'+edge.node.Nr"></a>
           <template v-if="edge.node.Type === 'Krav'">
             <KravBlock :block="edge.node" />

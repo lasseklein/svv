@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="40c92d67-58ff-4e03-b2bc-18513986f3b5" name="ProISP" url="http://cpanel83.proisp.no">
+        <fileTransfer host="cpanel83.proisp.no" port="21" rootFolder="/public_html/n100">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

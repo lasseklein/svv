@@ -5,10 +5,8 @@ module.exports = {
   theme: {
     colors: {
       transparent: 'transparent',
-
       black: '#000',
       white: '#fff',
-
       gray: {
         100: '#F5F5F5',
         200: '#F5F5F5',
@@ -57,7 +55,6 @@ module.exports = {
         'Lucida Grande',
         'Lucida Sans Unicode',
         '-apple-system',
-        'BlinkMacSystemFont',
         '"Segoe UI"',
         'Roboto',
         '"Helvetica Neue"',

@@ -3,7 +3,7 @@
 
     <div class="kravBlock pr-4 border border-gray-300 p-3 mb-4">
 
-        <div class="flex mb-4">{{block.Krav}}</div>
+        <div class="flex mb-4 text-lg">{{block.Krav}}</div>
 
         <div class="flex text-xs text-gray-500">
             <div class="w-full text-right italic underline">Versjon {{block.Versjon}}</div>
