@@ -11,7 +11,12 @@ import DefaultLayout from '~/layouts/Default.vue'
   Vue.component('Layout', DefaultLayout);
 
   // Add attributes to BODY tag
-  head.bodyAttrs = { class: 'bg-gray-600' }
+  head.bodyAttrs = { class: 'bg-gray-100' }
+
+    head.link.push({
+      rel: 'stylesheet',
+      href: "https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    })
 
 
-}
+  }
