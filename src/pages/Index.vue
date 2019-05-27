@@ -1,11 +1,15 @@
 <template>
     <Layout>
+
       <template slot="sidebar">
-        <div class="sticky top-0 py-4 px-4">
-          <h3 class="px-2 text-2xl">Håndbok N100</h3>
-          <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
-            <div v-if="edge.node.Fagtema" class="px-2 py-2 border-b">
-              {{ edge.node.Nr}}. {{edge.node.Fagtema}}
+        <div class="sticky top-0 py-4 h-screen">
+          <h3 class="px-2 px-4 text-2xl">Håndbok N100</h3>
+          <div class="h-full overflow-y-auto">
+            <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
+              <a v-if="edge.node.Fagtema" class="block border-b hover:bg-orange" v-bind:href="'.#refid-'+edge.node.Nr">
+                <span class="block text-sm h-18 px-4 py-2">{{edge.node.Fagtema}}</span>
+              </a>
+                <!-- For andre kapitler: +'?c='+edge.node.Kapittel -->
             </div>
           </div>
         </div>
@@ -15,7 +19,7 @@
         <h1>N100</h1>
 
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
-          <a :id="edge.node.Nr"></a>
+          <a v-bind:id="'refid-'+edge.node.Nr"></a>
           <template v-if="edge.node.Type === 'Krav'">
             <KravBlock :block="edge.node" />
           </template>
@@ -55,6 +59,8 @@
       edges {
         node {
           Krav
+          Kapittel
+          Avsnitt
           Nr
           Figur
           figref {
