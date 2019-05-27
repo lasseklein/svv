@@ -1,16 +1,21 @@
 <template>
     <Layout>
       <template slot="sidebar">
-        <div class="sticky top-0 py-4">
-          Sidebar kommer her
+        <div class="sticky top-0 py-4 px-4">
+          <h3 class="px-2 text-2xl">Håndbok N100</h3>
+          <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
+            <div v-if="edge.node.Fagtema" class="px-2 py-2 border-b">
+              {{ edge.node.Nr}}. {{edge.node.Fagtema}}
+            </div>
+          </div>
         </div>
       </template>
 
       <template  slot="content">
         <h1>N100</h1>
 
-        <template v-for="edge in $page.allKrav.edges">
-
+        <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
+          <a :id="edge.node.Nr"></a>
           <template v-if="edge.node.Type === 'Krav'">
             <KravBlock :block="edge.node" />
           </template>
@@ -19,7 +24,7 @@
             <TitleBlock :block="edge.node" />
           </template>
 
-        </template>
+        </div>
 
       </template>
 
@@ -52,6 +57,18 @@
           Krav
           Nr
           Figur
+          figref {
+            Tekst
+            FigurNr
+            Figurbilde {
+              url
+              thumbnails {
+                small {
+                  url
+                }
+              }
+            }
+          }
           id
           Type
           Fagtema
@@ -61,5 +78,25 @@
     }
   }
 
+
 </page-query>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

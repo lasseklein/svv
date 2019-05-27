@@ -19,18 +19,7 @@ module.exports = function (api, opts) {
             route: '/tabell/:id',
         });
 
-
-        //krav.addReference('figref', 'Figur')
-/*
-        contentType.addSchemaField('price', ({ graphql }) => ({
-            type: graphql.GraphQLFloat,
-            resolve (node) {
-                return node.fields.unitCost;
-            }
-        }));
-*/
-
-         await base('Figurer').select().eachPage((records, fetchNextPage) => {
+        await base('Figurer').select().eachPage((records, fetchNextPage) => {
             records.forEach((record) => {
                 const item = record._rawJson;
 
@@ -73,6 +62,7 @@ module.exports = function (api, opts) {
                     id: item.id,
                     fields: item.fields,
                     figref: store.createReference('Figur', item.fields.Figurer),
+                    tabref: store.createReference('Tabell', item.fields.Tabeller),
                     //figurer: [item.fields.Figurer],
                 });
 

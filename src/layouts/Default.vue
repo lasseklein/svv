@@ -12,11 +12,11 @@
       </header>
 
       <div class="flex mb-4">
-        <div id="sidebar" class="w-1/3 bg-white py-4">
+        <div id="sidebar" class="w-1/3 bg-white py-4 mx-2">
           <slot name="sidebar" />
         </div>
 
-        <div id="content" class="w-2/3 bg-white p-4">
+        <div id="content" class="w-2/3 bg-white p-4 mx-2">
           <slot name="content" />
         </div>
       </div>
