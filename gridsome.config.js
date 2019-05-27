@@ -5,14 +5,13 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 
-//const purgecss = require('@fullhuman/postcss-purgecss')
 const tailwind = require('tailwindcss')
 
 const postcssPlugins = [
     tailwind('./tailwind.config.js'),
 ]
 
-if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
+//if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
 
 module.exports = {
     siteName: 'SVV Håndbøker',
@@ -51,18 +50,10 @@ module.exports = {
         {
             use: 'gridsome-plugin-tailwindcss',
             options: {
-                config: './tailwind.config.js'
+                config: './tailwind.config.js',
+                shouldPurge: false, //true removes too much, like .hidden
             }
         }
-
     ],
 
-
-    chainWebpack: config => {
-        config.module
-            .rule('postcss-loader')
-            .test(/\.css$/)
-            .use(["tailwindcss", "autoprefixer"])
-            .loader('postcss-loader')
-    }
 }

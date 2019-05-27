@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div v-if="block.Tabell" class="TABLE">
+        <div v-if="block.Tabell" class="TABLE  cursor-pointer">
             <a @click="onClick('tab')"><i class="fas fa-angle-right"></i> Tabeller</a>
         </div>
 
