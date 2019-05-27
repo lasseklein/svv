@@ -10,7 +10,7 @@
         </div>
 
         <div v-if="block.figref.length" class="FIGURE" >
-            <a @click="onClick('fig')"><i class="fas fa-angle-right"></i> Figurer ({{block.figref.length}})</a>
+            <a @click="onClick('fig')" class="cursor-pointer"><i class="fas fa-angle-right"></i> Figurer ({{block.figref.length}})</a>
             <div v-bind:id="'ref-'+block.Nr" ref="veiledning" v-bind:class="{hidden: fighidden}">
                 <div v-for="figref in block.figref" class="text-sm text-gray-800">
                    Figur {{figref.FigurNr }}: {{ figref.Tekst }}
@@ -22,12 +22,12 @@
             </div>
         </div>
 
-        <div v-if="block.Tabell" class="TABLE  cursor-pointer">
-            <a @click="onClick('tab')"><i class="fas fa-angle-right"></i> Tabeller</a>
+        <div v-if="block.Tabell" class="TABLE">
+            <a @click="onClick('tab')" class="cursor-pointer"><i class="fas fa-angle-right"></i> Tabeller</a>
         </div>
 
-        <div v-if="block.Tilknyttet_tekst" class="REF cursor-pointer">
-            <a @click="onClick('txt')"><i class="fas fa-angle-right"></i> Veiledning</a>
+        <div v-if="block.Tilknyttet_tekst" class="REF">
+            <a @click="onClick('txt')" class="cursor-pointer"><i class="fas fa-angle-right"></i> Veiledning</a>
             <div v-bind:id="'ref-'+block.Nr" ref="veiledning" v-bind:class="{hidden: txthidden}">
                 {{ block.Tilknyttet_tekst }}
             </div>

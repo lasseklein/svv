@@ -8,7 +8,7 @@
             <div v-for="edge in $page.allKrav.edges" :key="edge.node.id">
               <template v-if="edge.node.Avsnitt.length === 1">
                 <a v-if="edge.node.Fagtema" class="block border-b hover:bg-orange" v-bind:href="'.#refid-'+edge.node.Nr">
-                  <span class="block text-sm h-12 px-4 py-2">{{edge.node.Fagtema}}</span>
+                  <span class="block h-12 px-4 py-2">{{edge.node.Fagtema}}</span>
                 </a>
               </template>
                 <!-- For andre kapitler: +'?c='+edge.node.Kapittel -->
