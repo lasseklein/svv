@@ -5,13 +5,13 @@
 
         <div class="flex justify-between text-xs text-gray-500">
             <div class="">Krav {{block.KravID}} <span v-bind:class="'m-2 px-1 krav rounded font-medium uppercase tracking-wider '+block.Kravtype">{{rectype}}</span></div>
-            <div class="text-right italic underline">Versjon {{block.Versjon}}</div>
+            <div class="text-right italic underline text-gray-dark">Versjon {{block.Versjon}}</div>
         </div>
 
         <div class="flex my-4 text-lg">{{block.Krav}}</div>
 
 
-        <div class="container flex flex-col lg:flex-row flex-no-wrap justify-center w-full m-auto my-2 fade-in">
+        <div class="container flex flex-col lg:flex-row flex-no-wrap justify-center w-full m-auto my-2 fade-in  border-gray-light">
 
             <!-- FIGURE -->
             <div v-if="block.figref.length" class="accordion-item rounded overflow-hidden w-auto md:w-full inactive">
@@ -25,7 +25,7 @@
                 <div class="accordion-content flex flex-column list-reset leading-normal bg-grey-lighter hidden">
                     <div v-for="figref in block.figref" :key="block.id" class="text-sm text-gray-800 ml-4 flex w-full my-2">
                         <div v-for="bilde in figref.Figurbilde" :key="block.FigurNr" >
-                            <div class="w-16 h-12 mr-2" v-bind:style="'background-image: url('+bilde.thumbnails.small.url+')'"> </div>
+                            <a v-bind:href="bilde.url" target="_blank"><div class="w-16 h-12 mr-2" v-bind:style="'background-image: url('+bilde.thumbnails.small.url+')'"> </div></a>
                         </div>
                         <div>Figur {{figref.FigurNr }}: {{ figref.Tekst }}</div>
                     </div>
