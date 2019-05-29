@@ -27,9 +27,7 @@ module.exports = function (api, opts) {
                     id: item.id,
                     fields: item.fields,
                 });
-
                 console.log('Figur: ', item.id);
-
             });
             fetchNextPage();
         });
@@ -44,9 +42,7 @@ module.exports = function (api, opts) {
                     id: item.id,
                     fields: item.fields,
                 });
-
                 console.log('Tabell: ', item.id);
-
             });
             fetchNextPage();
         });
@@ -65,12 +61,8 @@ module.exports = function (api, opts) {
                     tabref: store.createReference('Tabell', item.fields.Tabeller),
                     //figurer: [item.fields.Figurer],
                 });
-
                 console.log('Krav: ', item.id);
-                if(item.fields.Figurer) {
-                    console.log('Has ref: ', item.fields.Figurer);
-                }
-
+                if(item.fields.Figurer) { console.log('Has ref: ', item.fields.Figurer); }
             });
             fetchNextPage();
         });

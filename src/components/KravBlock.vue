@@ -1,7 +1,7 @@
 <template>
 
 
-    <div class="kravBlock pr-4 border border-gray-300 p-3 mb-4">
+    <div class="kravBlock pr-4 bg-gray-100 p-3 mb-8">
 
         <div class="flex text-xs text-gray-500">
             <div class="w-full text-right italic underline">Versjon {{block.Versjon}}</div>
@@ -13,7 +13,7 @@
         <div v-if="block.figref.length" class="FIGURE" >
             <a @click="onClick('fig')" class="cursor-pointer"><i class="fas fa-angle-right"></i> Figurer ({{block.figref.length}})</a>
             <div v-bind:id="'ref-'+block.Nr" ref="veiledning" v-bind:class="{hidden: fighidden}">
-                <div v-for="figref in block.figref" class="text-sm text-gray-800 ml-4">
+                <div v-for="figref in block.figref" :key="block.id" class="text-sm text-gray-800 ml-4">
                     <div class="w-16 h-12 my-3"
                          v-bind:style="'background-image: url('+figref.Figurbilde[0].thumbnails.small.url+')'">
                     </div>
@@ -40,14 +40,17 @@
 
 <script>
     export default {
+
         name: 'KravBlock',
         props: ['block'],
+
         data: function () {
             return {
                 fighidden: true,
-                txthidden: true
+                txthidden: true,
             }
         },
+
         methods: {
             onClick (i) {
                 switch(i){
@@ -61,7 +64,6 @@
                         this.tabhidden = !this.tabhidden;
                         break;
                 }
-
             }
         }
     };
