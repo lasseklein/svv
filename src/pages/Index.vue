@@ -50,6 +50,8 @@
       edges {
         node {
           Krav
+          KravID
+          Kravtype
           Kapittel
           Avsnitt
           Nr
