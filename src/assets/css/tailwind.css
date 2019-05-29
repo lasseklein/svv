@@ -3,3 +3,9 @@
 @tailwind components;
 
 @tailwind utilities;
+
+/* Too slow with so much text
+html{
+    scroll-behavior: smooth;
+}
+*/

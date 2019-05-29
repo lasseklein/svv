@@ -5,7 +5,7 @@
         <div class="h-full overflow-y-auto">
             <div v-for="edge in edges" :key="edge.node.id">
                 <template v-if="edge.node.Avsnitt.length === 1">
-                    <a v-if="edge.node.Fagtema" class="block border-b hover:bg-orange" v-bind:href="'.#refid-'+edge.node.Nr">
+                    <a v-if="edge.node.Fagtema" class="block border-b border-gray-light hover:bg-gray-light" v-bind:href="'.#refid-'+edge.node.Nr">
                         <span class="block h-16 px-4 py-2">{{edge.node.Fagtema}}</span>
                     </a>
                 </template>

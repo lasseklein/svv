@@ -46,7 +46,7 @@
 
 <page-query>
   query Krav  {
-    allKrav (filter: { Kapittel:{eq: "B"}}, sortBy: "Nr", order: ASC) {
+    allKrav (filter: { Kapittel:{eq: "D"}}, sortBy: "Nr", order: ASC) {
       edges {
         node {
           Krav
