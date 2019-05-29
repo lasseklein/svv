@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <header class="flex mb-4 h-24 bg-gray-900 py-4">
+    <header class="flex mb-4 h-24 bg-gray-dark py-4">
       <g-image
         src="https://www.vegvesen.no/_public/vegvesen.no/apps/felles/frontend-global/images/svg/svv-logo-graa-topp.svg"
         height="100"
