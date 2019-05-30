@@ -5,9 +5,10 @@ Håndbøkene vedlikeholdes i Airtable, og nye oppdateringer publiseres gjennom e
 
 ### 1. Oppdatering
 
-Oppdater tekster og legg til nytt innhold i Airtable
+Oppdater tekster og bilder, eller legg til nytt innhold i Airtable
 
-### 2. Publisering
-
-Kjør ny deploy for å lese ut informasjonen fra Airtable og generere en statisk site i Netlify med oppdatert informasjon.
+1. Håndboken bygges opp i Airtable
+2. Gridsome leser feltene og genererer en JAM-stack-site (med Vue.js, GraphQL og Tailwind CSS)
+3. Siten oppdateres på GitHub
+4. Netlify oppdaterer automatisk nvv.netlify.com med nye endringer
 
