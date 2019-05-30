@@ -40,12 +40,13 @@ module.exports = {
         {
             use: '~/src/sources/krav',
             options: {
-                apiKey: 'keyBL8EdTEVmtAKOn',
-                base: 'app2szVnKxhLteAUt',
+                apiKey: process.env.AIRTABLE_APIKEY,
+                base: process.env.AIRTABLE_BASE,
             },
         },
 
-        {
+
+{
             use: 'gridsome-plugin-tailwindcss',
             options: {
                 config: './tailwind.config.js',
