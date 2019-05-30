@@ -83,11 +83,7 @@
 
                var hideothers = true; // Funker ikke for mobil der andre må skjules
 
-               const accordionItems = document.querySelectorAll(".accordion-item");
-               const accordionContentPanes = document.querySelectorAll(".accordion-content");
-
-                //var testContainer = document.querySelector('#test');
-                //var fourChildNode = testContainer.querySelector('.four');
+                const accordionContentPanes = document.querySelectorAll(".accordion-content");
 
                 accordionContentPanes.forEach(function(content) {
                     if (content.previousElementSibling === e.target){
@@ -109,12 +105,12 @@
                     'K': 'Frivillig',
                     'B': 'Anbefalt',
                     'S': 'Påkrevet',
-                }
+                };
                 return texts[this.block.Kravtype.charAt(0)];
             }
-        }
+        },
 
-    }
+    };
 
 
 </script>
@@ -128,13 +124,9 @@
     .krav.Skal { color: darkred; }
 
     /* ACCORDION */
-    .accordion-item.active .accordion-title-row .accordion-arrow {
-        transform: rotate(-180deg);
-        transition: ease .3s transform;
-    }
 
     .accordion-item.active .accordion-content {
-        transition: ease .3s all;
+        transition: ease .3s;
         animation-name: fadeIn;
         animation-duration: .6s;
         animation-fill-mode: both;

@@ -26,17 +26,19 @@
 
 
 <script>
-  import KravBlock from '../components/KravBlock'
-  import TitleBlock from '../components/TitleBlock'
-  import Sidebar from '../components/Sidebar'
+  import KravBlock from '../components/KravBlock';
+  import TitleBlock from '../components/TitleBlock';
+  import Sidebar from '../components/Sidebar';
 
   export default {
+    name: 'Index',
     components: {
-      KravBlock,
-      TitleBlock,
-      Sidebar,
+        KravBlock,
+        TitleBlock,
+        Sidebar,
     },
- };
+  };
+
 </script>
 
 

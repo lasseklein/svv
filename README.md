@@ -1,6 +1,6 @@
 # Håndbøker for Vegvesenet
 
-Håndbøkene vedlikeholdes i Airtable, og nye oppdateringer publiseres gjennom en deploy her.
+Håndbøkene vedlikeholdes i Airtable. Nye oppdateringer publiseres gjennom en deploy her.
 
 
 ### 1. Oppdatering
