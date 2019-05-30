@@ -1,14 +1,13 @@
-# Default starter for Gridsome
+# Håndbøker for Vegvesenet
 
-This is the project you get when you run `gridsome create new-project`.
+Håndbøkene vedlikeholdes i Airtable, og nye oppdateringer publiseres gjennom en deploy her.
 
-### 1. Install Gridsome CLI tool if you don't have
 
-`npm install --global @gridsome/cli`
+### 1. Oppdatering
 
-### 2. Create a Gridsome project
+Oppdater tekster og legg til nytt innhold i Airtable
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+### 2. Publisering
+
+Kjør ny deploy for å lese ut informasjonen fra Airtable og generere en statisk site i Netlify med oppdatert informasjon.
+
