@@ -113,9 +113,9 @@
         computed: {
             rectype: function () {
                 let texts = {
-                    'K': 'Frivillig',
-                    'B': 'Anbefalt',
-                    'S': 'Påkrevet',
+                    'K': 'KAN',
+                    'B': 'BØR',
+                    'S': 'SKAL',
                 };
                 return texts[this.block.Kravtype.charAt(0)];
             }
