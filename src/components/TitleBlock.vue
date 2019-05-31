@@ -3,7 +3,7 @@
         <h2 class="text-orange text-3xl mb-6">{{block.Fagtema}}</h2>
     </div>
     <div v-else class="ml-3">
-        <h3 class="text-xl mt-16 mb-6">{{block.Fagtema}}</h3>
+        <h3 class="text-xl mt-16 mb-6">{{block.Kapittel}}.{{block.Avsnitt}} <span class="ml-3">{{block.Fagtema}}</span></h3>
     </div>
 </template>
 
