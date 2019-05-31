@@ -5,7 +5,7 @@
 
         <div class="flex justify-between text-xs text-gray-500">
             <div class="">Krav {{block.KravID}} <span v-bind:class="'m-2 px-1 krav rounded font-medium uppercase tracking-wider '+block.Kravtype">{{rectype}}</span></div>
-            <div class="text-right italic underline text-gray-dark">Versjon {{block.Versjon}}</div>
+            <div class="text-right"><span class="italic underline text-gray-dark mr-4">Versjon {{block.Versjon}}</span> <i class="far fa-star"></i></div>
         </div>
 
 
@@ -22,7 +22,7 @@
                     <div class=" pointer-events-none"><svg viewBox="0 0 20 20" width="20" height="20" class="fill-current text-grey-dark accordion-arrow"> <title>cheveron down</title> <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg></div>
                 </div>
 
-                <div class="accordion-content list-reset leading-normal mx-4 mb-2 hidden">
+                <div class="accordion-content list-reset leading-normal mb-2 hidden">
                     {{ block.Tilknyttet_tekst }}
                 </div>
             </div>
