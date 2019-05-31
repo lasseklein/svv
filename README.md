@@ -1,14 +1,15 @@
 # Håndbøker for Vegvesenet
 
-Håndbøkene vedlikeholdes i Airtable. Nye oppdateringer publiseres gjennom en deploy her.
+Håndbøkene vedlikeholdes ved oppdatering av tekster og bilder eller nytt innhold i Airtable. 
+
+Nye oppdateringer i Airtable publiseres enkelt ved å trykke "trigger deploy" i Netlify.
 
 
-### 1. Oppdatering
+### Oppbygging av løsningen
 
-Oppdater tekster og bilder, eller legg til nytt innhold i Airtable
 
 1. Håndboken bygges opp i Airtable
-2. Gridsome leser feltene og genererer en JAM-stack-site (med Vue.js, GraphQL og Tailwind CSS)
+2. Gridsome leser feltene og genererer statisk site (JAM-stack med Vue.js, GraphQL og Tailwind CSS)
 3. Siten oppdateres på GitHub
 4. Netlify oppdaterer automatisk nvv.netlify.com med nye endringer
 

@@ -8,7 +8,8 @@
             <div class="text-right italic underline text-gray-dark">Versjon {{block.Versjon}}</div>
         </div>
 
-        <div class="flex my-4 text-lg">{{block.Krav}}</div>
+
+        <div v-html="block.Krav" class="flex my-4 text-lg"></div>
 
 
         <div v-if="block.Tilknyttet_tekst" class="container flex flex-col lg:flex-row flex-no-wrap justify-center w-full m-auto mb-2 fade-in  border-gray-light">
@@ -55,7 +56,7 @@
             </div>
 
 
-            <div v-if="block.kravref.length" class="">
+            <div v-if="block.kravref.length" class="mt-2">
                 Se også:
                 <span v-for="ref in block.kravref" :key="block.Nr" class="text-sm text-gray-dark bg-gray-light p-1 rounded ml-2 cursor-pointer">
                     <span v-if="ref.Type==='Krav'">
@@ -138,7 +139,7 @@
     /* ACCORDION */
     .accordion-item.active .accordion-title-row .accordion-arrow {
         transform: rotate(-180deg);
-        transition: ease .3s transform;
+        transition: ease .3s;
     }
 
     .accordion-item.active .accordion-content {

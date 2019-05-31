@@ -1,6 +1,7 @@
 *.log
 .cache
 .idea
+.idea/workspace.xml
 .DS_Store
 src/.temp
 node_modules
