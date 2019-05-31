@@ -2,7 +2,7 @@
 <template>
   <div>
     <header class="flex mb-4 h-24 bg-gray-dark py-4 ">
-        <div class="container px-4 mx-auto flex">
+        <div class="container px-2 mx-auto flex">
 
           <g-image class="w-24"
             src="https://www.vegvesen.no/_public/vegvesen.no/apps/felles/frontend-global/images/svg/svv-logo-graa-topp.svg"
