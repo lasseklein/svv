@@ -9,7 +9,7 @@
         </div>
 
 
-        <div v-html="block.Krav" class="flex my-4 text-lg"></div>
+        <div v-html="block.Krav" class="my-4 text-lg"></div>
 
 
         <div v-if="block.Tilknyttet_tekst" class="container flex flex-col lg:flex-row flex-no-wrap justify-center w-full m-auto mb-2 fade-in  border-gray-light">
