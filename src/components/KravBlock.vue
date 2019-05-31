@@ -134,7 +134,12 @@
     .krav.Bør { color: darkorange; }
     .krav.Skal { color: darkred; }
 
+
     /* ACCORDION */
+    .accordion-item.active .accordion-title-row .accordion-arrow {
+        transform: rotate(-180deg);
+        transition: ease .3s transform;
+    }
 
     .accordion-item.active .accordion-content {
         transition: ease .3s;
