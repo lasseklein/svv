@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="accordion-content flex flex-column list-reset leading-normal bg-grey-lighter hidden">
-                    <div v-for="figref in block.figref" :key="block.id" class="text-sm text-gray-800 ml-4 flex w-full my-2">
+                    <div v-for="figref in block.figref" :key="block.figref.FigurNr" class="text-sm text-gray-800 ml-4 flex w-full my-2">
                         <div v-for="bilde in figref.Figurbilde" :key="block.FigurNr" >
                             <a v-bind:href="bilde.url" target="_blank"><div class="w-16 h-12 mr-2" v-bind:style="'background-image: url('+bilde.thumbnails.small.url+')'"> </div></a>
                         </div>
@@ -35,7 +35,7 @@
 
 
             <!-- TABLE -->
-            <div v-if="block.Tabell" class="accordion-item rounded overflow-hidden w-auto md:w-full inactive">
+            <div v-if="block.tabref.length" class="accordion-item rounded overflow-hidden w-auto md:w-full inactive">
                 <div v-on:click="onClick" class="accordion-title-row flex items-center cursor-pointer px-4 py-2 hover:bg-gray-light">
                     <div class="flex pointer-events-none">
                         <h2 class="mb-0 mr-1">Tabeller</h2>
@@ -44,12 +44,17 @@
                 </div>
 
                 <div class="accordion-content list-reset leading-normal px-8 py-4 bg-grey-lighter hidden">
-                    Tabeller kommer her
+                    <div v-for="tabref in block.tabref" :key="block.tabref.Navn" class="text-sm text-gray-800 ml-4 flex w-full my-2">
+                        <div v-for="bilde in tabref.Bilde" :key="block.tabref.Navn" >
+                            <a v-bind:href="bilde.url" target="_blank"><div class="w-16 h-12 mr-2" v-bind:style="'background-image: url('+bilde.thumbnails.small.url+')'"> </div></a>
+                        </div>
+                        <div>Tabell {{tabref.Navn }}: {{ tabref.Tekst }}</div>
+                    </div>
                 </div>
             </div>
 
 
-            <!-- REFERENCE -->
+            <!-- EXPLANATION -->
             <div v-if="block.Tilknyttet_tekst" class="accordion-item rounded overflow-hidden w-auto md:w-full inactive">
                 <div v-on:click="onClick" class="accordion-title-row flex items-center cursor-pointer px-4 py-2 hover:bg-gray-light">
                     <div class="flex pointer-events-none">
@@ -60,6 +65,32 @@
 
                 <div class="accordion-content list-reset leading-normal py-4 hidden">
                     {{ block.Tilknyttet_tekst }}
+                </div>
+            </div>
+
+            <!-- REFERENCE -->
+            <div v-if="block.kravref.length" class="accordion-item rounded overflow-hidden w-auto md:w-full inactive">
+                <div v-on:click="onClick" class="accordion-title-row flex items-center cursor-pointer px-4 py-2 hover:bg-gray-light">
+                    <div class="flex pointer-events-none">
+                        <h2 class="mb-0 mr-1">Referanser ({{block.kravref.length}})</h2>
+                    </div>
+                    <div class=" pointer-events-none"><svg viewBox="0 0 20 20" width="20" height="20" class="fill-current text-grey-dark accordion-arrow"> <title>cheveron down</title> <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg></div>
+                </div>
+
+                <div class="accordion-content list-reset leading-normal py-4 hidden">
+                    <div v-for="ref in block.kravref" :key="block.Nr" >
+                        <div v-if="ref.Type==='Krav'">
+                            Krav {{ ref.KravID }}
+                        </div>
+                        <div v-else>
+                            <div v-if="ref.Avsnitt==='0'">
+                                {{ ref.Book_Number[0]}}: Kapittel {{ ref.Kapittel }}
+                            </div>
+                            <div v-else>
+                                {{ ref.Book_Number[0]}}: {{ ref.Kapittel }}.{{ ref.Avsnitt }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

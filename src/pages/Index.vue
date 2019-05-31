@@ -48,7 +48,7 @@
 
 <page-query>
   query Krav  {
-    allKrav (filter: { Kapittel:{eq: "D"}}, sortBy: "Nr", order: ASC) {
+    allKrav ( filter: { Kapittel:{eq: "D"}}, sortBy: "Nr", order: ASC ) {
       edges {
         node {
           Krav
@@ -57,9 +57,31 @@
           Kapittel
           Avsnitt
           Nr
+          id
+          Type
+          Fagtema
+          Versjon
           Figur
-          Tabell
           Tilknyttet_tekst
+          tabref {
+            Navn
+            Tekst
+            Bilde {
+              url
+              thumbnails {
+                small {
+                  url
+                }
+              }
+            }
+          }
+          kravref {
+            Book_Number
+            Kapittel
+            Avsnitt
+            KravID
+            Type
+          }
           figref {
             Tekst
             FigurNr
@@ -72,10 +94,7 @@
               }
             }
           }
-          id
-          Type
-          Fagtema
-          Versjon
+
         }
       }
     }
