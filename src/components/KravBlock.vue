@@ -83,13 +83,19 @@
 
 
 <script>
+
     export default {
+
         name: 'KravBlock',
         props: ['block'],
+
         methods: {
-            onClick (e) {
-                var hideothers = true; // Funker ikke for mobil der andre må skjules
+           onClick (e) {
+
+               var hideothers = true; // Funker ikke for mobil der andre må skjules
+
                 const accordionContentPanes = document.querySelectorAll(".accordion-content");
+
                 accordionContentPanes.forEach(function(content) {
                     if (content.previousElementSibling === e.target){
                         content.classList.toggle("hidden");
@@ -114,16 +120,22 @@
                 return texts[this.block.Kravtype.charAt(0)];
             }
         },
+
     };
+
+
 </script>
 
 
 
 <style scoped>
+
     .krav.Kan { color: darkgreen; }
     .krav.Bør { color: darkorange; }
     .krav.Skal { color: darkred; }
+
     /* ACCORDION */
+
     .accordion-item.active .accordion-content {
         transition: ease .3s;
         animation-name: fadeIn;
@@ -131,12 +143,16 @@
         animation-fill-mode: both;
         will-change: transform;
     }
+
     .fade-in {
         animation-name: fadeIn;
         animation-duration: .6s;
         animation-fill-mode: both;
     }
+
     @keyframes fadeIn {
         from { opacity: 0; }  to { opacity: 1; }
     }
+
+
 </style>
