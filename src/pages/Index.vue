@@ -63,6 +63,7 @@
           Versjon
           Figur
           Tilknyttet_tekst
+          Avhengig
           tabref {
             Navn
             Tekst

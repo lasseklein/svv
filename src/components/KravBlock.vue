@@ -1,11 +1,11 @@
 <template>
 
 
-    <div class="kravBlock pr-4 bg-gray-bg border border-gray-light p-3 mb-8">
+    <div v-bind:class="'kravBlock pr-4 bg-gray-bg border border-gray-light p-3 '+ isSeparateStyle">
 
-        <div class="flex justify-between text-xs text-gray-500">
+        <div class="flex justify-between text-xs text-gray-dark">
             <div class="">Krav {{block.KravID}} <span v-bind:class="'m-2 px-1 krav rounded font-medium uppercase tracking-wider '+block.Kravtype">{{rectype}}</span></div>
-            <div class="text-right"><span class="italic underline text-gray-dark mr-4">Versjon {{block.Versjon}}</span> <i class="far fa-star"></i></div>
+            <div class="text-right"><span class="italic underline mr-4">Versjon {{block.Versjon}}</span> <i class="far fa-star"></i></div>
         </div>
 
 
@@ -27,7 +27,6 @@
                 </div>
             </div>
         </div>
-
 
 
         <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-medium pt-3 border-t">
@@ -73,9 +72,7 @@
                 </span>
             </div>
 
-
         </div>
-
 
     </div>
 
@@ -119,11 +116,13 @@
                     'S': 'SKAL',
                 };
                 return texts[this.block.Kravtype.charAt(0)];
+            },
+            isSeparateStyle: function() {
+                return (this.block.Avhengig)?'border-t-0 border-dashed':'mt-8';
             }
         },
 
     };
-
 
 </script>
 
