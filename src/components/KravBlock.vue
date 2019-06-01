@@ -1,35 +1,21 @@
 <template>
 
 
-    <div v-bind:class="'kravBlock pr-4 bg-gray-bg border border-gray-light p-3 '+ isSeparateStyle">
+    <div v-bind:class="'kravBlock pr-4 bg-gray-bg border border-gray-medium p-3 '+ isSeparateStyle">
 
         <div class="flex justify-between text-xs text-gray-dark">
-            <div class="">Krav {{block.KravID}} <span v-bind:class="'m-2 px-1 krav rounded font-medium uppercase tracking-wider '+block.Kravtype">{{rectype}}</span></div>
+            <div class="">{{block.Avhengig?'Delkrav':'Krav'}} {{block.KravID}} <span
+                            class="m-2 px-1 krav rounded font-medium uppercase tracking-wider"
+                            v-bind:class="block.Kravtype">{{rectype}}</span></div>
             <div class="text-right"><span class="italic underline mr-4">Versjon {{block.Versjon}}</span> <i class="far fa-star"></i></div>
         </div>
 
 
         <div v-html="block.Krav" class="my-4 text-lg"></div>
 
+        <KravExplanation v-bind:text="block.Tilknyttet_tekst" />
 
-        <div v-if="block.Tilknyttet_tekst" class="container flex flex-col lg:flex-row flex-no-wrap justify-center w-full m-auto mb-2 fade-in  border-gray-light">
-            <!-- EXPLANATION -->
-            <div class="accordion-item rounded overflow-hidden w-auto md:w-full inactive">
-                <div v-on:click="onClick" class="accordion-title-row flex items-center cursor-pointer py-2">
-                    <div class="flex pointer-events-none">
-                        <h2 class="mb-0 mr-1">Veiledning</h2>
-                    </div>
-                    <div class=" pointer-events-none"><svg viewBox="0 0 20 20" width="20" height="20" class="fill-current text-grey-dark accordion-arrow"> <title>cheveron down</title> <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg></div>
-                </div>
-
-                <div class="accordion-content list-reset leading-normal mb-2 hidden">
-                    {{ block.Tilknyttet_tekst }}
-                </div>
-            </div>
-        </div>
-
-
-        <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-medium pt-3 border-t">
+        <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-3 border-t">
 
             <!-- FIGURE -->
             <div v-if="block.figref.length" class="">
@@ -82,32 +68,15 @@
 
 <script>
 
-    export default {
+    import KravExplanation from "./KravExplanation";
 
+    export default {
         name: 'KravBlock',
+        components: {
+            KravExplanation,
+        },
         props: ['block'],
 
-        methods: {
-           onClick (e) {
-
-               var hideothers = true; // Funker ikke for mobil der andre må skjules
-
-                const accordionContentPanes = document.querySelectorAll(".accordion-content");
-
-                accordionContentPanes.forEach(function(content) {
-                    if (content.previousElementSibling === e.target){
-                        content.classList.toggle("hidden");
-                        content.parentElement.classList.toggle("active");
-                        content.parentElement.classList.toggle("inactive");
-                    }
-                    else if (hideothers) {
-                        content.classList.add('hidden');
-                        content.parentElement.classList.remove("active");
-                        content.parentElement.classList.add("inactive");
-                    }
-                });
-            },
-        },
         computed: {
             rectype: function () {
                 let texts = {
@@ -118,7 +87,7 @@
                 return texts[this.block.Kravtype.charAt(0)];
             },
             isSeparateStyle: function() {
-                return (this.block.Avhengig)?'border-t-0 border-dashed':'mt-8';
+                return (this.block.Avhengig)?'border-dashed border-t-0':'mt-8';
             }
         },
 

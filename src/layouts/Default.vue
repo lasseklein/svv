@@ -1,7 +1,8 @@
 
 <template>
-  <div>
+  <div class=" bg-gray-light">
     <header class="flex mb-4 h-24 bg-gray-dark py-4 ">
+
         <div class="container px-2 mx-auto flex">
 
           <g-image class="w-24"
@@ -21,7 +22,6 @@
 
     <div class="container mx-auto">
 
-
         <div id="top" class="flex flex-col justify-center">
             <div id="Mobilenav" class="block md:hidden my-6 mx-auto ">[Navigasjon for mobil kommer her]</div>
         </div>
@@ -29,11 +29,11 @@
         <div id="page" class="">
 
             <div class="flex mb-4">
-                <div id="sidebar" class="w-1/3 bg-white py-4 mx-2 hidden md:block">
+                <div id="sidebar" class="w-1/3 py-4 mx-2 hidden md:block">
                     <slot name="sidebar" />
                 </div>
 
-                <div id="content" class="w-full md:w-2/3 bg-white p-4 mx-2">
+                <div id="content" class="w-full md:w-2/3 p-4 mx-2">
                     <slot name="content" />
                 </div>
             </div>

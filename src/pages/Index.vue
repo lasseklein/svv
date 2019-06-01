@@ -10,11 +10,11 @@
           <a v-bind:id="'refid-'+edge.node.Nr"></a>
 
           <template v-if="edge.node.Type === 'Tittel'">
-            <TitleBlock :block="edge.node" />
+            <TitleBlock v-bind:block="edge.node" />
           </template>
 
           <template v-else="edge.node.Type === 'Krav'">
-            <KravBlock :block="edge.node" />
+            <KravBlock v-bind:block="edge.node" />
           </template>
 
         </div>
