@@ -45,10 +45,10 @@
                 Se også:
                 <span v-for="ref in block.kravref" :key="block.sequence" class="text-sm text-gray-dark bg-gray-light p-1 rounded ml-2 cursor-pointer">
                     <span v-if="ref.Type==='Krav'">
-                        Krav {{ ref.KravID }}
+                        Krav {{ ref.kravID }}
                     </span>
                     <span v-else>
-                        <span v-if="ref.Avsnitt==='0'">
+                        <span v-if="ref.avsnitt==='0'">
                             {{ ref.booknr[0]}}: kapittel {{ ref.kapittel }}
                         </span>
                         <span v-else>
