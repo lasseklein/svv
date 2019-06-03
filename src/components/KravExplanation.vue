@@ -48,3 +48,32 @@
 
     }
 </script>
+
+
+<style scoped>
+
+    /* ACCORDION */
+    .accordion-item.active .accordion-title-row .accordion-arrow {
+        transform: rotate(-180deg);
+        transition: ease .3s;
+    }
+
+    .accordion-item.active .accordion-content {
+        transition: ease .3s;
+        animation-name: fadeIn;
+        animation-duration: .6s;
+        animation-fill-mode: both;
+        will-change: transform;
+    }
+
+    .fade-in {
+        animation-name: fadeIn;
+        animation-duration: .6s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }  to { opacity: 1; }
+    }
+
+</style>
