@@ -60,7 +60,7 @@ module.exports = function (api, opts) {
                     kravref: store.createReference('Krav', item.fields.Henvisninger),
                 });
                 count++;
-                console.log('Krav: ', item.id);
+                console.log('Krav: ', count);
                 if(item.fields.Figurer) { console.log('Has ref: ', item.fields.Figurer); }
             });
             fetchNextPage();
