@@ -9,15 +9,15 @@
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
           <a v-bind:id="'refid-'+edge.node.sequence"></a>
 
-          <template v-if="edge.node.Type === 'Tittel'">
+          <template v-if="edge.node.type === 'Tittel'">
             <TitleBlock v-bind:block="edge.node" />
           </template>
 
-          <template v-else-if="edge.node.Type === 'Tekst'">
-            <TextBlock v-bind:text="edge.node.Krav" />
+          <template v-else-if="edge.node.type === 'Tekst'">
+            <TextBlock v-bind:text="edge.node.krav" />
           </template>
 
-          <template v-else="edge.node.Type === 'Krav'">
+          <template v-else="edge.node.type === 'Krav'">
             <KravBlock v-bind:block="edge.node" />
           </template>
 
@@ -54,25 +54,25 @@
 
 <page-query>
   query Krav  {
-    allKrav ( filter: { Kapittel:{eq: "D"}}, sortBy: "sequence", order: ASC ) {
+    allKrav ( filter: { kapittel:{eq: "D"}}, sortBy: "sequence", order: ASC ) {
       edges {
         node {
           sequence
-          Krav
-          KravID
-          Kravtype
-          Kapittel
-          Avsnitt
+          krav
+          kravID
+          kravtype
+          kapittel
+          avsnitt
           id
-          Type
-          Fagtema
-          Versjon
-          Tilknyttet_tekst
-          Avhengig
+          type
+          fagtema
+          versjon
+          veiledning
+          koblet
           tabref {
-            Navn
-            Tekst
-            Bilde {
+            navn
+            tekst
+            bilde {
               url
               thumbnails {
                 small {
@@ -82,16 +82,16 @@
             }
           }
           kravref {
-            Book_Number
-            Kapittel
-            Avsnitt
-            KravID
-            Type
+            booknr
+            kapittel
+            avsnitt
+            kravID
+            type
           }
           figref {
-            Tekst
-            FigurNr
-            Figurbilde {
+            tekst
+            figurNr
+            figurBilde {
               url
               thumbnails {
                 small {

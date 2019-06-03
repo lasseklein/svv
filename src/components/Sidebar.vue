@@ -4,9 +4,9 @@
         <h3 class="px-4 pb-6 text-2xl">Håndbok N100</h3>
         <div class="h-full overflow-y-auto">
             <div v-for="edge in edges" :key="edge.node.id">
-                <template v-if="edge.node.Avsnitt.length === 1">
-                    <a v-if="edge.node.Fagtema" class="block border-b border-gray-medium self-center hover:bg-gray-light" v-bind:href="'.#refid-'+edge.node.sequence">
-                        <span class="block h-16 px-4 py-2">{{edge.node.Fagtema}}</span>
+                <template v-if="edge.node.avsnitt.length === 1">
+                    <a v-if="edge.node.fagtema" class="block border-b border-gray-medium self-center hover:bg-gray-light" v-bind:href="'.#refid-'+edge.node.sequence">
+                        <span class="block h-16 px-4 py-2">{{edge.node.fagtema}}</span>
                     </a>
                 </template>
                 <!-- For andre kapitler: +'?c='+edge.node.Kapittel -->

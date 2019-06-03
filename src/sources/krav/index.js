@@ -26,7 +26,10 @@ module.exports = function (api, opts) {
 
                 figurer.addNode({
                     id: item.id,
-                    fields: item.fields,
+                    tekst: item.fields.Tekst,
+                    figurNr: item.fields.FigurNr,
+                    figurBilde: item.fields.Figurbilde,
+                    //fields: item.fields,
                 });
                 console.log('Figur: ', item.id);
             });
@@ -39,7 +42,10 @@ module.exports = function (api, opts) {
 
                 tabeller.addNode({
                     id: item.id,
-                    fields: item.fields,
+                    navn: item.fields.Navn,
+                    tekst: item.fields.Tekst,
+                    bilde: item.fields.Bilde,
+                    //fields: item.fields,
                 });
                 console.log('Tabell: ', item.id);
             });
@@ -54,7 +60,18 @@ module.exports = function (api, opts) {
                 krav.addNode({
                     sequence: count,
                     id: item.id,
-                    fields: item.fields,
+                    krav: item.fields.Krav,
+                    kravID: item.fields.KravID,
+                    kravtype: item.fields.Kravtype,
+                    kapittel: item.fields.Kapittel,
+                    avsnitt: item.fields.Avsnitt,
+                    type: item.fields.Type,
+                    fagtema: item.fields.Fagtema,
+                    versjon: item.fields.Versjon,
+                    veiledning: item.fields.Veiledning,
+                    koblet: item.fields.Koblet,
+                    booknr: item.fields.booknr,
+
                     figref: store.createReference('Figur', item.fields.Figurer),
                     tabref: store.createReference('Tabell', item.fields.Tabeller),
                     kravref: store.createReference('Krav', item.fields.Henvisninger),

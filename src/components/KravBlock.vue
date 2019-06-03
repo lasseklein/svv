@@ -4,26 +4,26 @@
     <div v-bind:class="'kravBlock pr-4 bg-gray-bg border border-gray-medium p-3 '+ isSeparateStyle">
 
         <div class="flex justify-between text-xs text-gray-dark">
-            <div class="">{{block.Avhengig?'Delkrav':'Krav'}} {{block.KravID}} <span
+            <div class="">{{block.koblet?'Delkrav':'Krav'}} {{block.kravID}} <span
                             class="m-2 px-1 krav rounded font-medium uppercase tracking-wider"
-                            v-bind:class="block.Kravtype">{{rectype}}</span></div>
-            <div class="text-right"><span class="italic underline mr-4">Versjon {{block.Versjon}}</span> <i class="far fa-star text-lg"></i></div>
+                            v-bind:class="block.kravtype">{{rectype}}</span></div>
+            <div class="text-right"><span class="italic underline mr-4">Versjon {{block.versjon}}</span> <i class="far fa-star text-lg"></i></div>
         </div>
 
 
-        <div v-html="block.Krav" class="my-4 text-lg"></div>
+        <div v-html="block.krav" class="my-4 text-lg"></div>
 
-        <KravExplanation v-bind:text="block.Tilknyttet_tekst" />
+        <KravExplanation v-bind:text="block.veiledning" />
 
         <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-3 border-t">
 
             <!-- FIGURE -->
             <div v-if="block.figref.length" class="">
-                <div v-for="figref in block.figref" :key="block.figref.FigurNr" class="text-sm text-gray-800 flex w-full my-2">
-                    <div v-for="bilde in figref.Figurbilde" :key="block.FigurNr" >
+                <div v-for="figref in block.figref" :key="block.figref.figurNr" class="text-sm text-gray-800 flex w-full my-2">
+                    <div v-for="bilde in figref.figurBilde" :key="block.figurNr" >
                         <a v-bind:href="bilde.url" target="_blank"><div class="w-12 h-8 mr-2" v-bind:style="'background-image: url('+bilde.thumbnails.small.url+')'"> </div></a>
                     </div>
-                    <div>Figur {{figref.FigurNr }}: {{ figref.Tekst }}</div>
+                    <div>Figur {{figref.figurNr }}: {{ figref.tekst }}</div>
                 </div>
             </div>
 
@@ -31,11 +31,11 @@
             <!-- TABLE -->
             <div v-if="block.tabref.length" class="">
                 <div class="">
-                    <div v-for="tabref in block.tabref" :key="block.tabref.Navn" class="text-sm text-gray-800 flex w-full my-2">
-                        <div v-for="bilde in tabref.Bilde" :key="block.tabref.Navn" >
+                    <div v-for="tabref in block.tabref" :key="block.tabref.navn" class="text-sm text-gray-800 flex w-full my-2">
+                        <div v-for="bilde in tabref.bilde" :key="block.tabref.navn" >
                             <a v-bind:href="bilde.url" target="_blank"><div class="w-12 h-8 mr-2" v-bind:style="'background-image: url('+bilde.thumbnails.small.url+')'"> </div></a>
                         </div>
-                        <div>Tabell {{tabref.Navn }}: {{ tabref.Tekst }}</div>
+                        <div>Tabell {{tabref.navn }}: {{ tabref.tekst }}</div>
                     </div>
                 </div>
             </div>
@@ -49,10 +49,10 @@
                     </span>
                     <span v-else>
                         <span v-if="ref.Avsnitt==='0'">
-                            {{ ref.Book_Number[0]}}: Kapittel {{ ref.Kapittel }}
+                            {{ ref.booknr[0]}}: kapittel {{ ref.kapittel }}
                         </span>
                         <span v-else>
-                            {{ ref.Book_Number[0]}}: {{ ref.Kapittel }}.{{ ref.Avsnitt }}
+                            {{ ref.booknr[0]}}: {{ ref.kapittel }}.{{ ref.avsnitt }}
                         </span>
                     </span>
                 </span>
@@ -84,10 +84,10 @@
                     'B': 'BØR',
                     'S': 'SKAL',
                 };
-                return texts[this.block.Kravtype.charAt(0)];
+                return texts[this.block.kravtype.charAt(0)];
             },
             isSeparateStyle: function() {
-                return (this.block.Avhengig)?'border-dashed border-t-0':'mt-8';
+                return (this.block.koblet)?'border-dashed border-t-0':'mt-8';
             }
         },
 
