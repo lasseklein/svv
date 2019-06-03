@@ -13,6 +13,10 @@
             <TitleBlock v-bind:block="edge.node" />
           </template>
 
+          <template v-else-if="edge.node.Type === 'Tekst'">
+            <TextBlock v-bind:text="edge.node.Krav" />
+          </template>
+
           <template v-else="edge.node.Type === 'Krav'">
             <KravBlock v-bind:block="edge.node" />
           </template>
@@ -28,6 +32,7 @@
 <script>
   import KravBlock from '../components/KravBlock';
   import TitleBlock from '../components/TitleBlock';
+  import TextBlock from '../components/TextBlock';
   import Sidebar from '../components/Sidebar';
 
   export default {
@@ -35,6 +40,7 @@
     components: {
         KravBlock,
         TitleBlock,
+        TextBlock,
         Sidebar,
     },
   };

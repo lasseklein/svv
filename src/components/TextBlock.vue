@@ -1,5 +1,5 @@
 <template>
-    <p class="text-xl mt-16 mb-6">{{text}}</p>
+    <p class="text-xl my-4">{{text}}</p>
 </template>
 
 
