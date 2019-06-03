@@ -6,7 +6,7 @@
        </template>
 
       <template  slot="content">
-        <div v-for="edge in $page.allKrav.edges" :key="edge.node.id" class="block">
+        <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
           <a v-bind:id="'refid-'+edge.node.Nr"></a>
 
           <template v-if="edge.node.Type === 'Tittel'">
@@ -48,9 +48,10 @@
 
 <page-query>
   query Krav  {
-    allKrav ( filter: { Kapittel:{eq: "D"}}, sortBy: "Nr", order: ASC ) {
+    allKrav ( filter: { Kapittel:{eq: "D"}}, sortBy: "sequence", order: ASC ) {
       edges {
         node {
+          sequence
           Krav
           KravID
           Kravtype

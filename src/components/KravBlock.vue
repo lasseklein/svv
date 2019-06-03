@@ -7,7 +7,7 @@
             <div class="">{{block.Avhengig?'Delkrav':'Krav'}} {{block.KravID}} <span
                             class="m-2 px-1 krav rounded font-medium uppercase tracking-wider"
                             v-bind:class="block.Kravtype">{{rectype}}</span></div>
-            <div class="text-right"><span class="italic underline mr-4">Versjon {{block.Versjon}}</span> <i class="far fa-star"></i></div>
+            <div class="text-right"><span class="italic underline mr-4">Versjon {{block.Versjon}}</span> <i class="far fa-star text-lg"></i></div>
         </div>
 
 
