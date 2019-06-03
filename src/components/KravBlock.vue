@@ -43,7 +43,7 @@
 
             <div v-if="block.kravref.length" class="mt-2">
                 Se også:
-                <span v-for="ref in block.kravref" :key="block.Nr" class="text-sm text-gray-dark bg-gray-light p-1 rounded ml-2 cursor-pointer">
+                <span v-for="ref in block.kravref" :key="block.sequence" class="text-sm text-gray-dark bg-gray-light p-1 rounded ml-2 cursor-pointer">
                     <span v-if="ref.Type==='Krav'">
                         Krav {{ ref.KravID }}
                     </span>

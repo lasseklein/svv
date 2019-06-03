@@ -7,7 +7,7 @@
 
       <template  slot="content">
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
-          <a v-bind:id="'refid-'+edge.node.Nr"></a>
+          <a v-bind:id="'refid-'+edge.node.sequence"></a>
 
           <template v-if="edge.node.Type === 'Tittel'">
             <TitleBlock v-bind:block="edge.node" />
@@ -63,12 +63,10 @@
           Kravtype
           Kapittel
           Avsnitt
-          Nr
           id
           Type
           Fagtema
           Versjon
-          Figur
           Tilknyttet_tekst
           Avhengig
           tabref {
