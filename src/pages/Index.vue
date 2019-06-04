@@ -68,6 +68,10 @@
           fagtema
           versjon
           veiledning
+          vedlegg {
+            filename
+            url
+          }
           koblet
           tabref {
             navn

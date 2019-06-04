@@ -58,6 +58,13 @@
                 </span>
             </div>
 
+            <div v-if="block.vedlegg.length" class="mt-2">
+                <i class="fas fa-paperclip"></i> Vedlegg:
+                <span v-for="vl in block.vedlegg" :key="vl.filename">
+                    <a v-bind:href="vl.url">{{vl.filename}}</a>
+                </span>
+            </div>
+
         </div>
 
     </div>
