@@ -6,7 +6,6 @@
 
 
 const tailwind = require('tailwindcss');
-
 const postcssPlugins = [ tailwind('./tailwind.config.js') ];
 
 //if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
@@ -45,14 +44,21 @@ module.exports = {
             },
         },
 
-
-{
+        {
             use: 'gridsome-plugin-tailwindcss',
             options: {
                 config: './tailwind.config.js',
                 shouldPurge: false, //true removes too much, like .hidden
             }
-        }
+        },
     ],
+
+    transformers: {
+        remark: {
+            // global remark options
+            externalLinksTarget: '_blank',
+        }
+    },
+
 
 };

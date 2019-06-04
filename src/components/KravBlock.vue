@@ -11,7 +11,8 @@
         </div>
 
 
-        <div v-html="block.krav" class="my-4 text-lg"></div>
+        <div v-html="compiledMarkdown" class="my-4 text-lg"></div>
+
 
         <KravExplanation v-bind:text="block.veiledning" />
 
@@ -75,6 +76,8 @@
 
 <script>
 
+    import marked from "marked";
+
     import KravExplanation from "./KravExplanation";
 
     export default {
@@ -85,6 +88,11 @@
         props: ['block'],
 
         computed: {
+            compiledMarkdown: function(){
+                return marked(this.block.krav, { sanitize: true })
+                    .replace('<ul>','<ul class="pl-8 list-disc">')
+                    .replace('<li>','<li class="mt-1">')
+            },
             rectype: function () {
                 let texts = {
                     'K': 'KAN',
@@ -110,5 +118,9 @@
     .krav.Bør { color: darkorange; }
     .krav.Skal { color: darkred; }
 
+    ul {
+        list-style-type: square !important;
+        list-style: square !important;
+    }
 
 </style>
