@@ -92,6 +92,7 @@
                 return marked(this.block.krav, { sanitize: true })
                     .replace('<ul>','<ul class="pl-8 list-disc">')
                     .replace('<li>','<li class="mt-1">')
+                    .replace('<a href', '<a class="underline font-semibold" href')
             },
             rectype: function () {
                 let texts = {
