@@ -1,7 +1,7 @@
 <template>
 
 
-    <div v-bind:class="'kravBlock pr-4 bg-gray-bg border border-gray-medium p-3 '+ isSeparateStyle">
+    <div class="kravBlock pr-4 bg-gray-bg border border-gray-medium p-3" v-bind:class="isSeparateStyle">
 
         <div class="flex justify-between text-xs text-gray-dark">
             <div class="">{{block.koblet?'Delkrav':'Krav'}} {{block.kravID}} <span
@@ -92,11 +92,11 @@
                 return marked(this.block.krav, { sanitize: true })
                     .replace('<ul>','<ul class="pl-8 list-disc">')
                     .replace('<li>','<li class="mt-1">')
-                    .replace('<a href', '<a class="underline font-semibold" href')
+                    .replace('<a href', '<a class="underline font-medium" href')
             },
             rectype: function () {
                 let texts = {
-                    'K': 'KAN',
+                    'K': 'Anbefaling',
                     'B': 'BØR',
                     'S': 'SKAL',
                 };

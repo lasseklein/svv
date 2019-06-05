@@ -14,7 +14,7 @@
             compiledMarkdown: function(){
                 return marked(this.text, { sanitize: true })
                     .replace('<p>','<p class="mb-4">')
-                    .replace('<a href', '<a class="underline font-semibold" href');
+                    .replace('<a href', '<a class="underline font-medium" href');
             },
          },
 
