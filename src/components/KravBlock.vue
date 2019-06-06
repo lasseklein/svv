@@ -1,7 +1,7 @@
 <template>
 
 
-    <div class="kravBlock pr-4 bg-white border border-gray-dark p-3" v-bind:class="isSeparateStyle">
+    <div class="kravBlock pr-4 bg-white border border-gray-medium p-3" v-bind:class="isSeparateStyle">
         <div v-bind:class="isSeparateKrav" >
 
             <div class="flex justify-between text-xs text-gray-dark">
@@ -92,7 +92,7 @@
         computed: {
             compiledMarkdown: function(){
                 return marked(this.block.krav, { sanitize: true })
-                    .replace(/<p>/g, '<p class="mb-4">')
+                    .replace(/<p>/g, '<p class="my-2">')
                     .replace(/<ul>/g,'<ul class="pl-8 list-disc">')
                     .replace(/<li>/g, '<li class="mt-1">')
                     .replace(/<a href/g, '<a class="underline font-medium" href')
