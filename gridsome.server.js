@@ -11,7 +11,7 @@ module.exports = function (api) {
   });
 
   api.createPages(async ({ graphql, createPage }) => {
-
+/*
       const {data} = await graphql(`
         {
           allKrav ( filter: { type:{eq: "Kapittel"}}, sortBy: "sequence", order: ASC ) {
@@ -39,6 +39,6 @@ module.exports = function (api) {
           }
         })
       });
-
+*/
    });
 };
