@@ -53,12 +53,6 @@ module.exports = {
         },
     ],
 
-    transformers: {
-        remark: {
-            // global remark options
-            externalLinksTarget: '_blank',
-        }
-    },
 
 
 };

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="block.avsnitt==='0'" class="">
+    <div v-if="block.type==='Kapittel'" class="">
         <h2 class="text-gray-dark uppercase text-3xl mt-3 mb-6">{{block.kapittel}} {{block.fagtema}}</h2>
     </div>
     <div v-else-if="block.avsnitt.length===1" class="">

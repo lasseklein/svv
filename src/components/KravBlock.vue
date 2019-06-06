@@ -108,7 +108,7 @@
                 return (this.block.koblet)?'border-dashed border-t-0':'mt-8';
             },
             isSeparateKrav: function() {
-                return (this.block.koblet)?'border-l border-gray-dark pl-4':'';
+                return (this.block.koblet)?'border-l border-gray-medium pl-4':'';
             }
         },
 

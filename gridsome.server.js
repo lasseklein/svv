@@ -10,7 +10,34 @@ module.exports = function (api) {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api
   });
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api
-  })
+  api.createPages(async ({ graphql, createPage }) => {
+
+      const {data} = await graphql(`
+        {
+          allKrav ( filter: { type:{eq: "Kapittel"}}, sortBy: "sequence", order: ASC ) {
+            edges {
+              node {
+                sequence
+                kapittel
+                avsnitt
+                id
+                type
+                fagtema
+              }
+            }
+          }
+        }
+     `);
+
+      data.allKrav.edges.forEach(({ node }) => {
+        createPage({
+          path: `/kapittel/${node.kapittel}`,
+          component: './src/templates/Kapittel.vue',
+          //context: {
+          //  chapter: node.kapittel
+          //}
+        })
+      });
+
+   });
 };
