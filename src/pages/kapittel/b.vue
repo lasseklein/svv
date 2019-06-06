@@ -40,10 +40,10 @@
       Sidebar,
     },
   };
-  import KravBlock  from '../components/KravBlock';
-  import TitleBlock from '../components/TitleBlock';
-  import TextBlock  from '../components/TextBlock';
-  import Sidebar    from '../components/Sidebar';
+  import KravBlock  from '../../components/KravBlock';
+  import TitleBlock from '../../components/TitleBlock';
+  import TextBlock  from '../../components/TextBlock';
+  import Sidebar    from '../../components/Sidebar';
 
 
 </script>

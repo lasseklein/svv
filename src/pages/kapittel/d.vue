@@ -40,10 +40,10 @@
       Sidebar,
     },
   };
-  import KravBlock  from '../components/KravBlock';
-  import TitleBlock from '../components/TitleBlock';
-  import TextBlock  from '../components/TextBlock';
-  import Sidebar    from '../components/Sidebar';
+  import KravBlock  from '../../components/KravBlock';
+  import TitleBlock from '../../components/TitleBlock';
+  import TextBlock  from '../../components/TextBlock';
+  import Sidebar    from '../../components/Sidebar';
 
 
 </script>
@@ -55,7 +55,7 @@
 
 <page-query>
   query Krav {
-    allKrav ( filter: { kapittel: {eq: "B"}}, sortBy: "sequence", order: ASC ) {
+    allKrav ( filter: { kapittel: {eq: "D"}}, sortBy: "sequence", order: ASC ) {
       edges {
         node {
           sequence
