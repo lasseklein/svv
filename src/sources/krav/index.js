@@ -72,6 +72,7 @@ module.exports = function (api, opts) {
                     koblet      : item.fields.Koblet,
                     vedlegg     : item.fields.Vedlegg,
                     booknr      : item.fields.booknr,
+                    kapittelID  : item.fields.KapittelID, //Kun for å bygge sider
                     // Add references to self and other tables
                     figref      : store.createReference('Figur' , item.fields.Figurer      ),
                     tabref      : store.createReference('Tabell', item.fields.Tabeller     ),

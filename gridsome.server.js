@@ -19,6 +19,7 @@ module.exports = function (api) {
               node {
                 sequence
                 kapittel
+                kapittelID
                 avsnitt
                 id
                 type
@@ -31,11 +32,11 @@ module.exports = function (api) {
 
       data.allKrav.edges.forEach(({ node }) => {
         createPage({
-          path: `/kapittel/${node.kapittel}`,
+          path: `${node.kapittelID}`,
           component: './src/templates/Kapittel.vue',
-          //context: {
-          //  chapter: node.kapittel
-          //}
+          context: {
+            chapter: node.kapittel
+          }
         })
       });
 

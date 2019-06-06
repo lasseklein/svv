@@ -2,10 +2,14 @@
     <Layout>
 
       <template slot="sidebar">
-        <Sidebar v-bind:edges="$page.allKrav.edges" />
+        <Sidebar />
        </template>
 
       <template  slot="content">
+          <g-link to="/kapittel-b">Kapittel B</g-link>
+          <g-link to="/kapittel-c">Kapittel C</g-link>
+          <g-link to="/kapittel-d">Kapittel D</g-link>
+          <g-link to="/kapittel-e">Kapittel E</g-link>
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
           <a v-bind:id="'refid-'+edge.node.sequence"></a>
 
@@ -30,20 +34,20 @@
 
 
 <script>
+  export default {
+    name: 'Index',
+    components: {
+      KravBlock,
+      TitleBlock,
+      TextBlock,
+      Sidebar,
+    },
+  };
   import KravBlock  from '../components/KravBlock';
   import TitleBlock from '../components/TitleBlock';
   import TextBlock  from '../components/TextBlock';
   import Sidebar    from '../components/Sidebar';
 
-  export default {
-    name: 'Index',
-    components: {
-        KravBlock,
-        TitleBlock,
-        TextBlock,
-        Sidebar,
-    },
-  };
 
 </script>
 
@@ -53,8 +57,8 @@
 
 
 <page-query>
-  query Krav   {
-    allKrav ( filter: { kapittel:{eq: "D" }}, sortBy: "sequence", order: ASC ) {
+  query Krav {
+    allKrav ( filter: { kapittel: {eq: "B"}}, sortBy: "sequence", order: ASC ) {
       edges {
         node {
           sequence

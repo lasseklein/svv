@@ -1,5 +1,6 @@
 <template>
     <Layout>
+
       <template slot="sidebar">
         <Sidebar v-bind:edges="$page.allKrav.edges" />
        </template>
@@ -29,11 +30,6 @@
 
 
 <script>
-  import KravBlock  from '../components/KravBlock';
-  import TitleBlock from '../components/TitleBlock';
-  import TextBlock  from '../components/TextBlock';
-  import Sidebar    from '../components/Sidebar';
-
   export default {
     name: 'Index',
     components: {
@@ -42,24 +38,23 @@
       TextBlock,
       Sidebar,
     },
-    context: {
-      chap: "B"
-    },
   };
+  import KravBlock  from '../components/KravBlock';
+  import TitleBlock from '../components/TitleBlock';
+  import TextBlock  from '../components/TextBlock';
+  import Sidebar    from '../components/Sidebar';
 
-  console.log('Kapittel: ', $path);
 
 </script>
 
 
 <style scoped>
-
 </style>
 
 
 <page-query>
-  query Krav  {
-    allKrav ( filter: { kapittel:{ eq:"E"}}, sortBy: "sequence", order: ASC ) {
+  query Krav {
+    allKrav ( filter: { kapittel: {eq: "D"}}, sortBy: "sequence", order: ASC ) {
       edges {
         node {
           sequence
@@ -117,4 +112,23 @@
 
 
 </page-query>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
