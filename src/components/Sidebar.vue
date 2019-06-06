@@ -7,7 +7,7 @@
                 <a v-if="edge.node.type==='Kapittel'" class="block border-t border-gray-medium self-center hover:bg-gray-light" v-bind:href="'/kapittel-'+edge.node.kapittel.toLowerCase()">
                     <span class="block h-16 px-4 py-2">{{edge.node.kapittel}}. {{edge.node.fagtema}}</span>
                 </a>
-                <a v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length === 1" class="ml-10 block"> {{edge.node.kapittel}}.{{edge.node.avsnitt}} {{edge.node.fagtema}}</a>
+                <!-- <a v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length === 1" class="ml-10 block"> {{edge.node.kapittel}}.{{edge.node.avsnitt}} {{edge.node.fagtema}}</a> -->
             </div>
         </div>
     </div>

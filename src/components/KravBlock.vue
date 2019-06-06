@@ -1,7 +1,7 @@
 <template>
 
 
-    <div class="kravBlock pr-4 bg-gray-bg border border-gray-medium p-3" v-bind:class="isSeparateStyle">
+    <div class="kravBlock pr-4 bg-white border border-gray-medium p-3" v-bind:class="isSeparateStyle">
         <div v-bind:class="isSeparateKrav" >
 
             <div class="flex justify-between text-xs text-gray-dark">
