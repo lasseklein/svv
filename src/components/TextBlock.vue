@@ -13,8 +13,10 @@
         computed: {
             compiledMarkdown: function(){
                 return marked(this.text, { sanitize: true })
-                    .replace('<p>','<p class="mb-4">')
-                    .replace('<a href', '<a class="underline font-medium" href');
+                    .replace(/<p>/g, '<p class="mb-4">')
+                    .replace(/<a href/g, '<a class="underline font-medium" href')
+                    .replace(/<ul>/g,'<ul class="pl-8 list-disc">')
+                    .replace(/<li>/g, '<li class="mb-4">');
             },
          },
 

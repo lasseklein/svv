@@ -92,9 +92,10 @@
         computed: {
             compiledMarkdown: function(){
                 return marked(this.block.krav, { sanitize: true })
-                    .replace('<ul>','<ul class="pl-8 list-disc">')
-                    .replace('<li>','<li class="mt-1">')
-                    .replace('<a href', '<a class="underline font-medium" href')
+                    .replace(/<p>/g, '<p class="mb-4">')
+                    .replace(/<ul>/g,'<ul class="pl-8 list-disc">')
+                    .replace(/<li>/g, '<li class="mt-1">')
+                    .replace(/<a href/g, '<a class="underline font-medium" href')
             },
             rectype: function () {
                 let texts = {

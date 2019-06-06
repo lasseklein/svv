@@ -4,10 +4,10 @@
         <h3 class="px-4 pb-6 text-2xl">Håndbok N100</h3>
         <div class="h-full overflow-y-auto">
             <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
-                <a v-if="edge.node.fagtema" class="block border-b border-gray-medium self-center hover:bg-gray-light" v-bind:href="'.#refid-'+edge.node.sequence">
-                    <span class="block h-16 px-4 py-2">{{edge.node.kapittel}} {{edge.node.fagtema}}</span>
+                <a v-if="edge.node.type==='Kapittel'" class="block border-t border-gray-medium self-center hover:bg-gray-light" v-bind:href="'/kapittel-'+edge.node.kapittel.toLowerCase()">
+                    <span class="block h-16 px-4 py-2">{{edge.node.kapittel}}. {{edge.node.fagtema}}</span>
                 </a>
-                <!-- For andre kapitler: +'?c='+edge.node.Kapittel -->
+                <a v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length === 1" class="ml-10 block"> {{edge.node.kapittel}}.{{edge.node.avsnitt}} {{edge.node.fagtema}}</a>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
 <static-query>
 
     query Krav {
-        allKrav ( filter: { type:{eq: "Kapittel"}}, sortBy: "sequence", order: ASC ) {
+        allKrav ( filter: { type:{in: ["Kapittel","Tittel"]}}, sortBy: "sequence", order: ASC ) {
             edges {
                 node {
                     sequence
