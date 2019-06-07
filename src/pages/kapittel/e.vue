@@ -2,7 +2,7 @@
     <Layout>
 
       <template slot="sidebar">
-        <Sidebar />
+        <Sidebar chapter="E" />
        </template>
 
       <template  slot="content">
