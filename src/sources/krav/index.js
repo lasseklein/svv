@@ -21,6 +21,7 @@ module.exports = function (api, opts) {
             route       : '/tabell/:id',
         });
 
+        let fcount = 0;
         await base('Figurer').select().eachPage((records, fetchNextPage) => {
             records.forEach((record) => {
                 const item = record._rawJson;
@@ -31,12 +32,14 @@ module.exports = function (api, opts) {
                     figurNr     : item.fields.FigurNr,
                     figurBilde  : item.fields.Figurbilde,
                 });
-                console.log('Figur: ', item.id);
+                fcount++;
             });
+            console.log('Figur: ', fcount);
             fetchNextPage();
         });
 
-         await base('Tabeller').select().eachPage((records, fetchNextPage) => {
+        let tcount = 0;
+        await base('Tabeller').select().eachPage((records, fetchNextPage) => {
             records.forEach((record) => {
                 const item = record._rawJson;
 
@@ -46,8 +49,9 @@ module.exports = function (api, opts) {
                     tekst   : item.fields.Tekst,
                     bilde   : item.fields.Bilde,
                 });
-                console.log('Tabell: ', item.id);
+                tcount++;
             });
+            console.log('Tabell: ', tcount);
             fetchNextPage();
         });
 

@@ -1,18 +1,21 @@
 <template>
 
 
-    <div class="kravBlock pr-4 bg-white border border-gray-medium p-3" v-bind:class="isSeparateStyle">
-        <div v-bind:class="isSeparateKrav" >
+    <div class="kravBlock pr-4 bg-white border border-gray-medium p-3" v-bind:class="isAttachedStyle">
+        <div >
 
-            <div class="flex justify-between text-xs text-gray-dark">
-                <div class="uppercase">{{block.koblet?'Delkrav':'Krav'}} {{block.kravID}} <span
+            <div class="flex justify-start text-xs text-gray-dark">
+                <svg viewBox="0 0 21 14" width="21" height="15" class="fill-current text-gray-dark mr-1" v-bind:class="isAttached"><path d="M13.6,1.4c-0.1-0.1-0.4-0.1-0.5,0l-1.4,1.4c-0.1,0.1-0.1,0.4,0,0.5l3.2,3.2c0,0,0,0,0,0H3.2C3,6.6,2.8,6.4,2.8,6.2V1.7
+		c0-0.2-0.2-0.4-0.4-0.4h-2C0.2,1.3,0,1.5,0,1.7V9c0,0.2,0.2,0.4,0.4,0.4h14.4c0,0,0,0,0,0l-3.3,3.3c-0.1,0.1-0.1,0.4,0,0.5l1.4,1.4
+		c0.1,0.1,0.4,0.1,0.5,0l6.4-6.4c0.1-0.1,0.1-0.4,0-0.5L13.6,1.4z"></path></svg>
+                <div class="uppercase">{{block.koblet?'Krav':'Krav'}} {{block.kravID}} <span
                                 class="m-2 px-1 krav rounded font-medium uppercase tracking-wide"
                                 v-bind:class="block.kravtype">{{rectype}}</span></div>
-                <div class="text-right"><span class="italic underline mr-4">Versjon {{block.versjon}}</span> <i class="far fa-star text-lg"></i></div>
+                <div class="text-right flex-grow"><span class="italic underline mr-4">Versjon {{block.versjon}}</span> <i class="far fa-star text-lg"></i></div>
             </div>
 
 
-            <div v-html="compiledMarkdown" class="mt-4 text-lg"></div>
+            <div v-html="compiledMarkdown" class="mt-4 text-lg"  v-bind:class="isAttachedKrav"></div>
 
 
             <KravExplanation v-bind:text="block.veiledning" />
@@ -105,11 +108,14 @@
                 };
                 return texts[this.block.kravtype.charAt(0)];
             },
-            isSeparateStyle: function() {
+            isAttachedStyle: function() {
                 return (this.block.koblet)?'border-dashed border-t-0':'mt-8';
             },
-            isSeparateKrav: function() {
-                return (this.block.koblet)?'border-l border-gray-medium pl-4':'';
+            isAttachedKrav: function() {
+                return (this.block.koblet)?'pl-6':'';
+            },
+            isAttached: function(){
+                return (this.block.koblet)?'':'hidden';
             }
         },
 
