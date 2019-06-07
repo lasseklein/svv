@@ -12,14 +12,18 @@ html{
 }
 */
 
-.title{
+h1 {
     @apply text-gray-dark uppercase text-3xl mt-3 mb-6;
 }
 
-.subtitle{
+h2 {
     @apply text-2xl mt-8 mb-6;
 }
 
-.subsubtitle {
+h3 {
+    @apply text-xl mt-16 mb-6;
+}
+
+h4 {
     @apply text-xl mt-16 mb-6;
 }
