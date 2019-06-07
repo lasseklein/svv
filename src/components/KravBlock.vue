@@ -23,29 +23,9 @@
 
             <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-3 mt-4 border-t">
 
-                <!-- FIGURE -->
-                <div v-if="block.figref.length" class="">
-                    <div v-for="figref in block.figref" :key="block.figref.figurNr" class="text-sm text-gray-800 flex w-full my-2">
-                        <div v-for="bilde in figref.figurBilde" :key="block.figurNr" >
-                            <a v-bind:href="bilde.url" target="_blank"><div class="w-12 h-8 mr-2" v-bind:style="'background-image: url('+bilde.thumbnails.small.url+')'"> </div></a>
-                        </div>
-                        <div>Figur {{figref.figurNr }}: {{ figref.tekst }}</div>
-                    </div>
-                </div>
+                <Thumbnail v-bind:item="block.figref" name="Figur" />
 
-
-                <!-- TABLE -->
-                <div v-if="block.tabref.length" class="">
-                    <div class="">
-                        <div v-for="tabref in block.tabref" :key="block.tabref.navn" class="text-sm text-gray-800 flex w-full my-2">
-                            <div v-for="bilde in tabref.bilde" :key="block.tabref.navn" >
-                                <a v-bind:href="bilde.url" target="_blank"><div class="w-12 h-8 mr-2" v-bind:style="'background-image: url('+bilde.thumbnails.small.url+')'"> </div></a>
-                            </div>
-                            <div>Tabell {{tabref.navn }}: {{ tabref.tekst }}</div>
-                        </div>
-                    </div>
-                </div>
-
+                <Thumbnail v-bind:item="block.tabref" name="Tabell" />
 
                 <div v-if="block.kravref.length" class="mt-2">
                     Se også:
@@ -85,11 +65,13 @@
     import marked from "marked";
 
     import KravExplanation from "./KravExplanation";
+    import Thumbnail from "./Thumbnail";
 
     export default {
         name: 'KravBlock',
         components: {
             KravExplanation,
+            Thumbnail,
         },
         props: ['block'],
 

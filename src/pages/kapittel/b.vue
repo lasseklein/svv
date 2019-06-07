@@ -95,8 +95,8 @@
           }
           figref {
             tekst
-            figurNr
-            figurBilde {
+            navn
+            bilde {
               url
               thumbnails {
                 small {

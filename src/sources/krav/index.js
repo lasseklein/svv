@@ -27,10 +27,10 @@ module.exports = function (api, opts) {
                 const item = record._rawJson;
 
                 figurer.addNode({
-                    id          : item.id,
-                    tekst       : item.fields.Tekst,
-                    figurNr     : item.fields.FigurNr,
-                    figurBilde  : item.fields.Figurbilde,
+                    id     : item.id,
+                    tekst  : item.fields.Tekst,
+                    navn   : item.fields.Navn,
+                    bilde  : item.fields.Bilde,
                 });
                 fcount++;
             });

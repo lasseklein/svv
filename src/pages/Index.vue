@@ -8,6 +8,7 @@
       <template  slot="content">
 
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
+
           <a v-bind:id="'refid-'+edge.node.sequence"></a>
 
           <template v-if="edge.node.type === 'Kapittel' || edge.node.type === 'Tittel'">
@@ -95,8 +96,8 @@
           }
           figref {
             tekst
-            figurNr
-            figurBilde {
+            navn
+            bilde {
               url
               thumbnails {
                 small {
