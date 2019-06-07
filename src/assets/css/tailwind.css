@@ -11,3 +11,15 @@ html{
     scroll-behavior: smooth;
 }
 */
+
+.title{
+    @apply text-gray-dark uppercase text-3xl mt-3 mb-6;
+}
+
+.subtitle{
+    @apply text-2xl mt-8 mb-6;
+}
+
+.subsubtitle {
+    @apply text-xl mt-16 mb-6;
+}
