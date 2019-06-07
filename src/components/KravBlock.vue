@@ -1,7 +1,7 @@
 <template>
 
 
-    <div class="kravBlock pr-4 bg-white border border-gray-medium p-3" v-bind:class="isAttachedStyle">
+    <div class="kravBlock pr-4 bg-white border border-gray-frame p-3" v-bind:class="isAttachedStyle">
         <div >
 
             <div class="flex justify-start text-xs text-gray-dark">
@@ -109,7 +109,7 @@
                 return texts[this.block.kravtype.charAt(0)];
             },
             isAttachedStyle: function() {
-                return (this.block.koblet)?'border-dashed border-t-0':'mt-8';
+                return (this.block.koblet)?'border-t-0':'mt-8';
             },
             isAttachedKrav: function() {
                 return (this.block.koblet)?'pl-6':'';
