@@ -67,6 +67,8 @@
     import KravExplanation from "./KravExplanation";
     import Thumbnail from "./Thumbnail";
 
+    // TODO: Show/hide for bilder og figurer
+
     export default {
         name: 'KravBlock',
         components: {

@@ -1,7 +1,7 @@
 <template>
 
     <div class="sticky top-0 py-4 h-screen">
-        <h3 class="px-4 pb-6 text-2xl">Håndbok N100</h3>
+        <div class="px-4 pb-6 text-2xl">Håndbok N100</div>
         <div class="flex flex-col h-full overflow-y-auto">
             <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
 

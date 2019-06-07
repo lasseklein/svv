@@ -2,9 +2,10 @@
     <div v-html="compiledMarkdown" class="text-lg my-4"></div>
 </template>
 
-
 <script>
     import marked from "marked";
+
+    // TODO: Få inn block og vise figurer og bilder her også.
 
     export default {
         name: 'TextBlock',
