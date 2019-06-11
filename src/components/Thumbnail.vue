@@ -11,7 +11,7 @@
                         <div class="flex-grow">{{name}} {{ref.navn }}: {{ ref.tekst }}</div>
                     </div>
 
-                    <div class="my-content" v-collapse-content><img v-bind:src="bilde.url" /></div>
+                    <div class="my-content" v-collapse-content><a v-bind:href="bilde.url" target="_blank"><img v-bind:src="bilde.url" /></a></div>
 
                 </v-collapse-wrapper>
 
