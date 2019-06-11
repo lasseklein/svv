@@ -14,7 +14,11 @@
                 <input class="border border-gray-medium px-2 py-1 mx-3 mb-2 text-sm" type="text" name="søk" placeholder="Søk kommer her">
             </div>
 
-            <div class="flex flex-col h-full overflow-y-auto">
+
+            <div id="thesidebar" class="flex flex-col h-full overflow-y-auto">
+
+
+
                 <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
 
                     <a class="flex block content-center hover:bg-gray-light"
@@ -32,10 +36,36 @@
                     </a>
 
                 </div>
+
+
+
             </div>
         </div>
 
     </div>
+
+
+
+<!--
+
+                <navscroll class="nav-scroll-items"
+                           container="#content"
+                           item-selector=".item"
+                           active-class="active-element">
+
+                    <a v-for="edge in $static.allKrav.edges" :key="edge.node.id"
+                       v-bind:href="'#refid-'+edge.node.sequence"
+                       class="item">
+                        <span class="block text-sm self-center h-10 px-4 py-2">
+                            NEW <span v-if="edge.node.kapittel!=='0'">
+                                {{edge.node.kapittel}}
+                            </span>
+                            {{edge.node.fagtema}}
+                        </span>
+                    </a>
+                </navscroll>
+
+    -->
 
 </template>
 
@@ -47,11 +77,18 @@
 
     }
 
+
+
+
 </script>
 
 
 <style scoped>
 
+    .active-element{
+        color: red;
+        font-weight: bold;
+    }
 </style>
 
 

@@ -22,13 +22,12 @@
             </div>
         </div>
 
-
         <div v-html="compiledMarkdown" class="mt-4 text-lg" v-bind:class="isAttachedKrav"></div>
 
 
         <KravExplanation v-bind:text="block.veiledning" />
 
-
+        <div id="my-scrollable-container"></div>
         <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-3 mt-4 border-t">
 
             <Thumbnail v-bind:item="block.figref" name="Figur" />
