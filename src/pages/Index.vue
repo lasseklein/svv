@@ -9,7 +9,7 @@
 
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
 
-
+          <a v-bind:id="'refid-'+edge.node.sequence"></a>
           <section v-bind:id="'refid-'+edge.node.sequence"></section>
 
           <template v-if="edge.node.type === 'Kapittel' || edge.node.type === 'Tittel'">
