@@ -6,12 +6,12 @@
 
                 <v-collapse-wrapper>
 
-                    <div v-bind:href="bilde.url" class="header flex w-full hover:bg-gray-light py-2" v-collapse-toggle>
+                    <div v-bind:href="bilde.url" class="header flex w-full cursor-pointer" v-collapse-toggle>
                         <div class="w-12 h-8 mr-2 flex-grow-0" v-bind:style="'background-image: url('+bilde.thumbnails.small.url+')'"> </div>
                         <div class="flex-grow">{{name}} {{ref.navn }}: {{ ref.tekst }}</div>
                     </div>
 
-                    <div class="my-content" v-collapse-content><a v-bind:href="bilde.url" target="_blank"><img v-bind:src="bilde.url" /></a></div>
+                    <div class="my-content my-2" v-collapse-content><a v-bind:href="bilde.url" target="_blank" class="cursor-pointer"><img v-bind:src="bilde.url" /></a></div>
 
                 </v-collapse-wrapper>
 

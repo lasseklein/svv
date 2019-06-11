@@ -39,14 +39,17 @@
                 Se også:
                 <span v-for="ref in block.kravref" :key="block.sequence" class="text-sm text-gray-dark bg-gray-light p-1 rounded ml-2 cursor-pointer">
                     <span v-if="ref.Type==='Krav'">
-                        Krav {{ ref.kravID }}
+
+                        <a v-bind:href="'/kapittel/'+ref.kapittel+'#refid-'+ref.sequence">Krav {{ ref.kravID }}</a>
                     </span>
                     <span v-else>
                         <span v-if="ref.avsnitt==='0'">
-                            {{ ref.booknr[0]}}: Kapittel {{ ref.kapittel }}
+
+                            <a v-bind:href="'/kapittel/'+ref.kapittel+'#refid-'+ref.sequence">{{ ref.booknr[0]}}: Kapittel {{ ref.kapittel }}</a>
                         </span>
                         <span v-else>
-                            {{ ref.booknr[0]}}: {{ ref.kapittel }}.{{ ref.avsnitt }}
+
+                            <a v-bind:href="'/kapittel/'+ref.kapittel+'#refid-'+ref.sequence">{{ ref.booknr[0]}}: {{ ref.kapittel }}.{{ ref.avsnitt }}</a>
                         </span>
                     </span>
                 </span>
