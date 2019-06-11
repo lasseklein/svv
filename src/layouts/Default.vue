@@ -10,8 +10,8 @@
             height="100" />
             <nav class="text-white mt-4 w-full flex flex-row justify-left">
               <!-- <g-link class="text-white mx-8 uppercase" to="/">{{ $static.metaData.siteName }}</g-link> -->
-              <div class="text-center text-black underline mx-auto p-2 bg-gray-medium self-center rounded w-1/2 hover:bg-orange">
-                  <a href="https://airtable.com/shrSAorwzd9q2MMOh" target="_blank">Gi tilbakemelding</a>
+              <div class="text-left text-gray-medium underline mx-auto p-2 self-center rounded hover:bg-orange">
+                  <a href="https://airtable.com/shrSAorwzd9q2MMOh" target="_blank">Gi tilbakemelding på prototypen</a>
               </div>
 
             </nav>

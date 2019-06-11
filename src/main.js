@@ -2,13 +2,17 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import './assets/css/tailwind.css'
-
 import DefaultLayout from '~/layouts/Default.vue'
+import VueCollapse from 'vue2-collapse';
 
 //export default function (Vue, { router, head, isClient }) {
-  export default function (Vue, { head }) {
+
+export default function (Vue, { head }) {
   // Set default layout as a global component
+
   Vue.component('Layout', DefaultLayout);
+
+  Vue.use(VueCollapse);
 
   // Add attributes to BODY tag
   head.bodyAttrs = { class: 'bg-white' };

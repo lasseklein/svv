@@ -51,7 +51,7 @@ module.exports = {
                 shouldPurge: false, //true removes too much, like .hidden
             }
         },
-    ],
+   ],
 
 
 

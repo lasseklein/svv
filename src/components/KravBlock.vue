@@ -72,6 +72,7 @@
 
     import marked from "marked";
 
+
     import KravExplanation from "./KravExplanation";
     import Thumbnail from "./Thumbnail";
 
@@ -82,6 +83,7 @@
         components: {
             KravExplanation,
             Thumbnail,
+            marked,
         },
         props: ['block'],
 

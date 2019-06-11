@@ -27,3 +27,14 @@ h3 {
 h4 {
     @apply text-xl mt-16 mb-6;
 }
+
+.v-collapse-content{
+    max-height: 0;
+    transition: max-height 0.1s linear;
+    overflow: hidden;
+    padding: 0;
+}
+.v-collapse-content-end{
+    transition: max-height 0.25s linear;
+    max-height: 500px;
+}
