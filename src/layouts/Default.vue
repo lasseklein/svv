@@ -22,14 +22,10 @@
 
     <div class="container mx-auto">
 
-        <div id="top" class="flex flex-col justify-center">
-            <div id="Mobilenav" class="block md:hidden my-6 mx-auto ">[Navigasjon for mobil kommer her]</div>
-        </div>
+        <div id="page">
 
-        <div id="page" class="">
-
-            <div class="flex mb-4">
-                <div id="sidebar" class="w-1/3 py-4 mx-2 hidden md:block">
+            <div class="flex mb-4 flex-col md:flex-row">
+                <div id="sidebar" class="w-full md:w-1/3 py-4 mx-2">
                     <slot name="sidebar" />
                 </div>
 
