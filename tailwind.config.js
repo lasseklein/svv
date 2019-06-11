@@ -14,9 +14,18 @@ module.exports = {
         medium: '#dadada',
         dark: '#444f55',
       },
-      red: '#742a2a',
-      orange: '#FF9600',
-      green: '#5DB82E',
+      red: {
+        svv: '#742a2a',
+        dark: '#770000',
+      },
+      orange: {
+        svv: '#FF9600',
+        dark: '#9f5700',
+      },
+      green: {
+        svv: '#5DB82E',
+        dark: '#006600',
+      },
       blue: '#008ec2',
     },
     spacing: {

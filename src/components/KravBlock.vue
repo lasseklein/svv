@@ -13,7 +13,7 @@
     c0.1,0.1,0.4,0.1,0.5,0l6.4-6.4c0.1-0.1,0.1-0.4,0-0.5L13.6,1.4z"></path>
                 </svg>
                 {{block.koblet?'Krav':'Krav'}} {{block.kravID}}
-                <span class="pl-2 krav font-medium uppercase tracking-wide" v-bind:class="block.kravtype">{{rectype}}</span>
+                <span class="pl-2 krav font-medium uppercase tracking-wide" v-bind:class="recclass">{{rectype}}</span>
             </div>
 
             <div class="flex text-right">
@@ -40,16 +40,16 @@
                 <span v-for="ref in block.kravref" :key="block.sequence" class="text-sm text-gray-dark bg-gray-light p-1 rounded ml-2 cursor-pointer">
                     <span v-if="ref.Type==='Krav'">
 
-                        <a v-bind:href="'/kapittel/'+ref.kapittel+'#refid-'+ref.sequence">Krav {{ ref.kravID }}</a>
+                        <a href="#">Krav {{ ref.kravID }}</a>
                     </span>
                     <span v-else>
                         <span v-if="ref.avsnitt==='0'">
 
-                            <a v-bind:href="'/kapittel/'+ref.kapittel+'#refid-'+ref.sequence">{{ ref.booknr[0]}}: Kapittel {{ ref.kapittel }}</a>
+                            <a href="#">{{ ref.booknr[0]}}: Kapittel {{ ref.kapittel }}</a>
                         </span>
                         <span v-else>
 
-                            <a v-bind:href="'/kapittel/'+ref.kapittel+'#refid-'+ref.sequence">{{ ref.booknr[0]}}: {{ ref.kapittel }}.{{ ref.avsnitt }}</a>
+                            <a href="#">{{ ref.booknr[0]}}: {{ ref.kapittel }}.{{ ref.avsnitt }}</a>
                         </span>
                     </span>
                 </span>
@@ -106,6 +106,14 @@
                 };
                 return texts[this.block.kravtype.charAt(0)];
             },
+            recclass: function(){
+                let kravfarge = {
+                    'K':'text-green-dark',
+                    'B':'text-orange-dark',
+                    'S':'text-red-dark',
+                };
+                return kravfarge[this.block.kravtype.charAt(0)];
+            },
             isAttachedStyle: function() {
                 return (this.block.koblet)?'border-t-0':'mt-8';
             },
@@ -114,7 +122,7 @@
             },
             isAttached: function(){
                 return (this.block.koblet)?'':'hidden';
-            }
+            },
         },
 
     };
@@ -124,10 +132,6 @@
 
 
 <style scoped>
-
-    .krav.Kan { color: darkgreen; }
-    .krav.Bør { color: darkorange; }
-    .krav.Skal { color: darkred; }
 
     ul {
         list-style-type: square !important;
