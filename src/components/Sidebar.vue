@@ -24,8 +24,7 @@
                            v-bind:container="content"
                            v-bind:item-selector="'.menuitem'"
                            v-bind:active-class="active"
-                           v-bind:duration=400
-                >
+                           v-bind:duration=400 >
 
                     <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
 

@@ -35,7 +35,7 @@ h4 {
 }
 
 .active {
-    @apply border-black font-bold
+    @apply border-black font-bold;
 }
 
 .v-collapse-content{

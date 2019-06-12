@@ -1,7 +1,7 @@
 <template>
 
 <div v-if="text" class="container flex flex-col lg:flex-row flex-no-wrap justify-center w-full m-auto mb-2 fade-in  border-gray-light">
-    <div class="accordion-item rounded overflow-hidden w-auto md:w-full inactive">
+    <div class="accordion-item rounded overflow-hidden w-auto md:w-full isinactive">
         <div v-on:click="onClick" class="accordion-title-row flex items-center cursor-pointer py-2">
             <div class="flex pointer-events-none">
                 <div class="mb-0 mr-1">Veiledning</div>
@@ -34,13 +34,13 @@
                 accordionContentPanes.forEach(function(content) {
                     if (content.previousElementSibling === e.target){
                         content.classList.toggle("hidden");
-                        content.parentElement.classList.toggle("active");
-                        content.parentElement.classList.toggle("inactive");
+                        content.parentElement.classList.toggle("isactive");
+                        content.parentElement.classList.toggle("isinactive");
                     }
                     else if (hideothers) {
                         content.classList.add('hidden');
-                        content.parentElement.classList.remove("active");
-                        content.parentElement.classList.add("inactive");
+                        content.parentElement.classList.remove("isactive");
+                        content.parentElement.classList.add("isinactive");
                     }
                 });
             },
@@ -53,12 +53,12 @@
 <style scoped>
 
     /* ACCORDION */
-    .accordion-item.active .accordion-title-row .accordion-arrow {
+    .accordion-item.isactive .accordion-title-row .accordion-arrow {
         transform: rotate(-180deg);
         transition: ease .3s;
     }
 
-    .accordion-item.active .accordion-content {
+    .accordion-item.isactive .accordion-content {
         transition: ease .3s;
         animation-name: fadeIn;
         animation-duration: .6s;
