@@ -19,7 +19,7 @@
 
 
                 <scrollactive class="nav-scroll-items entries"
-                           active-class="active"
+                           active-class="activeitem"
                            :duration=400 >
 
                     <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">

@@ -28,8 +28,8 @@ h4 {
     @apply text-xl mt-16 mb-6;
 }
 
-.active {
-    @apply border-black font-bold;
+.activeitem {
+    @apply border-black border-l-2 font-bold;
 }
 
 .v-collapse-content{
