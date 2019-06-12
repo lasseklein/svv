@@ -5,12 +5,12 @@
         <Sidebar chapter="B" />
        </template>
 
-      <template  slot="content">
+      <template slot="content">
 
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
 
-          <a v-bind:id="'refid-'+edge.node.sequence"></a>
-          <section v-bind:id="'refid-'+edge.node.sequence"></section>
+
+          <section v-bind:id="'refid-'+edge.node.sequence" class="card-section"></section>
 
           <template v-if="edge.node.type === 'Kapittel' || edge.node.type === 'Tittel'">
             <TitleBlock v-bind:block="edge.node" />

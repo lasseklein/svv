@@ -29,7 +29,7 @@
                     <slot name="sidebar" />
                 </div>
 
-                <div id="content" class="w-full md:w-2/3 p-4 mx-2">
+                <div id="scrollablecontent" class="w-full md:w-2/3 p-4 mx-2">
                     <slot name="content" />
                 </div>
             </div>

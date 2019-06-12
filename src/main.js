@@ -3,19 +3,21 @@
 
 import './assets/css/tailwind.css'
 import DefaultLayout from '~/layouts/Default.vue'
-import NavScroll from 'navscroll';
-import VueCollapse from 'vue2-collapse';
+import NavScroll from 'navscroll'
+import VueCollapse from 'vue2-collapse'
 
 //export default function (Vue, { router, head, isClient }) {
 
 export default function (Vue, { head }) {
-  // Set default layout as a global component
 
+  // Set default layout as a global component
   Vue.component('Layout', DefaultLayout);
+
+  Vue.use(VueCollapse);
 
   Vue.use(NavScroll);
 
-  Vue.use(VueCollapse);
+  //Vue.prototype.$NavScroll = NavScroll;
 
   // Add attributes to BODY tag
   head.bodyAttrs = { class: 'bg-white' };

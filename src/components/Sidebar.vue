@@ -20,15 +20,15 @@
 
 
 
-                <navscroll class="nav-scroll-items"
-                           v-bind:container="content"
-                           v-bind:item-selector="'.menuitem'"
-                           v-bind:active-class="active"
-                           v-bind:duration=400 >
+                <navscroll class="nav-scroll-items entries"
+                           :container="scrollablecontent"
+                           :item-selector="'.menuitem'"
+                           :active-class="active"
+                           :duration=400 >
 
                     <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
 
-                        <a class="flex content-center hover:bg-gray-light"
+                        <a class="flex content-center hover:bg-gray-light cursor-pointer"
                            v-bind:class="(chapter===edge.node.kapittel)?'font-bold':''"
                            v-if="edge.node.type==='Kapittel'"
                            v-bind:href="'/kapittel/'+edge.node.kapittel.toLowerCase()">
@@ -42,8 +42,8 @@
 
                         <a v-bind:href="'#refid-'+edge.node.sequence"
                            v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length===1 && edge.node.kapittel===chapter"
-                           class="menuitem border-l border-gray-medium ml-5 block text-sm h-8 pl-3 pt-1 pb-2">
-                            {{edge.node.fagtema}}
+                           class="menuitem entry border-l border-gray-medium ml-5 block text-sm h-8 pl-3 pt-1 pb-2 cursor-pointer hover:bg-gray-light ">
+                            <span class="entry-name">{{edge.node.fagtema}}</span>
                         </a>
 
 
@@ -62,10 +62,16 @@
 
 <script>
 
+
+
     export default {
         name: 'Sidebar',
         props: ['chapter'],
-
+        mounted() {
+            //let options = { container: '#content', activeClass: 'active' }
+            //this.$NavScroll.initObserver(navWrapper, '.menuitem', options);
+            //let scrollablecontent = document.getElementById('#scrollablecontent');
+        }
     }
 
 

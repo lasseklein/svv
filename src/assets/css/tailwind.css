@@ -12,12 +12,6 @@
 
 @tailwind utilities;
 
-/* Too slow with so much text
-html{
-    scroll-behavior: smooth;
-}
-*/
-
 h1 {
     @apply text-gray-dark uppercase text-3xl mt-3 mb-6;
 }
