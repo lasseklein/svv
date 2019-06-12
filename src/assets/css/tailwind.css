@@ -29,7 +29,7 @@ h4 {
 }
 
 .activeitem {
-    @apply border-black border-l-2 font-bold;
+    @apply border-orange-svv border-l-2 font-bold;
 }
 
 .v-collapse-content{
