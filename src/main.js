@@ -3,7 +3,7 @@
 
 import './assets/css/tailwind.css'
 import DefaultLayout from '~/layouts/Default.vue'
-import NavScroll from 'navscroll'
+import VueScrollactive from 'vue-scrollactive';
 import VueCollapse from 'vue2-collapse'
 
 //export default function (Vue, { router, head, isClient }) {
@@ -15,7 +15,7 @@ export default function (Vue, { head }) {
 
   Vue.use(VueCollapse);
 
-  Vue.use(NavScroll);
+  Vue.use(VueScrollactive);
 
   //Vue.prototype.$NavScroll = NavScroll;
 

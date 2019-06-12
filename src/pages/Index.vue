@@ -10,7 +10,7 @@
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
 
 
-          <section v-bind:id="'refid-'+edge.node.sequence" class="card-section"></section>
+          <section v-bind:id="'refid-'+edge.node.sequence" class="section card-section"></section>
 
           <template v-if="edge.node.type === 'Kapittel' || edge.node.type === 'Tittel'">
             <TitleBlock v-bind:block="edge.node" />

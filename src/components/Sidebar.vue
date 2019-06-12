@@ -18,12 +18,8 @@
             <div id="thesidebar" class="flex flex-col h-full overflow-y-auto">
 
 
-
-
-                <navscroll class="nav-scroll-items entries"
-                           :container="scrollablecontent"
-                           :item-selector="'.menuitem'"
-                           :active-class="active"
+                <scrollactive class="nav-scroll-items entries"
+                           active-class="active"
                            :duration=400 >
 
                     <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
@@ -42,14 +38,14 @@
 
                         <a v-bind:href="'#refid-'+edge.node.sequence"
                            v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length===1 && edge.node.kapittel===chapter"
-                           class="menuitem entry border-l border-gray-medium ml-5 block text-sm h-8 pl-3 pt-1 pb-2 cursor-pointer hover:bg-gray-light ">
-                            <span class="entry-name">{{edge.node.fagtema}}</span>
+                           class="scrollactive-item border-l border-gray-medium ml-5 block text-sm h-8 pl-3 pt-1 pb-2 cursor-pointer hover:bg-gray-light ">
+                            <span>{{edge.node.fagtema}}</span>
                         </a>
 
 
                     </div>
 
-                </navscroll>
+                </scrollactive>
 
             </div>
         </div>
