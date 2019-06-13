@@ -21,7 +21,8 @@
                 <scrollactive class="nav-scroll-items entries"
                               active-class="activeitem"
                               :duration=400
-                              :offset=100 >
+                              :offset=100
+                              bezier-easing-value=".5,0,.35,1" >
 
                     <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
 

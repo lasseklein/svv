@@ -1,24 +1,17 @@
 <template>
     <Layout>
       <template slot="sidebar">
-        <Sidebar v-bind:edges="$page.allKrav.edges" />
+        <Sidebar v-bind:chapter="$context.thechapter" />
        </template>
 
       <template  slot="content">
+
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
+
           <a v-bind:id="'refid-'+edge.node.sequence"></a>
-
-          <template v-if="edge.node.type === 'Kapittel' || edge.node.type === 'Tittel'">
-            <TitleBlock v-bind:block="edge.node" />
-          </template>
-
-          <template v-else-if="edge.node.type === 'Tekst'">
-            <TextBlock v-bind:text="edge.node.krav" />
-          </template>
-
-          <template v-else="edge.node.type === 'Krav'">
-            <KravBlock v-bind:block="edge.node" />
-          </template>
+          <TitleBlock v-if="edge.node.type==='Kapittel'||edge.node.type ==='Tittel'" v-bind:block="edge.node" />
+          <TextBlock v-else-if="edge.node.type==='Tekst'" v-bind:text="edge.node.krav" />
+          <KravBlock v-else="edge.node.type==='Krav'"v-bind:block="edge.node" />
 
         </div>
 
@@ -42,12 +35,8 @@
       TextBlock,
       Sidebar,
     },
-    context: {
-      chap: "B"
-    },
-  };
 
-  console.log('Kapittel: ', $path);
+  };
 
 </script>
 
@@ -58,8 +47,8 @@
 
 
 <page-query>
-  query Krav  {
-    allKrav ( filter: { kapittel:{ eq:"E"}}, sortBy: "sequence", order: ASC ) {
+  query Krav ($thechapter: String) {
+    allKrav ( filter: { kapittel: {eq: $thechapter }}, sortBy: "sequence", order: ASC ) {
       edges {
         node {
           sequence
@@ -99,21 +88,22 @@
           }
           figref {
             tekst
-            figurNr
-            figurBilde {
+            navn
+            bilde {
               url
-              thumbnails {
-                small {
-                  url
+                thumbnails {
+                  small {
+                   url
+                  }
                 }
               }
-            }
           }
 
         }
       }
     }
   }
+
 
 
 </page-query>

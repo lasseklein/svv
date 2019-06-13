@@ -11,7 +11,7 @@ module.exports = function (api) {
   });
 
   api.createPages(async ({ graphql, createPage }) => {
-/*
+
       const {data} = await graphql(`
         {
           allKrav ( filter: { type:{eq: "Kapittel"}}, sortBy: "sequence", order: ASC ) {
@@ -32,13 +32,13 @@ module.exports = function (api) {
 
       data.allKrav.edges.forEach(({ node }) => {
         createPage({
-          path: `${node.kapittelID}`,
+          path: `/${node.kapittelID}`,
           component: './src/templates/Kapittel.vue',
           context: {
-            chapter: node.kapittel
-          }
+              thechapter: node.kapittel
+          },
         })
       });
-*/
+
    });
 };
