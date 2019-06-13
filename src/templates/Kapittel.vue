@@ -8,7 +8,7 @@
 
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
 
-          <a v-bind:id="'refid-'+edge.node.sequence"></a>
+          <section v-bind:id="'refid-'+edge.node.sequence"></section>
           <TitleBlock v-if="edge.node.type==='Kapittel'||edge.node.type ==='Tittel'" v-bind:block="edge.node" />
           <TextBlock v-else-if="edge.node.type==='Tekst'" v-bind:text="edge.node.krav" />
           <KravBlock v-else="edge.node.type==='Krav'"v-bind:block="edge.node" />

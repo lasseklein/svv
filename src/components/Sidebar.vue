@@ -32,7 +32,7 @@
                            v-bind:href="'/kapittel/'+edge.node.kapittel.toLowerCase()">
 
                             <span class="block text-sm self-center h-10 px-4 py-2">
-                                <span v-if="edge.node.kapittel!=='0'">{{edge.node.kapittel}} </span>
+                                <span v-if="edge.node.kapittel.match(/[A-Z]/)">{{edge.node.kapittel}} </span>
                                 {{edge.node.fagtema}}
                             </span>
                         </a>
