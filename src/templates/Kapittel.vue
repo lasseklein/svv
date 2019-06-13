@@ -1,14 +1,14 @@
 <template>
     <Layout>
       <template slot="sidebar">
-        <Sidebar v-bind:chapter="$context.thechapter" />
+        <Sidebar v-bind:chapter="$context.chapter" />
        </template>
 
       <template  slot="content">
 
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
 
-          <section v-bind:id="'refid-'+edge.node.sequence"></section>
+          <section v-bind:id="edge.node.id"></section>
           <TitleBlock v-if="edge.node.type==='Kapittel'||edge.node.type ==='Tittel'" v-bind:block="edge.node" />
           <TextBlock v-else-if="edge.node.type==='Tekst'" v-bind:text="edge.node.krav" />
           <KravBlock v-else="edge.node.type==='Krav'"v-bind:block="edge.node" />
@@ -37,7 +37,7 @@
     },
 
   };
-
+// Removed from page query (, $book: String) filter: , booknr: {contains: [$book]}
 </script>
 
 
@@ -47,8 +47,8 @@
 
 
 <page-query>
-  query Krav ($thechapter: String) {
-    allKrav ( filter: { kapittel: {eq: $thechapter }}, sortBy: "sequence", order: ASC ) {
+  query Krav ($chapter: String) {
+    allKrav ( filter: { kapittel: {eq: $chapter }}, sortBy: "sequence", order: ASC ) {
       edges {
         node {
           sequence
@@ -80,6 +80,7 @@
             }
           }
           kravref {
+            id
             booknr
             kapittel
             avsnitt

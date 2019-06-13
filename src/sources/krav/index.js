@@ -6,6 +6,11 @@ module.exports = function (api, opts) {
 
     api.loadSource(async store => {
 
+        const books = store.addContentType({
+            typeName    : 'Book',
+            route       : '/Book/:id',
+        });
+
         const krav = store.addContentType({
             typeName    : 'Krav',
             route       : '/krav/:id',
@@ -85,6 +90,28 @@ module.exports = function (api, opts) {
                 count++;
             });
             console.log('Krav: ', count);
+            fetchNextPage();
+        });
+
+
+        let bcount = 0;
+        await base('Books').select({view: 'Grid view'}).eachPage((records, fetchNextPage) => {
+            records.forEach((record) => {
+                const item = record._rawJson;
+
+                books.addNode({
+                    // Explicitly add and name the fields we want to include
+                    sequence    : count,
+                    id          : item.id,
+                    navn        : item.fields.Name,
+                    tittel      : item.fields.Tittel,
+                    type        : item.fields.Type,
+                    booknr      : item.fields.Book,
+                    forside     : item.fields.Forside,
+                });
+                bcount++;
+            });
+            console.log('Book: ', bcount);
             fetchNextPage();
         });
 

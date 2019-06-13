@@ -27,32 +27,23 @@
 
         <KravExplanation v-bind:text="block.veiledning" />
 
-        <div id="my-scrollable-container"></div>
+
         <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-3 mt-4 border-t">
 
             <Thumbnail v-bind:item="block.figref" name="Figur" />
-
             <Thumbnail v-bind:item="block.tabref" name="Tabell" />
+
 
             <div v-if="block.kravref.length" class="mt-2">
                 Se også:
                 <span v-for="ref in block.kravref" :key="block.sequence" class="text-sm text-gray-dark bg-gray-light p-1 rounded ml-2 cursor-pointer">
-                    <span v-if="ref.Type==='Krav'">
 
-                        <a href="#">Krav {{ ref.kravID }}</a>
-                    </span>
-                    <span v-else>
-                        <span v-if="ref.avsnitt==='0'">
+                    <a v-if="ref.type==='Krav'" v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id">Krav {{ ref.kravID }}</a>
+                    <a v-else v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id">{{ ref.booknr[0]}} {{ ref.kapittel }}.{{ ref.avsnitt }}</a>
 
-                            <a href="#">{{ ref.booknr[0]}}: Kapittel {{ ref.kapittel }}</a>
-                        </span>
-                        <span v-else>
-
-                            <a href="#">{{ ref.booknr[0]}}: {{ ref.kapittel }}.{{ ref.avsnitt }}</a>
-                        </span>
-                    </span>
                 </span>
             </div>
+
 
             <div v-if="block.vedlegg.length" class="mt-2">
                 <i class="fas fa-paperclip"></i> Vedlegg:
@@ -122,6 +113,7 @@
             isAttached: function(){
                 return (this.block.koblet)?'':'hidden';
             },
+
         },
 
     };

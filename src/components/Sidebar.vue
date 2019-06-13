@@ -6,81 +6,61 @@
             <i class="fas fa-hamburger"></i> Meny for mobil kommer her
         </div>
 
-        <div class="hidden md:block">
+        <div id="thesidebar" class="hidden md:block flex flex-col h-full overflow-y-auto">
 
-            <div class="px-4 pb-2 text-2xl">Håndbok N100</div>
+            <h3>Håndbok N100</h3>
 
-            <div class="pb-2">
-                <input class="border border-gray-medium px-2 py-1 mx-3 mb-2 text-sm" type="text" name="søk" placeholder="Søk kommer her">
-            </div>
+            <input class="pb-2 border border-gray-medium px-2 py-1 mx-3 mb-2 text-sm" type="text" name="søk" placeholder="Søk kommer her">
 
+            <scrollactive class="nav-scroll-items"
+                          active-class="activeitem"
+                          :duration=400
+                          :offset=80
+                          bezier-easing-value=".5,0,.35,1" >
 
-            <div id="thesidebar" class="flex flex-col h-full overflow-y-auto">
+                <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
 
+                    <a v-bind:class="(chapter===edge.node.kapittel)?'font-bold':''"
+                       v-if="edge.node.type==='Kapittel'"
+                       v-bind:href="edge.node.kapittelID"
+                       class="flex content-center hover:bg-gray-light cursor-pointer h-10" >
 
-                <scrollactive class="nav-scroll-items entries"
-                              active-class="activeitem"
-                              :duration=400
-                              :offset=100
-                              bezier-easing-value=".5,0,.35,1" >
-
-                    <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
-
-                        <a class="flex content-center hover:bg-gray-light cursor-pointer"
-                           v-bind:class="(chapter===edge.node.kapittel)?'font-bold':''"
-                           v-if="edge.node.type==='Kapittel'"
-                           v-bind:href="'/kapittel/'+edge.node.kapittel.toLowerCase()">
-
-                            <span class="block text-sm self-center h-10 px-4 py-2">
-                                <span v-if="edge.node.kapittel.match(/[A-Z]/)">{{edge.node.kapittel}} </span>
-                                {{edge.node.fagtema}}
-                            </span>
-                        </a>
+                        <div class="text-sm self-center px-4">
+                            <span v-if="edge.node.kapittel.match(/[A-Z]/)">{{edge.node.kapittel}} </span>
+                            {{edge.node.fagtema}}
+                        </div>
+                    </a>
 
 
-                        <a v-bind:href="'#refid-'+edge.node.sequence"
-                           v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length===1 && edge.node.kapittel===chapter"
-                           class="scrollactive-item border-l border-gray-medium ml-5 block text-sm h-8 pl-3 pt-1 pb-2 cursor-pointer hover:bg-gray-light ">
-                            <span>{{edge.node.fagtema}}</span>
-                        </a>
+                    <a v-bind:href="'#'+edge.node.id"
+                       v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length===1 && edge.node.kapittel===chapter"
+                       class="scrollactive-item flex border-l border-gray-medium ml-5 pl-2 cursor-pointer hover:bg-gray-light h-10 ">
+                        <div class="text-sm self-center">{{edge.node.fagtema}}</div>
+                    </a>
 
 
-                    </div>
+                </div>
 
-                </scrollactive>
+            </scrollactive>
 
-            </div>
         </div>
-
     </div>
-
 
 
 </template>
 
+
 <script>
-
-
 
     export default {
         name: 'Sidebar',
         props: ['chapter'],
-        mounted() {
-            //let options = { container: '#content', activeClass: 'active' }
-            //this.$NavScroll.initObserver(navWrapper, '.menuitem', options);
-            //let scrollablecontent = document.getElementById('#scrollablecontent');
-        }
     }
-
-
-
 
 </script>
 
 
-<style >
-
-
+<style scoped>
 </style>
 
 

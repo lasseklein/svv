@@ -11,9 +11,9 @@ module.exports = function (api) {
   });
 
   api.createPages(async ({ graphql, createPage }) => {
-
+    //, booknr: {contains: ["N100"]}
       const {data} = await graphql(`
-        {
+       query Krav {
           allKrav ( filter: { type:{eq: "Kapittel"}}, sortBy: "sequence", order: ASC ) {
             edges {
               node {
@@ -24,6 +24,7 @@ module.exports = function (api) {
                 id
                 type
                 fagtema
+                booknr
               }
             }
           }
@@ -35,7 +36,8 @@ module.exports = function (api) {
           path: `/${node.kapittelID}`,
           component: './src/templates/Kapittel.vue',
           context: {
-              thechapter: node.kapittel
+              chapter: node.kapittel,
+              book: "N100",
           },
         })
       });
