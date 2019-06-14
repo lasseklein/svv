@@ -10,17 +10,17 @@ import VueCollapse from 'vue2-collapse'
 
 export default function (Vue, { head }) {
 
-  // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout);
+    // Set default layout as a global component
+    Vue.component('Layout', DefaultLayout);
 
-  Vue.use(VueCollapse);
+    Vue.use(VueCollapse);
 
-  Vue.use(VueScrollactive);
+    Vue.use(VueScrollactive);
 
-  //Vue.prototype.$NavScroll = NavScroll;
+    //Vue.prototype.$NavScroll = NavScroll;
 
-  // Add attributes to BODY tag
-  head.bodyAttrs = { class: 'bg-white' };
+    // Add attributes to BODY tag
+    head.bodyAttrs = { class: 'bg-white' };
 
     head.link.push({
       rel: 'stylesheet',

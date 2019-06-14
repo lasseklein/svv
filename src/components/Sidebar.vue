@@ -1,6 +1,6 @@
 <template>
 
-    <div class="sticky top-0 py-4">
+    <div class="sticky top-0">
 
         <div class="block md:hidden mx-4 ">
             <i class="fas fa-hamburger"></i> Meny for mobil kommer her
@@ -8,7 +8,7 @@
 
         <div id="thesidebar" class="hidden md:block flex flex-col h-full overflow-y-auto">
 
-            <h3>Håndbok N100</h3>
+            <h3 class="ml-4 mt-10">Håndbok N100</h3>
 
             <input class="pb-2 border border-gray-medium px-2 py-1 mx-3 mb-2 text-sm" type="text" name="søk" placeholder="Søk kommer her">
 
