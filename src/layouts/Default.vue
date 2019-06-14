@@ -29,7 +29,7 @@
             </div>
 
             <div id="scrollablecontent"
-                 class="w-full md:w-2/3 lg:w-3/4 mx-8 py-8">
+                 class="w-full md:w-2/3 lg:w-3/4 px-4 md:px-8 py-8">
                 <slot name="content" />
             </div>
 

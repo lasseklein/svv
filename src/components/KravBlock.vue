@@ -90,7 +90,7 @@
             },
             rectype: function () {
                 let texts = {
-                    'K': 'Anbefaling',
+                    'K': 'KAN',
                     'B': 'BØR',
                     'S': 'SKAL',
                 };
