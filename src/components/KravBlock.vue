@@ -12,7 +12,7 @@
     c0-0.2-0.2-0.4-0.4-0.4h-2C0.2,1.3,0,1.5,0,1.7V9c0,0.2,0.2,0.4,0.4,0.4h14.4c0,0,0,0,0,0l-3.3,3.3c-0.1,0.1-0.1,0.4,0,0.5l1.4,1.4
     c0.1,0.1,0.4,0.1,0.5,0l6.4-6.4c0.1-0.1,0.1-0.4,0-0.5L13.6,1.4z"></path>
                 </svg>
-                {{block.koblet?'Krav':'Krav'}} {{block.kravID}}
+                {{block.koblet?'Delkrav':'Krav'}} {{block.kravID}}
                 <span class="pl-2 krav font-medium uppercase tracking-wide" v-bind:class="recclass">{{rectype}}</span>
             </div>
 
@@ -32,18 +32,7 @@
 
             <Thumbnail v-bind:item="block.figref" name="Figur" />
             <Thumbnail v-bind:item="block.tabref" name="Tabell" />
-
-
-            <div v-if="block.kravref.length" class="text-sm mt-2">
-                Se også:
-                <span v-for="ref in block.kravref" :key="block.sequence" class="text-gray-dark p-1 ml-2 underline cursor-pointer">
-
-                    <a v-if="ref.type==='Krav'" v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id">Krav {{ ref.kravID }}</a>
-                    <a v-else v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id">{{ ref.booknr[0]}} {{ ref.kapittel }}.{{ ref.avsnitt }}</a>
-
-                </span>
-            </div>
-
+            <Reference v-bind:block="block" />
 
             <div v-if="block.vedlegg.length" class="mt-2">
                 <i class="fas fa-paperclip"></i> Vedlegg:
@@ -68,6 +57,7 @@
 
     import KravExplanation from "./KravExplanation";
     import Thumbnail from "./Thumbnail";
+    import Reference from "./Reference";
 
     // TODO: Show/hide for bilder og figurer
 
@@ -76,6 +66,7 @@
         components: {
             KravExplanation,
             Thumbnail,
+            Reference,
             marked,
         },
         props: ['block'],

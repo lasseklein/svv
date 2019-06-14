@@ -10,8 +10,8 @@
 
           <section v-bind:id="edge.node.id"></section>
           <TitleBlock v-if="edge.node.type==='Kapittel'||edge.node.type ==='Tittel'" v-bind:block="edge.node" />
-          <TextBlock v-else-if="edge.node.type==='Tekst'" v-bind:text="edge.node.krav" />
-          <KravBlock v-else="edge.node.type==='Krav'"v-bind:block="edge.node" />
+          <TextBlock v-else-if="edge.node.type==='Tekst'" v-bind:block="edge.node" />
+          <KravBlock v-else="edge.node.type==='Krav'" v-bind:block="edge.node" />
 
         </div>
 
