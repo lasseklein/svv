@@ -1,8 +1,8 @@
 
 <template>
-    <div class="app">
+    <div class="app font-sans">
 
-        <header class="flex  h-20 bg-gray-dark py-4 ">
+        <header class="flex h-20 bg-gray-dark py-4 ">
 
             <div class="container px-2 flex">
 
@@ -23,11 +23,11 @@
 
         <div class="container flex flex-col md:flex-row w-full">
 
-            <div id="sidebar" class="w-full md:w-1/3 py-4 mx-2 bg-gray-bg">
+            <div id="sidebar" class="w-full md:w-1/3 lg:w-1/4 py-4 mx-2 bg-white border-r border-gray-light">
                 <slot name="sidebar" />
             </div>
 
-            <div id="scrollablecontent" class="w-full md:w-2/3 pl-10 py-8">
+            <div id="scrollablecontent" class="w-full md:w-2/3 lg:w-3/4 pl-10 py-8">
                 <slot name="content" />
             </div>
 

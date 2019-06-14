@@ -8,9 +8,9 @@
 
         <div id="thesidebar" class="hidden md:block flex flex-col h-full overflow-y-auto">
 
-            <h3 class="ml-4 mt-10">Håndbok N100</h3>
+            <h3 class="ml-4 mt-2">N100 Veg- og gateutforming</h3>
 
-            <input class="pb-2 border border-gray-medium px-2 py-1 mx-3 mb-2 text-sm" type="text" name="søk" placeholder="Søk kommer her">
+            <input class="border border-gray-medium px-2 py-1 mx-3 mb-2 text-sm" type="text" name="søk" placeholder="Søk kommer her" >
 
             <scrollactive class="nav-scroll-items"
                           active-class="activeitem"

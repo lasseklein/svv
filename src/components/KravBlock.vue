@@ -1,7 +1,7 @@
 <template>
 
 
-    <div class="kravBlock pr-4 bg-white border border-gray-frame p-3" v-bind:class="isAttachedStyle">
+    <div class="kravBlock pr-4 bg-gray-verylight border border-gray-frame p-3" v-bind:class="isAttachedStyle">
 
 
         <div class="flex flex-row items-baseline justify-between flex-no-wrap text-xs text-gray-dark ">
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div v-html="compiledMarkdown" class="mt-4 text-lg" v-bind:class="isAttachedKrav"></div>
+        <div v-html="compiledMarkdown" class="mt-4 text-base" v-bind:class="isAttachedKrav"></div>
 
 
         <KravExplanation v-bind:text="block.veiledning" />
@@ -34,9 +34,9 @@
             <Thumbnail v-bind:item="block.tabref" name="Tabell" />
 
 
-            <div v-if="block.kravref.length" class="mt-2">
+            <div v-if="block.kravref.length" class="text-sm mt-2">
                 Se også:
-                <span v-for="ref in block.kravref" :key="block.sequence" class="text-sm text-gray-dark bg-gray-light p-1 rounded ml-2 cursor-pointer">
+                <span v-for="ref in block.kravref" :key="block.sequence" class="text-gray-dark p-1 ml-2 underline cursor-pointer">
 
                     <a v-if="ref.type==='Krav'" v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id">Krav {{ ref.kravID }}</a>
                     <a v-else v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id">{{ ref.booknr[0]}} {{ ref.kapittel }}.{{ ref.avsnitt }}</a>

@@ -1,5 +1,5 @@
 <template>
-    <div v-html="compiledMarkdown" class="text-lg my-4"></div>
+    <div v-html="compiledMarkdown" class="font-sans text-base my-4"></div>
 </template>
 
 <script>
