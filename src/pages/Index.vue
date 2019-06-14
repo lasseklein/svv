@@ -9,20 +9,10 @@
 
         <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
 
-
           <section v-bind:id="edge.node.id"></section>
-
-          <template v-if="edge.node.type === 'Kapittel' || edge.node.type === 'Tittel'">
-            <TitleBlock v-bind:block="edge.node" />
-          </template>
-
-          <template v-else-if="edge.node.type === 'Tekst'">
-            <TextBlock v-bind:text="edge.node.krav" />
-          </template>
-
-          <template v-else="edge.node.type === 'Krav'">
-            <KravBlock v-bind:block="edge.node" />
-          </template>
+          <TitleBlock v-if="edge.node.type==='Kapittel'||edge.node.type ==='Tittel'" v-bind:block="edge.node" />
+          <TextBlock v-else-if="edge.node.type==='Tekst'" v-bind:block="edge.node" />
+          <KravBlock v-else   ="edge.node.type==='Krav'"  v-bind:block="edge.node" />
 
         </div>
 

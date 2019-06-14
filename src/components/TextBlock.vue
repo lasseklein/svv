@@ -22,11 +22,11 @@
         },
         computed: {
             compiledMarkdown: function(){
-                return marked(this.block.krav, { sanitize: true })
-                    .replace(/<p>/g, '<p class="mb-4">')
-                    .replace(/<a href/g, '<a class="underline font-medium" href')
+                return marked(this.block.krav, { sanitize: true }) // TODO: Krav feiler her!
+                    .replace(/<p>/g, '<p class="my-2">')
                     .replace(/<ul>/g,'<ul class="pl-8 list-disc">')
-                    .replace(/<li>/g, '<li class="mb-4">');
+                    .replace(/<li>/g, '<li class="mt-1">')
+                    .replace(/<a href/g, '<a class="underline font-medium" href')
             },
          },
 
