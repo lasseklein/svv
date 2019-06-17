@@ -22,6 +22,7 @@
 
 
 <script>
+  import Layout from '~/layouts/Default.vue'
   import KravBlock  from '../components/KravBlock';
   import TitleBlock from '../components/TitleBlock';
   import TextBlock  from '../components/TextBlock';
@@ -30,6 +31,7 @@
   export default {
     name: 'Index',
     components: {
+      Layout,
       KravBlock,
       TitleBlock,
       TextBlock,

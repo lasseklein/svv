@@ -1,21 +1,21 @@
 <template>
     <Layout>
 
-      <template slot="sidebar">
-        <Sidebar chapter="B" />
-       </template>
-
       <template slot="content">
 
-        <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
+        <div class="flex flex-row">
 
-          <section v-bind:id="edge.node.id"></section>
-          <TitleBlock v-if="edge.node.type==='Kapittel'||edge.node.type ==='Tittel'" v-bind:block="edge.node" />
-          <TextBlock v-else-if="edge.node.type==='Tekst'" v-bind:block="edge.node" />
-          <KravBlock v-else   ="edge.node.type==='Krav'"  v-bind:block="edge.node" />
+          <a v-for="edge in $page.allBook.edges" :key="edge.node.id"
+             v-if="edge.node.booknr === 'N100'"
+             v-bind:href="'/'+edge.node.booknr+'/1'"
+             class="m-8 w-48"
+          >
+
+            <img v-bind:src="edge.node.forside[0].url"  />
+            <div class="mt-4 text-center">{{edge.node.tittel}}</div>
+          </a>
 
         </div>
-
       </template>
 
     </Layout>
@@ -23,20 +23,17 @@
 
 
 <script>
+  // TODO: Gjøre om denne siden til forside for alle manualer
+  import Layout from '~/layouts/Frontpage.vue'
+
+
   export default {
     name: 'Index',
     components: {
-      KravBlock,
-      TitleBlock,
-      TextBlock,
-      Sidebar,
+      Layout,
     },
 
   };
-  import KravBlock  from '../components/KravBlock';
-  import TitleBlock from '../components/TitleBlock';
-  import TextBlock  from '../components/TextBlock';
-  import Sidebar    from '../components/Sidebar';
 
 
 </script>
@@ -47,64 +44,24 @@
 
 
 <page-query>
-  query Krav {
-    allKrav ( filter: { kapittel: {eq: "B"}}, sortBy: "sequence", order: ASC ) {
+  query Book {
+    allBook ( sortBy: "sequence", order: ASC ) {
       edges {
         node {
           sequence
-          krav
-          kravID
-          kravtype
-          kapittel
-          avsnitt
           id
+          navn
+          tittel
           type
-          fagtema
-          versjon
-          veiledning
-          vedlegg {
-            filename
-            url
-          }
-          koblet
-          tabref {
-            navn
-            tekst
-            bilde {
-              url
-              thumbnails {
-                small {
-                  url
-                }
-              }
-            }
-          }
-          kravref {
-            booknr
-            kapittel
-            avsnitt
-            kravID
-            type
-          }
-          figref {
-            tekst
-            navn
-            bilde {
-              url
-              thumbnails {
-                small {
-                  url
-                }
-              }
-            }
+          booknr
+          forside{
+           url
           }
 
         }
       }
     }
   }
-
-
 </page-query>
 
 
