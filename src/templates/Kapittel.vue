@@ -72,6 +72,12 @@
           tabref {
             navn
             tekst
+            lineref  (sortBy: "sequence", order: ASC ){
+              rowtitle,
+              coltitle,
+              value,
+              sequence,
+            }
             bilde {
               url
               thumbnails {

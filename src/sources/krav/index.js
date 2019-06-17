@@ -26,6 +26,11 @@ module.exports = function (api, opts) {
             route       : '/tabell/:id',
         });
 
+        const tabellinjer = store.addContentType({
+            typeName    : 'Tabellinjer',
+            route       : '/tabellinjer/:id',
+        });
+
         let fcount = 0;
         await base('Figurer').select().eachPage((records, fetchNextPage) => {
             records.forEach((record) => {
@@ -43,6 +48,24 @@ module.exports = function (api, opts) {
             fetchNextPage();
         });
 
+        let tlcount = 0;
+        await base('Tabellinjer').select({view: 'Grid view'}).eachPage((records, fetchNextPage) => {
+            records.forEach((record) => {
+                const item = record._rawJson;
+
+                tabellinjer.addNode({
+                    sequence : tlcount,
+                    id       : item.id,
+                    rowtitle : item.fields.Radtittel,
+                    coltitle : item.fields.Kolonnetittel,
+                    value    : item.fields.Value,
+                });
+                tlcount++;
+            });
+            console.log('Tabellinjer: ', tlcount);
+            fetchNextPage();
+        });
+
         let tcount = 0;
         await base('Tabeller').select().eachPage((records, fetchNextPage) => {
             records.forEach((record) => {
@@ -53,6 +76,8 @@ module.exports = function (api, opts) {
                     navn    : item.fields.Navn,
                     tekst   : item.fields.Tekst,
                     bilde   : item.fields.Bilde,
+
+                    lineref : store.createReference('Tabellinjer' , item.fields.Tabellinjer      ),
                 });
                 tcount++;
             });
