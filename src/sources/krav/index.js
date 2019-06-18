@@ -76,6 +76,7 @@ module.exports = function (api, opts) {
                     navn    : item.fields.Navn,
                     tekst   : item.fields.Tekst,
                     bilde   : item.fields.Bilde,
+                    legend : item.fields.firstcoltitle,
 
                     lineref : store.createReference('Tabellinjer' , item.fields.Tabellinjer      ),
                 });

@@ -72,6 +72,7 @@
           tabref {
             navn
             tekst
+            legend
             lineref  (sortBy: "sequence", order: ASC ){
               rowtitle,
               coltitle,

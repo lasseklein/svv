@@ -30,10 +30,9 @@
 
         <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-3 mt-4 border-t">
 
-            <Table v-bind:item="block.tabref" name="Tabell" />
 
             <Thumbnail v-bind:item="block.figref" name="Figur" />
-            <Thumbnail v-bind:item="block.tabref" name="Tabell" />
+            <Table v-bind:item="block.tabref" name="Tabell" />
             <Reference v-bind:block="block" />
 
             <div v-if="block.vedlegg.length" class="mt-2">
