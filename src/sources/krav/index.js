@@ -72,10 +72,11 @@ module.exports = function (api, opts) {
                 const item = record._rawJson;
 
                 tabeller.addNode({
-                    id      : item.id,
-                    navn    : item.fields.Navn,
-                    tekst   : item.fields.Tekst,
-                    legend : item.fields.firstcoltitle,
+                    id          : item.id,
+                    navn        : item.fields.Navn,
+                    tekst       : item.fields.Tekst,
+                    legend      : item.fields.firstcoltitle,
+                    beskrivelse : item.fields.Beskrivelse,
 
                     lineref : store.createReference('Tabellinjer' , item.fields.Tabellinjer      ),
                 });

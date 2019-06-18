@@ -73,6 +73,7 @@
             navn
             tekst
             legend
+            beskrivelse
             lineref  (sortBy: "sequence", order: ASC ){
               rowtitle,
               coltitle,

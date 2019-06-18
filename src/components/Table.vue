@@ -11,14 +11,14 @@
 
                 <div class="my-content my-2 pb-0 mb-0" v-collapse-content>
 
-                    <div class="overflow-x-scroll">
+                    <div class="overflow-x-auto">
 
                     <table v-if="ref.lineref" class="w-full text-xs md:text-sm">
                         <template v-for="(line, part) in tabledata(ref)"
                                   class="border-collapse border">
                             <thead v-if="part==='head'">
                                 <tr>
-                                    <th v-for="title in line" class="border text-left p-1 bg-gray-dark text-white">{{title}}</th>
+                                    <th v-for="title in line" class="border text-center p-1 bg-gray-dark text-white" v-html="formattedTitle(title)"></th>
                                 </tr>
                             </thead>
                             <tbody v-else>
@@ -28,6 +28,7 @@
                             </tbody>
                         </template>
                     </table>
+                        <div v-if="ref.beskrivelse" v-html="compiledMarkdown(ref)"></div>
                     </div>
 
                 </div>
@@ -40,9 +41,15 @@
 
 <script>
 
+    import marked from "marked";
+
     export default {
         name: 'Table',
         props: ['item', 'name'],
+        components: {
+            marked,
+        },
+
         methods: {
             tabledata: function(ref){
                 let table = { 'head': [], 'rows': [], };
@@ -61,6 +68,18 @@
                 });
                 return table;
             },
-         },
+            compiledMarkdown: function (ref) {
+                return marked(ref.beskrivelse, {sanitize: true})
+                    .replace(/<p>/g, '<p class="my-2">')
+                    .replace(/<a href/g, '<a class="underline font-medium" href')
+            },
+            formattedTitle: function (title) {
+                return marked(title, {sanitize: true});
+            }
+        },
+        computed: {
+
+        },
+
     };
 </script>
