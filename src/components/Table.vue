@@ -11,7 +11,7 @@
 
                 <div class="my-content my-2 pb-0 mb-0" v-collapse-content>
 
-                    <div class="overflow-x-auto">
+                    <div class="overflow-x-auto overflow-y-auto">
 
                     <table v-if="ref.lineref" class="w-full text-xs md:text-sm">
                         <template v-for="(line, part) in tabledata(ref)"

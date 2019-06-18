@@ -42,5 +42,5 @@ h4 {
 
 .v-collapse-content-end{
     transition: max-height 0.25s linear;
-    max-height: 800px;
+    max-height: 600px;
 }
