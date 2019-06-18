@@ -1,8 +1,8 @@
 <template>
 
-<div v-if="text" class="container flex flex-col lg:flex-row flex-no-wrap justify-center w-full m-auto mb-2 fade-in  border-gray-light">
+<div v-if="text" class="container flex flex-col lg:flex-row flex-no-wrap justify-center w-full m-auto mb-2 fade-in border-gray-light">
     <div class="accordion-item rounded overflow-hidden w-auto md:w-full isinactive">
-        <div v-on:click="onClick" class="accordion-title-row flex items-center cursor-pointer py-2">
+        <div v-on:click="onClick" class="accordion-title-row flex items-center cursor-pointer pt-2">
             <div class="flex pointer-events-none">
                 <div class="mb-0 mr-1">Veiledning</div>
             </div>

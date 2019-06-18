@@ -28,7 +28,7 @@
         <KravExplanation v-bind:text="block.veiledning" />
 
 
-        <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-3 mt-4 border-t">
+        <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-1 mt-3 border-t">
 
 
             <Thumbnail v-bind:item="block.figref" name="Figur" />

@@ -5,15 +5,15 @@
 
             <v-collapse-wrapper>
 
-                <div class="header flex flex-row w-full cursor-pointer text-sm" v-collapse-toggle>
+                <div class="mt-3 header flex flex-row w-full cursor-pointer text-sm" v-collapse-toggle>
                     <i class="fas fa-table text-xl text-gray-dark mr-2"></i>Tabell {{ref.navn}}:<span class="ml-2 text-gray-dark">{{ref.tekst}}</span>
                 </div>
 
-                <div class="my-content my-2 pb-0 mb-0" v-collapse-content>
+                <div class="my-content pb-0 mb-0" v-collapse-content>
 
                     <div class="overflow-x-auto overflow-y-auto">
 
-                    <table v-if="ref.lineref" class="w-full text-xs md:text-sm">
+                    <table v-if="ref.lineref" class="w-full text-xs md:text-sm mt-2">
                         <template v-for="(line, part) in tabledata(ref)"
                                   class="border-collapse border">
                             <thead v-if="part==='head'">
@@ -83,3 +83,8 @@
 
     };
 </script>
+
+
+<style scoped>
+
+</style>
