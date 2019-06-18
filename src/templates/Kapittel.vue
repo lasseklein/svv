@@ -79,14 +79,6 @@
               value,
               sequence,
             }
-            bilde {
-              url
-              thumbnails {
-                small {
-                  url
-                }
-              }
-            }
           }
           kravref {
             id
@@ -101,12 +93,7 @@
             navn
             bilde {
               url
-                thumbnails {
-                  small {
-                   url
-                  }
-                }
-              }
+            }
           }
 
         }

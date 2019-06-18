@@ -6,7 +6,7 @@
             <v-collapse-wrapper>
 
                 <div class="header flex flex-row w-full cursor-pointer text-sm" v-collapse-toggle>
-                    <i class="fas fa-table text-lg text-gray-dark mr-2"></i>Tabell {{ref.navn}}:<span class="ml-2 text-gray-dark">{{ref.tekst}}</span>
+                    <i class="fas fa-table text-xl text-gray-dark mr-2"></i>Tabell {{ref.navn}}:<span class="ml-2 text-gray-dark">{{ref.tekst}}</span>
                 </div>
 
                 <div class="my-content my-2 pb-0 mb-0" v-collapse-content>
