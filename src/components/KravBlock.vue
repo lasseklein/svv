@@ -36,7 +36,7 @@
             <Reference v-bind:block="block" />
 
             <div v-if="block.vedlegg.length" v-for="vl in block.vedlegg" :key="vl.filename" class="mt-3">
-                <a v-bind:href="vl.url" class="underline text-gray-dark text-sm "><i class="fas fa-paperclip  mr-4"></i>{{vl.filename}}</a>
+                <a v-bind:href="vl.url" class="underline text-gray-dark text-sm "><i class="fas fa-paperclip mr-3"></i>{{vl.filename}}</a>
             </div>
 
 
