@@ -17,10 +17,12 @@
             </div>
 
             <div class="flex text-right">
-                <span class="self-center italic underline mr-4">Versjon {{block.versjon}}</span>
+                <span class="self-center italic underline mr-4" >Versjon {{block.versjon}}</span>
                 <i class="far fa-star text-lg"></i>
             </div>
         </div>
+
+        <!--  v-popover:myname <popover name="myname"> Hello! </popover> -->
 
         <div v-html="compiledMarkdown" class="mt-4 text-base" v-bind:class="isAttachedKrav"></div>
 
@@ -36,7 +38,7 @@
             <Reference v-bind:block="block" />
 
             <div v-if="block.vedlegg.length" v-for="vl in block.vedlegg" :key="vl.filename" class="mt-3">
-                <a v-bind:href="vl.url" class="underline text-gray-dark text-sm "><i class="fas fa-paperclip mr-3"></i>{{vl.filename}}</a>
+                <a v-bind:href="vl.url" class="underline text-gray-dark text-sm "><i class="fas fa-paperclip mr-4"></i>{{vl.filename}}</a>
             </div>
 
 
@@ -52,7 +54,7 @@
 <script>
 
     import marked from "marked";
-
+    //import Popover from "vue-js-popover";
 
     import KravExplanation from "./KravExplanation";
     import Thumbnail from "./Thumbnail";
@@ -68,6 +70,7 @@
             Thumbnail,
             Reference,
             Table,
+            //Popover,
             marked,
         },
         props: ['block'],
