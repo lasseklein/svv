@@ -13,21 +13,21 @@
 
                     <div class="overflow-x-auto overflow-y-auto">
 
-                    <table v-bind:id="'table-'+item.id" v-if="ref.lineref" class="w-full text-xs mt-2">
-                        <template v-for="(line, part) in tabledata(ref)"
-                                  class="border-collapse border">
-                            <thead v-if="part==='head'">
-                                <tr>
-                                    <th v-for="title in line" class="border text-center align-top p-1 bg-gray-dark text-white" v-html="formattedTitle(title)"></th>
-                                </tr>
-                            </thead>
-                            <tbody v-else>
-                                <tr v-for="row in line">
-                                    <td v-for="cell in row" class="border bg-gray-bg border-white p-1" v-bind:data-col="cell.coltitle">{{cell.value}}</td>
-                                </tr>
-                            </tbody>
-                        </template>
-                    </table>
+                        <table v-bind:id="'table-'+item.id" v-if="ref.lineref" class="w-full text-xs mt-2">
+                            <template v-for="(line, part) in tabledata(ref)"
+                                      class="border-collapse border">
+                                <thead v-if="part==='head'">
+                                    <tr>
+                                        <th v-for="title in line" class="border text-center align-top p-1 bg-gray-dark text-white" v-html="formattedTitle(title)"></th>
+                                    </tr>
+                                </thead>
+                                <tbody v-else>
+                                    <tr v-for="row in line">
+                                        <td v-for="cell in row" class="border bg-gray-bg border-white p-1" v-bind:data-col="cell.coltitle">{{cell.value}}</td>
+                                    </tr>
+                                </tbody>
+                            </template>
+                        </table>
                         <div v-if="ref.beskrivelse" v-html="compiledMarkdown(ref)"></div>
                     </div>
 
@@ -42,6 +42,7 @@
 <script>
 
     import marked from "marked";
+    //import fsm from "/js/fsm.js";
 
     export default {
         name: 'Table',

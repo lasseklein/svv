@@ -11,7 +11,7 @@
                         <i class="fas fa-image text-xl text-gray-dark mr-2"></i><div class="flex-grow text-sm">{{name}} {{ref.navn }}:<span class="ml-2 text-gray-dark">{{ ref.tekst }}</span></div>
                     </div>
 
-                    <div class="my-content" v-collapse-content><a v-bind:href="bilde.url" target="_blank" class="cursor-pointer object-contain"><img v-bind:src="bilde.url" class="mt-2"/></a></div>
+                    <div class="my-content" v-collapse-content><a v-bind:href="bilde.url" target="_blank" class=" object-contain"><img v-bind:src="bilde.url" class="img-zoomable cursor-pointermt-2"/></a></div>
 
                 </v-collapse-wrapper>
 
@@ -23,10 +23,31 @@
 
 
 <script>
+    /*
+    import Zooming from 'zooming'
+*/
 
     export default {
         name: 'Thumbnail',
         props: ['item', 'name'],
+    /*
+        mounted: function(){
+            document.addEventListener('DOMContentLoaded', function () {
+                const zooming = new Zooming({
 
+                });
+
+                zooming.listen('.img-zoomable')
+            })
+        }
+        */
     };
+
+
 </script>
+
+
+<style scoped>
+
+
+</style>

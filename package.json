@@ -16,7 +16,8 @@
     "sharp": "^0.22.1",
     "tailwindcss": "^1.0.2",
     "vue-marked": "^0.1.1",
-    "vue-scrollactive": "^0.8.0"
+    "vue-scrollactive": "^0.8.0",
+    "zooming": "^2.1.1"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^2.2.6",

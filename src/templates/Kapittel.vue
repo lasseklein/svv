@@ -85,6 +85,7 @@
             id
             booknr
             kapittel
+            fagtema
             avsnitt
             kravID
             type
