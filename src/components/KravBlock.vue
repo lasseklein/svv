@@ -1,7 +1,7 @@
 <template>
 
 
-    <div class="kravBlock pr-4 bg-gray-verylight border border-gray-frame p-3" v-bind:class="isAttachedStyle">
+    <div class="kravBlock bg-gray-verylight border border-gray-frame p-3" v-bind:class="isAttachedStyle">
 
 
         <div class="flex flex-row items-baseline justify-between flex-no-wrap text-xs text-gray-dark ">
@@ -35,12 +35,10 @@
             <Table v-bind:item="block" name="Tabell" />
             <Reference v-bind:block="block" />
 
-            <div v-if="block.vedlegg.length" class="mt-2">
-                <i class="fas fa-paperclip"></i> Vedlegg:
-                <span v-for="vl in block.vedlegg" :key="vl.filename">
-                    <a v-bind:href="vl.url">{{vl.filename}}</a>
-                </span>
+            <div v-if="block.vedlegg.length" v-for="vl in block.vedlegg" :key="vl.filename" class="mt-3">
+                <a v-bind:href="vl.url" class="underline text-gray-dark text-sm "><i class="fas fa-paperclip  mr-4"></i>{{vl.filename}}</a>
             </div>
+
 
         </div>
 

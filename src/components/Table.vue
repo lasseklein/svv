@@ -5,8 +5,8 @@
 
             <v-collapse-wrapper>
 
-                <div class="mt-3 header flex flex-row w-full cursor-pointer text-sm" v-collapse-toggle>
-                    <i class="fas fa-table text-xl text-gray-dark mr-2"></i>Tabell {{ref.navn}}:<span class="ml-2 text-gray-dark">{{ref.tekst}}</span>
+                <div class="mt-3 header flex flex-row w-full cursor-pointer text-sm  whitespace-no-wrap" v-collapse-toggle>
+                    <i class="fas fa-table text-xl text-gray-dark mr-2"></i>Tabell {{ref.navn}}:<span class="ml-2 text-gray-dark whitespace-normal">{{ref.tekst}}</span>
                 </div>
 
                 <div class="my-content pb-0 mb-0" v-collapse-content>
