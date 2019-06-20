@@ -6,28 +6,14 @@
          url('/fonts/LFTEticaLt.woff')         format("woff");
 }
 
-
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
-h1 {
-    @apply text-gray-dark  text-5xl font-bold mt-3 mb-6;
-}
-
-h2 {
-    @apply text-3xl mt-16 mb-6;
-}
-
-h3 {
-    @apply text-2xl mt-16 mb-6;
-}
-
-h4 {
-    @apply text-xl mt-16 mb-6;
-}
+h1 { @apply text-gray-dark text-5xl font-bold mt-3 mb-6; }
+h2 { @apply text-3xl mt-16 mb-6; }
+h3 { @apply text-2xl mt-16 mb-6; }
+h4 { @apply text-xl mt-16 mb-6;  }
 
 .activeitem {
     @apply border-orange-svv border-l-4 font-bold;

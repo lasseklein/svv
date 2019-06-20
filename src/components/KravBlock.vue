@@ -32,7 +32,7 @@
 
 
             <Thumbnail v-bind:item="block.figref" name="Figur" />
-            <Table v-bind:item="block.tabref" name="Tabell" />
+            <Table v-bind:item="block" name="Tabell" />
             <Reference v-bind:block="block" />
 
             <div v-if="block.vedlegg.length" class="mt-2">
