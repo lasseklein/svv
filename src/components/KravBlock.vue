@@ -1,7 +1,7 @@
 <template>
 
 
-    <div class="kravBlock bg-gray-verylight border border-gray-frame p-3" v-bind:class="isAttachedStyle">
+    <div class="kravBlock bg-gray-verylight border border-gray-frame p-4" v-bind:class="isAttachedStyle">
 
 
         <div class="flex flex-row items-baseline justify-between flex-no-wrap text-xs text-gray-dark ">

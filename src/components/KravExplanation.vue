@@ -4,7 +4,7 @@
     <div class="accordion-item rounded overflow-hidden w-auto md:w-full isinactive">
         <div v-on:click="onClick" class="accordion-title-row flex items-center cursor-pointer pt-2">
             <div class="flex pointer-events-none">
-                <div class="mb-0 mr-1">Veiledning</div>
+                <div class="mb-0 mr-1">Veiledning til kravet</div>
             </div>
             <div class=" pointer-events-none"><svg viewBox="0 0 20 20" width="20" height="20" class="fill-current text-grey-dark accordion-arrow"> <title>cheveron down</title> <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg></div>
         </div>
