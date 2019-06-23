@@ -28,7 +28,6 @@
         computed: {
             compiledMarkdown: function () {
                 return marked(this.text, {sanitize: true})
-                    .replace(/(\b(?:skal|bør|kan)\b)/gi, '<em>$1</em>')
                     .replace(/<p>/g, '<p class="my-2">')
                     .replace(/<ul>/g, '<ul class="pl-8 list-disc">')
                     .replace(/<li>/g, '<li class="mt-1">')
