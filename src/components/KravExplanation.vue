@@ -9,9 +9,7 @@
             <div class=" pointer-events-none"><svg viewBox="0 0 20 20" width="20" height="20" class="fill-current text-grey-dark accordion-arrow"> <title>cheveron down</title> <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg></div>
         </div>
 
-        <div class="accordion-content list-reset leading-normal mb-2 hidden">
-            {{ text }}
-        </div>
+        <div class="accordion-content list-reset leading-normal mb-2 hidden" v-html="compiledMarkdown"></div>
     </div>
 </div>
 
@@ -19,11 +17,24 @@
 
 
 <script>
+    import marked from "marked";
 
     export default {
+        components: {
+            marked,
+        },
         name: 'KravExplanation',
         props: ['text'],
-
+        computed: {
+            compiledMarkdown: function () {
+                return marked(this.text, {sanitize: true})
+                    .replace(/(\b(?:skal|bør|kan)\b)/gi, '<em>$1</em>')
+                    .replace(/<p>/g, '<p class="my-2">')
+                    .replace(/<ul>/g, '<ul class="pl-8 list-disc">')
+                    .replace(/<li>/g, '<li class="mt-1">')
+                    .replace(/<a href/g, '<a class="underline font-medium" href')
+            },
+        },
         methods: {
             onClick (e) {
 
