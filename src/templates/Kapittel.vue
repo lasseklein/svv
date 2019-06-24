@@ -1,7 +1,7 @@
 <template>
     <Layout>
       <template slot="sidebar">
-        <Sidebar v-bind:chapter="$context.chapter" v-bind:book="$context.book" />
+        <Sidebar v-bind:chapter="$context.chapter" v-bind:book="$context.book" v-bind:bookTitle="$context.bookTitle" />
        </template>
 
       <template  slot="content">

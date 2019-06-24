@@ -42,6 +42,9 @@ module.exports = function (api) {
                                 type
                                 fagtema
                                 booknr
+                                book {
+                                    tittel
+                                }
                             }
                         }
                     }
@@ -49,12 +52,14 @@ module.exports = function (api) {
            `);
 
             aBook.data.allKrav.edges.forEach(({node}) => {
+
                 createPage({
                     path: `/${node.kapittelID}`,
                     component: './src/templates/Kapittel.vue',
                     context: {
                         chapter: node.kapittel,
                         book: book,
+                        bookTitle: node.book[0].tittel,
                     },
                 })
             });

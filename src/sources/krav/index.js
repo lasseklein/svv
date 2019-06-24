@@ -86,6 +86,29 @@ module.exports = function (api, opts) {
             fetchNextPage();
         });
 
+
+        let bcount = 0;
+        await base('Books').select({view: 'Grid view'}).eachPage((records, fetchNextPage) => {
+            records.forEach((record) => {
+                const item = record._rawJson;
+
+                books.addNode({
+                    // Explicitly add and name the fields we want to include
+                    sequence    : bcount,
+                    id          : item.id,
+                    navn        : item.fields.Name,
+                    tittel      : item.fields.Tittel,
+                    type        : item.fields.Type,
+                    booknr      : item.fields.Book,
+                    forside     : item.fields.Forside,
+                });
+                bcount++;
+            });
+            console.log('Book: ', bcount);
+            fetchNextPage();
+        });
+
+
         let count = 0;
         await base('Book').select({view: 'Grid view'}).eachPage((records, fetchNextPage) => {
             records.forEach((record) => {
@@ -112,6 +135,7 @@ module.exports = function (api, opts) {
                     figref      : store.createReference('Figur' , item.fields.Figurer      ),
                     tabref      : store.createReference('Tabell', item.fields.Tabeller     ),
                     kravref     : store.createReference('Krav'  , item.fields.Henvisninger ),
+                    book        : store.createReference('Book'  , item.fields.Book         ),
                 });
                 count++;
             });
@@ -119,27 +143,6 @@ module.exports = function (api, opts) {
             fetchNextPage();
         });
 
-
-        let bcount = 0;
-        await base('Books').select({view: 'Grid view'}).eachPage((records, fetchNextPage) => {
-            records.forEach((record) => {
-                const item = record._rawJson;
-
-                books.addNode({
-                    // Explicitly add and name the fields we want to include
-                    sequence    : count,
-                    id          : item.id,
-                    navn        : item.fields.Name,
-                    tittel      : item.fields.Tittel,
-                    type        : item.fields.Type,
-                    booknr      : item.fields.Book,
-                    forside     : item.fields.Forside,
-                });
-                bcount++;
-            });
-            console.log('Book: ', bcount);
-            fetchNextPage();
-        });
 
     });
 };
