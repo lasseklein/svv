@@ -25,31 +25,14 @@
 
 
 <script>
-    /*
-    import Zooming from 'zooming'
-*/
 
     export default {
         name: 'Thumbnail',
         props: ['item', 'name', 'isActive'],
-    /*
-        mounted: function(){
-            document.addEventListener('DOMContentLoaded', function () {
-                const zooming = new Zooming({
-
-                });
-
-                zooming.listen('.img-zoomable')
-            })
-        }
-        */
-    };
-
 
 </script>
 
 
 <style scoped>
-
 
 </style>

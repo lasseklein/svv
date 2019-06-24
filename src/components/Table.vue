@@ -78,43 +78,11 @@
                 return marked(title, {sanitize: true});
             }
         },
-        computed: {
-
-        },
 
     };
 </script>
 
 
 <style scoped>
-    @media only print and (max-width: 1500px) {
-        table, thead, tbody, th, td, tr {
-            display: block;
-        }
-        thead tr {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-        }
-        tr { border: 1px solid #ccc; }
-        td {
-            border: none;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 200px;
-            margin-left: 150px;
-        }
-        td:before {
-            position: absolute;
-            top: 12px;
-            left: 6px;
-            width: 200px;
-            padding-right: 40px;
-            white-space: nowrap;
-            margin-left: -150px;
-        }
-        td:before { content: attr(data-col); }
-        td p {display: none;}
-    }
 
 </style>
