@@ -6,41 +6,60 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
-  api.loadSource(({ addContentType }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api
-  });
+    api.loadSource(({addContentType}) => {
+        // Use the Data Store API here: https://gridsome.org/docs/data-store-api
+    });
 
-  api.createPages(async ({ graphql, createPage }) => {
-    //, booknr: {contains: ["N100"]}
-      const {data} = await graphql(`
-       query Krav {
-          allKrav ( filter: { type:{eq: "Kapittel"}}, sortBy: "sequence", order: ASC ) {
-            edges {
-              node {
-                sequence
-                kapittel
-                kapittelID
-                avsnitt
-                id
-                type
-                fagtema
-                booknr
-              }
-            }
-          }
-        }
-     `);
+    api.createPages(async ({graphql, createPage}) => {
 
-      data.allKrav.edges.forEach(({ node }) => {
-        createPage({
-          path: `/${node.kapittelID}`,
-          component: './src/templates/Kapittel.vue',
-          context: {
-              chapter: node.kapittel,
-              book: "N100",
-          },
-        })
-      });
+        const books = [ 'N100', 'V121' ];
 
-   });
+        books.forEach(async(book) => {
+
+            console.log("Processing book: ", book);
+
+            const aBook = await graphql(`
+                query Krav {
+                    allKrav ( 
+                        filter: { 
+                            type:{
+                                eq: "Kapittel"
+                            },
+                            booknr: {
+                                contains: ["${book}"]
+                            }
+                        }, 
+                        sortBy: "sequence", 
+                        order: ASC 
+                    ) {
+                        edges {
+                            node {
+                                sequence
+                                kapittel
+                                kapittelID
+                                avsnitt
+                                id
+                                type
+                                fagtema
+                                booknr
+                            }
+                        }
+                    }
+                }
+           `);
+
+            aBook.data.allKrav.edges.forEach(({node}) => {
+                createPage({
+                    path: `/${node.kapittelID}`,
+                    component: './src/templates/Kapittel.vue',
+                    context: {
+                        chapter: node.kapittel,
+                        book: book,
+                    },
+                })
+            });
+
+        });
+
+    });
 };

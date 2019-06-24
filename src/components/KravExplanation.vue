@@ -23,6 +23,7 @@
         components: {
             marked,
         },
+
         name: 'KravExplanation',
         props: ['text'],
         computed: {

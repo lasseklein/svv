@@ -10,6 +10,7 @@
 
             <h3 class="ml-4 mt-2">N100 Veg- og gateutforming</h3>
 
+
             <input class="border border-gray-medium px-2 py-1 mx-3 mb-2 text-sm" type="text" name="søk" placeholder="Søk kommer her" >
 
             <scrollactive class="nav-scroll-items"
@@ -21,7 +22,7 @@
                 <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
 
                     <a v-bind:class="(chapter===edge.node.kapittel)?'font-bold':''"
-                       v-if="edge.node.type==='Kapittel'"
+                       v-if="edge.node.type==='Kapittel' && edge.node.booknr[0]===book"
                        v-bind:href="edge.node.kapittelID"
                        class="flex content-center hover:bg-gray-light cursor-pointer h-10" >
 
@@ -33,7 +34,7 @@
 
 
                     <a v-bind:href="'#'+edge.node.id"
-                       v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length===1 && edge.node.kapittel===chapter"
+                       v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length===1 && edge.node.kapittel===chapter && edge.node.booknr[0]===book"
                        class="scrollactive-item flex border-l border-gray-medium ml-5 pl-2 cursor-pointer hover:bg-gray-light h-10 ">
                         <div class="text-sm self-center">{{edge.node.fagtema}}</div>
                     </a>
@@ -54,7 +55,7 @@
 
     export default {
         name: 'Sidebar',
-        props: ['chapter'],
+        props: ['chapter', 'book'],
     }
 
 </script>
@@ -67,7 +68,15 @@
 <static-query>
 
     query Krav {
-        allKrav ( filter: { type:{in: ["Kapittel","Tittel"]}}, sortBy: "sequence", order: ASC ) {
+        allKrav (
+            filter: {
+                type:{
+                    in: ["Kapittel","Tittel"]
+                }
+            },
+            sortBy: "sequence",
+            order: ASC
+        ) {
             edges {
                 node {
                     sequence
@@ -77,6 +86,7 @@
                     id
                     type
                     fagtema
+                    booknr
                 }
             }
         }

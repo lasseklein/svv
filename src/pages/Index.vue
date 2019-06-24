@@ -6,7 +6,7 @@
         <div class="flex flex-row">
 
           <a v-for="edge in $page.allBook.edges" :key="edge.node.id"
-             v-if="edge.node.booknr === 'N100'"
+             v-if="edge.node.booknr === 'N100' || edge.node.booknr === 'V121'"
              v-bind:href="'/'+edge.node.booknr+'/1'"
              class="m-8 w-48"
           >

@@ -6,9 +6,11 @@
 
             <div class="container px-2 flex">
 
-              <g-image class="w-24 ml-10"
-                src="https://www.vegvesen.no/_public/vegvesen.no/apps/felles/frontend-global/images/svg/svv-logo-graa-topp.svg"
-                height="100" />
+                <a href="/">
+                    <g-image class="w-24 ml-10"
+                    src="https://www.vegvesen.no/_public/vegvesen.no/apps/felles/frontend-global/images/svg/svv-logo-graa-topp.svg"
+                    height="100" />
+                </a>
                 <nav class="text-white ml-10 flex flex-row justify-left ">
                   <!-- <g-link class="text-white mx-8 uppercase" to="/">{{ $static.metaData.siteName }}</g-link> -->
                   <div class="text-left text-gray-medium underline mx-auto p-2 self-center rounded hover:bg-orange">

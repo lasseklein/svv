@@ -1,7 +1,7 @@
 <template>
     <Layout>
       <template slot="sidebar">
-        <Sidebar v-bind:chapter="$context.chapter" />
+        <Sidebar v-bind:chapter="$context.chapter" v-bind:book="$context.book" />
        </template>
 
       <template  slot="content">
@@ -22,7 +22,7 @@
 
 
 <script>
-  import Layout from '~/layouts/Default.vue'
+  import Layout     from '~/layouts/Default.vue'
   import KravBlock  from '../components/KravBlock';
   import TitleBlock from '../components/TitleBlock';
   import TextBlock  from '../components/TextBlock';
@@ -39,7 +39,7 @@
     },
 
   };
-// Removed from page query (, $book: String) filter: , booknr: {contains: [$book]}
+
 </script>
 
 
@@ -49,61 +49,73 @@
 
 
 <page-query>
-  query Krav ($chapter: String) {
-    allKrav ( filter: { kapittel: {eq: $chapter }}, sortBy: "sequence", order: ASC ) {
-      edges {
-        node {
-          sequence
-          krav
-          kravID
-          kravtype
-          kapittel
-          avsnitt
-          id
-          type
-          fagtema
-          versjon
-          veiledning
-          vedlegg {
-            filename
-            url
-          }
-          koblet
-          tabref {
-            navn
-            tekst
-            legend
-            beskrivelse
-            lineref  (sortBy: "sequence", order: ASC ){
-              rowtitle,
-              coltitle,
-              value,
-              sequence,
-            }
-          }
-          kravref {
-            id
-            booknr
-            kapittel
-            fagtema
-            avsnitt
-            kravID
-            type
-          }
-          figref {
-            tekst
-            navn
-            bilde {
-              url
-            }
-          }
 
+    query Krav ( $chapter: String, $book: String ) {
+        allKrav (
+            filter: {
+                kapittel: {
+                    eq: $chapter
+                },
+                booknr: {
+                    contains: [$book]
+                }
+            },
+            sortBy: "sequence",
+            order: ASC
+        ) {
+            edges {
+                node {
+                    sequence
+                    krav
+                    kravID
+                    kravtype
+                    kapittel
+                    avsnitt
+                    id
+                    type
+                    fagtema
+                    versjon
+                    veiledning
+                    vedlegg {
+                        filename
+                        url
+                    }
+                    koblet
+                    tabref {
+                        navn
+                        tekst
+                        legend
+                        beskrivelse
+                        lineref (
+                            sortBy: "sequence",
+                            order: ASC
+                        ) {
+                            rowtitle,
+                            coltitle,
+                            value,
+                            sequence,
+                        }
+                    }
+                    kravref {
+                        id
+                        booknr
+                        kapittel
+                        fagtema
+                        avsnitt
+                        kravID
+                        type
+                    }
+                    figref {
+                        tekst
+                        navn
+                        bilde {
+                            url
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
-
-
 
 </page-query>
 
