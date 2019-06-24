@@ -24,7 +24,7 @@
     import marked from "marked";
     import Reference from "./Reference";
     import Thumbnail from "./Thumbnail";
-    import Table from "./Table";
+    import Table     from "./Table";
 
     // TODO: Få inn block og vise figurer og bilder her også.
 
