@@ -29,7 +29,7 @@
     export default {
         name: 'Thumbnail',
         props: ['item', 'name', 'isActive'],
-
+    }
 </script>
 
 
