@@ -12,6 +12,7 @@
           >
 
             <img v-bind:src="edge.node.forside[0].url"  />
+            <div class="mt-4 text-center">{{edge.node.booknr}}</div>
             <div class="mt-4 text-center">{{edge.node.tittel}}</div>
           </a>
 

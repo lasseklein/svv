@@ -3,7 +3,7 @@
 
         <div v-for="ref in item.tabref" :key="item.tabref.id">
 
-            <v-collapse-wrapper>
+            <v-collapse-wrapper :active="isActive">
 
                 <div class="mt-3 header flex flex-row w-full cursor-pointer text-sm whitespace-no-wrap" v-collapse-toggle>
                     <i class="fas fa-table text-xl text-gray-dark mr-2"></i>Tabell {{ref.navn}}:<span class="ml-2 text-gray-dark whitespace-normal">{{ref.tekst}}</span>
@@ -46,7 +46,7 @@
 
     export default {
         name: 'Table',
-        props: ['item', 'name'],
+        props: ['item', 'name', 'isActive'],
         components: {
             marked,
         },

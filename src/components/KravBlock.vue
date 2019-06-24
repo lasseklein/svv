@@ -44,8 +44,8 @@
         <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-1 mt-3 border-t">
 
 
-            <Thumbnail v-bind:item="block.figref" name="Figur" />
-            <Table v-bind:item="block" name="Tabell" />
+            <Thumbnail v-bind:item="block.figref" name="Figur" v-bind:isActive="false"/>
+            <Table v-bind:item="block" name="Tabell" v-bind:isActive="false" />
             <Reference v-bind:block="block" />
 
             <div v-if="block.vedlegg.length" v-for="vl in block.vedlegg" :key="vl.filename" class="mt-3">
