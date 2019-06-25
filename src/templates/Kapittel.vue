@@ -90,10 +90,10 @@
                             sortBy: "sequence",
                             order: ASC
                         ) {
-                            rowtitle,
-                            coltitle,
-                            value,
-                            sequence,
+                            rowtitle
+                            coltitle
+                            value
+                            sequence
                         }
                     }
                     kravref {
@@ -103,6 +103,7 @@
                         fagtema
                         avsnitt
                         kravID
+                        krav
                         type
                     }
                     figref {

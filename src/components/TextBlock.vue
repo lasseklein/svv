@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-html="compiledMarkdown" class="font-sans text-base my-4"></div>
-        <Reference v-bind:block="block" />
+        <Reference v-bind:block="block" v-bind:showContent="true" />
 
         <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="pt-1 pb-2 my-6">
 
