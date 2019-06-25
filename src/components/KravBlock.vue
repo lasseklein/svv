@@ -63,7 +63,6 @@
             Thumbnail,
             Reference,
             Table,
-            //Popover,
             marked,
         },
         props: ['block'],

@@ -8,7 +8,7 @@
                     Krav {{ ref.kravID }}
                 </a>
                 <div v-if="showContent" class="ml-8 mt-2">
-                    {{ref.krav}}
+                    <Markdown v-bind:text="ref.krav"></Markdown>
                 </div>
             </div>
             <a v-else v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id" class="text-gray-dark underline cursor-pointer">
@@ -22,8 +22,14 @@
 
 
 <script>
+    import Markdown from "./Markdown";
+
     export default {
         name: 'Reference',
         props: ['block','showContent'],
+        components: {
+            Markdown,
+        },
+
     };
 </script>

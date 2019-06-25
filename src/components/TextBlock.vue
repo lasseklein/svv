@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div v-html="compiledMarkdown" class="font-sans text-base my-4"></div>
+        <div class="font-sans text-base my-4">
+            <Markdown v-bind:text="block.krav"></Markdown>
+        </div>
 
         <Reference v-bind:block="block" v-bind:showContent="true" />
 
@@ -23,6 +25,7 @@
     import Reference from "./Reference";
     import Thumbnail from "./Thumbnail";
     import Table     from "./Table";
+    import Markdown from "./Markdown";
 
     export default {
         name: 'TextBlock',
@@ -30,19 +33,10 @@
 
         components: {
             Reference,
-            marked,
+            Markdown,
             Thumbnail,
             Table,
         },
-        computed: {
-            compiledMarkdown: function(){
-                return marked(this.block.krav, { sanitize: true })
-                    .replace(/<p>/g, '<p class="my-2">')
-                    .replace(/<ul>/g,'<ul class="pl-8 list-disc">')
-                    .replace(/<li>/g, '<li class="mt-1">')
-                    .replace(/<a href/g, '<a class="underline font-medium" href')
-            },
-         },
 
     };
 </script>

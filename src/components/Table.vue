@@ -34,7 +34,7 @@
                                     </tbody>
                                 </template>
                             </table>
-                            <div v-if="ref.beskrivelse" v-html="compiledMarkdown(ref)"></div>
+                            <Markdown v-bind:text="ref.beskrivelse"></Markdown>
                         </div>
                     </div>
                 </v-collapse-wrapper>
@@ -48,13 +48,14 @@
 <script>
 
     import marked from "marked";
-    //import fsm from "/js/fsm.js";
+    import Markdown from "./Markdown";
 
     export default {
         name: 'Table',
         props: ['item', 'name', 'isActive'],
         components: {
             marked,
+            Markdown,
         },
 
         methods: {
@@ -74,11 +75,6 @@
                     table.rows[row++].push({ 'value': line.value, 'coltitle':line.coltitle });
                 });
                 return table;
-            },
-            compiledMarkdown: function (ref) {
-                return marked(ref.beskrivelse, {sanitize: true})
-                    .replace(/<p>/g, '<p class="my-2">')
-                    .replace(/<a href/g, '<a class="underline font-medium" href')
             },
             formattedTitle: function (title) {
                 return marked(title, {sanitize: true});
