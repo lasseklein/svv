@@ -34,7 +34,7 @@
                                     </tbody>
                                 </template>
                             </table>
-                            <Markdown v-bind:text="ref.beskrivelse"></Markdown>
+                            <Markdown v-bind:text="ref.beskrivelse" />
                         </div>
                     </div>
                 </v-collapse-wrapper>

@@ -10,7 +10,7 @@
         </div>
 
         <div class="accordion-content list-reset leading-normal mb-2 hidden">
-            <Markdown v-bind:text="text"></Markdown>
+            <Markdown v-bind:text="text" />
         </div>
     </div>
 </div>
