@@ -1,21 +1,20 @@
 <template>
     <Layout>
-      <template slot="sidebar">
-        <Sidebar v-bind:chapter="$context.chapter" v-bind:book="$context.book" v-bind:bookTitle="$context.bookTitle" />
-       </template>
+        <template slot="sidebar">
+            <Sidebar v-bind:chapter="$context.chapter" v-bind:book="$context.book"
+                     v-bind:bookTitle="$context.bookTitle"/>
+        </template>
 
-      <template  slot="content">
+        <template slot="content">
+            <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
 
-        <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="block">
+                <section v-bind:id="edge.node.id"></section>
+                <TitleBlock v-if="edge.node.type==='Kapittel'||edge.node.type ==='Tittel'" v-bind:block="edge.node"/>
+                <TextBlock v-else-if="edge.node.type==='Tekst'" v-bind:block="edge.node"/>
+                <KravBlock v-else="edge.node.type==='Krav'" v-bind:block="edge.node"/>
 
-          <section v-bind:id="edge.node.id"></section>
-          <TitleBlock v-if="edge.node.type==='Kapittel'||edge.node.type ==='Tittel'" v-bind:block="edge.node" />
-          <TextBlock v-else-if="edge.node.type==='Tekst'" v-bind:block="edge.node" />
-          <KravBlock v-else   ="edge.node.type==='Krav'"  v-bind:block="edge.node" />
-
-        </div>
-
-      </template>
+            </div>
+        </template>
 
     </Layout>
 </template>

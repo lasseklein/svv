@@ -1,35 +1,46 @@
 <template>
     <div v-if="item.tabref.length" class="">
+        <v-collapse-group :onlyOneActive="false">
+            <div v-for="ref in item.tabref" :key="item.tabref.id">
 
-        <div v-for="ref in item.tabref" :key="item.tabref.id">
-
-            <v-collapse-wrapper :active="isActive">
-                <div class="mt-3 header flex flex-row w-full cursor-pointer text-sm whitespace-no-wrap" v-collapse-toggle>
-                    <i class="fas fa-table text-xl text-gray-dark mr-2"></i>Tabell {{ref.navn}}:<span class="ml-2 text-gray-dark whitespace-normal">{{ref.tekst}}</span>
-                </div>
-                <div class="pb-0 mb-0" v-collapse-content>
-                    <div class="overflow-x-auto overflow-y-auto">
-                        <table v-bind:id="'table-'+item.id" v-if="ref.lineref" class="w-full text-xs mt-2">
-                            <template v-for="(line, part) in tabledata(ref)"
-                                      class="border-collapse border">
-                                <thead v-if="part==='head'">
-                                    <tr>
-                                        <th v-for="title in line" class="border text-center align-top p-1 bg-gray-dark text-white" v-html="formattedTitle(title)"></th>
-                                    </tr>
-                                </thead>
-                                <tbody v-else>
-                                    <tr v-for="row in line">
-                                        <td v-for="cell in row" class="border bg-gray-bg border-white p-1" v-bind:data-col="cell.coltitle">{{cell.value}}</td>
-                                    </tr>
-                                </tbody>
-                            </template>
-                        </table>
-                        <div v-if="ref.beskrivelse" v-html="compiledMarkdown(ref)"></div>
+                <v-collapse-wrapper :active="isActive">
+                    <div class="mt-3 header flex flex-row w-full cursor-pointer text-sm whitespace-no-wrap"
+                         v-bind:class="{'mt-8':isActive}"
+                         v-collapse-toggle
+                    >
+                        <i class="fas fa-table text-xl text-gray-dark mr-2"></i>
+                        Tabell {{ref.navn}}:
+                        <span class="ml-2 text-gray-dark whitespace-normal">{{ref.tekst}}</span>
                     </div>
-                </div>
-            </v-collapse-wrapper>
+                    <div class="pb-0 mb-0" v-collapse-content>
+                        <div class="overflow-x-auto overflow-y-auto">
+                            <table v-bind:id="'table-'+item.id" v-if="ref.lineref" class="w-full text-xs mt-2">
+                                <template v-for="(line, part) in tabledata(ref)"
+                                          class="border-collapse border">
+                                    <thead v-if="part==='head'">
+                                        <tr>
+                                            <th v-for="title in line"
+                                                class="border text-center align-top p-1 bg-gray-dark text-white"
+                                                v-html="formattedTitle(title)">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody v-else>
+                                        <tr v-for="row in line">
+                                            <td v-for="cell in row" class="border bg-gray-bg border-white p-1"
+                                                v-bind:data-col="cell.coltitle">
+                                                {{cell.value}}</td>
+                                        </tr>
+                                    </tbody>
+                                </template>
+                            </table>
+                            <div v-if="ref.beskrivelse" v-html="compiledMarkdown(ref)"></div>
+                        </div>
+                    </div>
+                </v-collapse-wrapper>
 
-        </div>
+            </div>
+        </v-collapse-group>
     </div>
 </template>
 
