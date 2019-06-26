@@ -9,9 +9,13 @@
                         <div v-bind:href="bilde.url"
                              class="mt-3 header flex flex-row w-full cursor-pointer text-sm whitespace-no-wrap"
                              v-bind:class="{'mt-6':isActive}"
-                             v-collapse-toggle
-                        >
-                            <i class="fas fa-image text-xl text-gray-dark mr-2"></i>{{name}} {{ref.navn }}:<span class="ml-2 text-gray-dark whitespace-normal">{{ ref.tekst }}</span>
+                             v-collapse-toggle >
+
+                            <i class="fas fa-image text-xl text-gray-dark mr-2"></i>
+                            {{name}} {{ref.navn }}:
+                            <span class="ml-2 text-gray-dark whitespace-normal">
+                                {{ ref.tekst }}
+                            </span>
                         </div>
                         <div class="my-content" v-collapse-content>
                             <a v-bind:href="bilde.url" target="_blank" class=" object-contain">

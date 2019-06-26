@@ -1,48 +1,78 @@
 
+<!-- TODO: Konvertere fra tailwind til vuetify for å unngå konflikter -->
+
 <template>
-    <div class="app font-sans">
-
-        <header class="flex h-20 bg-gray-dark py-4 ">
-
-            <div class="container px-2 flex">
-
-                <a href="/">
-                    <g-image class="w-24 ml-10"
-                    src="https://www.vegvesen.no/_public/vegvesen.no/apps/felles/frontend-global/images/svg/svv-logo-graa-topp.svg"
-                    height="100" />
-                </a>
-                <nav class="text-white ml-10 flex flex-row justify-left ">
-                  <!-- <g-link class="text-white mx-8 uppercase" to="/">{{ $static.metaData.siteName }}</g-link> -->
-                  <div class="text-left text-gray-medium underline mx-auto p-2 self-center rounded hover:bg-orange">
-                      <a href="https://airtable.com/shrSAorwzd9q2MMOh" target="_blank">Gi tilbakemelding på prototypen</a>
-                  </div>
-
-                </nav>
-            </div>
-        </header>
+    <v-app  class="app font-sans">
 
 
-
-        <div class="container flex flex-col md:flex-row w-full">
-
-            <div id="sidebar"
-                 class="w-full md:w-1/3 lg:w-1/4 py-4 mx-2 border-r border-gray-light">
+        <v-navigation-drawer
+                mobile-break-point="1024"
+                v-model="drawer"
+                fixed
+                clipped
+                class="grey lighten-4"
+                app
+        >
                 <slot name="sidebar" />
-            </div>
+        </v-navigation-drawer>
 
-            <div id="scrollablecontent"
-                 class="w-full md:w-2/3 lg:w-3/4 px-4 md:px-8 py-8">
+
+
+        <v-toolbar app
+                   clipped-left
+                   flat
+                   fixed
+                   dark
+                   color="#444f55"
+        >
+            <span class="block lg:hidden"><v-toolbar-side-icon @click="drawer = !drawer" ></v-toolbar-side-icon></span>
+            <span class="title ml-3 mr-5"><a href="/" class="text-gray-light">SVV Håndbøker</a></span>
+            <v-text-field
+                    solo-inverted
+                    flat
+                    hide-details
+                    label="Søk kommer her"
+                    prepend-inner-icon="search"
+            ></v-text-field>
+            <v-spacer></v-spacer>
+        </v-toolbar>
+
+
+
+        <v-content>
+            <v-container
+
+                    fluid
+                    class="grey lighten-4">
+
                 <slot name="content" />
-            </div>
 
-        </div>
+            </v-container>
+        </v-content>
 
-    </div>
 
+
+    </v-app>
 
 </template>
 
+<script>
+    export default {
+        name: 'Default',
 
+        data () {
+            return {
+                items: [
+                    { title: 'Home', icon: 'D' },
+                    { title: 'About', icon: 'QA' }
+                ],
+                drawer: null
+            }
+        },
+    }
+
+
+</script>
 
 
 <static-query>

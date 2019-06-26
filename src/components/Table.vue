@@ -34,8 +34,8 @@
                                     </tbody>
                                 </template>
                             </table>
-                            <Markdown v-bind:text="ref.beskrivelse" />
                         </div>
+                        <Markdown v-bind:text="ref.beskrivelse" />
                     </div>
                 </v-collapse-wrapper>
 
@@ -70,8 +70,7 @@
                         col++;
                         row=0;
                     }
-                    if(col===0) { table.rows.push([{ 'value': line.rowtitle, 'coltitle':ref.legend }]); };
-                    //console.log('Rad '+row+' val: '+line.value)
+                    if(col===0) { table.rows.push([{ 'value': line.rowtitle, 'coltitle':ref.legend }]); }
                     table.rows[row++].push({ 'value': line.value, 'coltitle':line.coltitle });
                 });
                 return table;
@@ -86,5 +85,6 @@
 
 
 <style scoped>
+
 
 </style>

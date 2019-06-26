@@ -19,6 +19,14 @@ h4 { @apply text-xl mt-16 mb-6;  }
     @apply border-orange-svv border-l-4 font-bold;
 }
 
+.menu-hidden {
+    @apply fixed w-0 z-50 top-0 left-0;
+}
+
+.menu-sidebar {
+    @apply sticky top-0;
+}
+
 .v-collapse-content{
     max-height: 0;
     transition: max-height 0.1s linear;

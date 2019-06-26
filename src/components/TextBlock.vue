@@ -20,12 +20,14 @@
 
 </template>
 
+
+
 <script>
-    import marked    from "marked";
+
     import Reference from "./Reference";
     import Thumbnail from "./Thumbnail";
     import Table     from "./Table";
-    import Markdown from "./Markdown";
+    import Markdown  from "./Markdown";
 
     export default {
         name: 'TextBlock',

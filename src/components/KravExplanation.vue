@@ -1,5 +1,18 @@
 <template>
 
+    <v-expansion-panel v-if="text">
+        <v-expansion-panel-content >
+            <template v-slot:header>
+                <div class="shrink mr-2">Veiledning til kravet</div>
+            </template>
+            <v-card color="transparent">
+                <v-card-text>
+                    <Markdown v-bind:text="text"class="mx-2" />
+                </v-card-text>
+            </v-card>
+        </v-expansion-panel-content>
+    </v-expansion-panel>
+<!--
 <div v-if="text" class="container flex flex-col lg:flex-row flex-no-wrap justify-center w-full m-auto mb-2 fade-in border-gray-light">
     <div class="accordion-item rounded overflow-hidden w-auto md:w-full isinactive">
         <div v-on:click="onClick" class="accordion-title-row flex items-center cursor-pointer pt-2">
@@ -14,7 +27,7 @@
         </div>
     </div>
 </div>
-
+-->
 </template>
 
 
@@ -29,7 +42,7 @@
         name: 'KravExplanation',
         props: ['text'],
         methods: {
-            onClick (e) {
+            onClick (e) { // TODO: Bytte ut med hyllevare-accordion med chevron
 
                 var hideothers = true; // Funker ikke for mobil der andre må skjules
 
@@ -55,6 +68,26 @@
 
 
 <style scoped>
+
+    .v-expansion-panel{
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    }
+    .v-expansion-panel__header{
+        padding: 0 !important;
+    }
+
+    li.v-expansion-panel__container{
+        list-style: none;
+    }
+
+    .v-card__text{
+        padding-top: 0;
+    }
+
+    .v-expansion-panel__container,
+    .v-expansion-panel__body {
+        background-color: transparent !important;
+    }
 
     /* ACCORDION */
     .accordion-item.isactive .accordion-title-row .accordion-arrow {

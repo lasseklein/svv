@@ -4,17 +4,11 @@
 
             <div v-if="ref.type==='Krav'">
                 <a v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id" class="text-gray-dark underline cursor-pointer">
-                    <i class="fas fa-link text-md text-gray-dark mr-4"></i>
-                    Krav {{ ref.kravID }}
-                </a>
-                <div v-if="showContent" class="ml-8 mt-2">
-                    <Markdown v-bind:text="ref.krav" />
-                </div>
+                    <i class="fas fa-link text-md text-gray-dark mr-3"></i>{{ ref.booknr[0]}} Krav {{ ref.kravID }}</a>
+                <div v-if="showContent" class="ml-8 mt-2"><Markdown v-bind:text="ref.krav" /></div>
             </div>
             <a v-else v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id" class="text-gray-dark underline cursor-pointer">
-                <i class="fas fa-link text-md text-gray-dark mr-4"></i>
-                {{ ref.booknr[0]}} {{ ref.kapittel }}.{{ ref.avsnitt }}: {{ref.fagtema}}
-            </a>
+                <i class="fas fa-link text-md text-gray-dark mr-3"></i>{{ ref.booknr[0]}} {{ ref.kapittel }}.{{ ref.avsnitt }}: {{ref.fagtema}}</a>
 
         </div>
     </div>

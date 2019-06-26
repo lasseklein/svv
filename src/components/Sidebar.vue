@@ -1,12 +1,6 @@
 <template>
 
-    <div class="sticky top-0">
-
-        <div class="block md:hidden mx-4 ">
-            <i class="fas fa-hamburger"></i> Meny for mobil kommer her
-        </div>
-
-        <div id="thesidebar" class="hidden md:block flex flex-col h-full overflow-y-auto">
+    <div>
 
             <h4 class="ml-4 mt-2">{{book}} {{bookTitle}}</h4>
 
@@ -17,35 +11,37 @@
                           :duration=400
                           :offset=80
                           bezier-easing-value=".5,0,.35,1" >
-
+            <v-list
+                    dense
+                    class="pt-0">
                 <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
-
-                    <a v-bind:class="(chapter===edge.node.kapittel)?'font-bold':''"
-                       v-if="edge.node.type==='Kapittel' && edge.node.booknr[0]===book"
-                       v-bind:href="edge.node.kapittelID"
-                       class="flex content-center hover:bg-gray-light cursor-pointer h-10" >
-
-                        <div class="text-sm self-center px-4">
-                            <span v-if="edge.node.kapittel.match(/[A-Z]/)">{{edge.node.kapittel}} </span>
-                            {{edge.node.fagtema}}
-                        </div>
-                    </a>
-
-
-                    <a v-bind:href="'#'+edge.node.id"
-                       v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length===1 && edge.node.kapittel===chapter && edge.node.booknr[0]===book"
-                       class="scrollactive-item flex border-l border-gray-medium ml-5 pl-2 cursor-pointer hover:bg-gray-light h-10 ">
-                        <div class="text-sm self-center">{{edge.node.fagtema}}</div>
-                    </a>
-
-
+                <v-list-tile
+                        v-if="edge.node.type==='Kapittel'&&edge.node.booknr[0]===book||'Tittel'&&edge.node.avsnitt.length===1&&edge.node.kapittel===chapter&&edge.node.booknr[0]===book"
+                        @click="">
+                    <v-list-tile-content>
+                        <v-list-tile-title>
+                            <a v-bind:class="(chapter===edge.node.kapittel)?'font-bold':''"
+                               v-if="edge.node.type==='Kapittel' && edge.node.booknr[0]===book"
+                               v-bind:href="edge.node.kapittelID+'#'+edge.node.id"
+                               class="content-center" >
+                                <div class="text-sm text-black self-center px-4 py-1 ">
+                                    <span v-if="edge.node.kapittel.match(/[A-Z]/)">{{edge.node.kapittel}} </span>
+                                    {{edge.node.fagtema}}
+                                </div>
+                            </a>
+                            <a v-bind:href="'#'+edge.node.id"
+                               v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length===1 && edge.node.kapittel===chapter && edge.node.booknr[0]===book"
+                               class="scrollactive-item flex border-l border-gray-medium ml-5 pl-2 text-black h-full">
+                                <div class="text-sm self-center">{{edge.node.fagtema}}</div>
+                            </a>
+                        </v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
                 </div>
-
+            </v-list>
             </scrollactive>
 
-        </div>
     </div>
-
 
 </template>
 
@@ -60,7 +56,16 @@
 </script>
 
 
-<style scoped>
+<style >
+
+    .v-list__tile.v-list__tile--link.theme--light,
+    .v-list__tile__title
+    {
+        margin: 0;
+        padding: 0;
+        height: 35px !important;
+    }
+
 </style>
 
 
