@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-verylight border border-gray-frame py-4" v-bind:class="isAttachedStyle">
+    <div class="bg-white border border-gray-frame py-4" v-bind:class="isAttachedStyle">
 
 
         <v-collapse-wrapper>
