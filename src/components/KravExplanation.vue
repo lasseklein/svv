@@ -3,11 +3,11 @@
     <v-expansion-panel v-if="text">
         <v-expansion-panel-content >
             <template v-slot:header>
-                <div class="tw-shrink tw-mr-2">Veiledning til kravet</div>
+                <div class="shrink tw-mr-2">Veiledning til kravet</div>
             </template>
-            <v-card color="tw-transparent">
+            <v-card color="transparent">
                 <v-card-text>
-                    <Markdown v-bind:text="text"class="tw-mx-2" />
+                    <Markdown v-bind:text="text" class="tw-mx-2" />
                 </v-card-text>
             </v-card>
         </v-expansion-panel-content>
@@ -56,9 +56,10 @@
 
     .v-expansion-panel{
         box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        position: relative;
+        left: -10px; /* TODO: remove this hack to make vuejs align with tailwind */
     }
     .v-expansion-panel__header{
-        padding: 0 !important;
     }
 
     li.v-expansion-panel__container{
@@ -67,6 +68,7 @@
 
     .v-card__text{
         padding-top: 0;
+        padding-bottom: 0;
     }
 
     .v-expansion-panel__container,

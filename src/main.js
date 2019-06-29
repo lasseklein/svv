@@ -23,8 +23,6 @@ export default function (Vue, { head }) {
 
     Vue.use(Vuetify);
 
-    head.bodyAttrs = { class: 'bg-white' };
-
     head.link.push({
         rel: 'stylesheet',
         href: "https://use.fontawesome.com/releases/v5.8.2/css/all.css"

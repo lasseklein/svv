@@ -1,6 +1,4 @@
 
-<!-- TODO: Konvertere fra tailwind til vuetify for å unngå konflikter -->
-
 <template>
     <v-app  class="app font-sans">
 
