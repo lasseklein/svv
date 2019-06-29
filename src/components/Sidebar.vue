@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div class="tw-p-2">
 
             <h4 class="tw-ml-4 tw-mt-2">{{book}} {{bookTitle}}</h4>
 
@@ -22,7 +22,7 @@
                         <v-list-tile-title>
                             <a v-bind:class="(chapter===edge.node.kapittel)?'font-bold':''"
                                v-if="edge.node.type==='Kapittel' && edge.node.booknr[0]===book"
-                               v-bind:href="edge.node.kapittelID+'#'+edge.node.id"
+                               v-bind:href="edge.node.kapittelID"
                                class="content-center" >
                                 <div class="tw-text-sm tw-text-black tw-self-center tw-px-4 tw-py-1 ">
                                     <span v-if="edge.node.kapittel.match(/[A-Z]/)">{{edge.node.kapittel}} </span>

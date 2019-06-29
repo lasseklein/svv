@@ -77,7 +77,7 @@ module.exports = function (api, opts) {
                     tekst       : item.fields.Tekst,
                     legend      : item.fields.firstcoltitle,
                     beskrivelse : item.fields.Beskrivelse,
-
+                    bilde       : item.fields.Bilde,
                     lineref : store.createReference('Tabellinjer' , item.fields.Tabellinjer      ),
                 });
                 tcount++;

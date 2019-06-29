@@ -85,6 +85,9 @@
                         tekst
                         legend
                         beskrivelse
+                        bilde {
+                            url
+                        }
                         lineref (
                             sortBy: "sequence",
                             order: ASC

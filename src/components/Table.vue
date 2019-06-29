@@ -1,7 +1,7 @@
 <template>
     <div v-if="item.tabref.length" class="">
         <v-collapse-group :onlyOneActive="false">
-            <div v-for="ref in item.tabref" :key="item.tabref.id">
+            <div v-for="tabell in item.tabref" :key="item.tabref.id">
 
                 <v-collapse-wrapper :active="isActive">
                     <div class="tw-mt-3 tw-header tw-flex tw-flex-row tw-w-full tw-cursor-pointer tw-text-sm tw-whitespace-no-wrap"
@@ -9,13 +9,13 @@
                          v-collapse-toggle
                     >
                         <i class="fas fa-table tw-text-xl tw-text-gray-dark tw-mr-2"></i>
-                        Tabell {{ref.navn}}:
-                        <span class="tw-ml-2 tw-text-gray-dark tw-whitespace-normal">{{ref.tekst}}</span>
+                        Tabell {{tabell.navn}}:
+                        <span class="tw-ml-2 tw-text-gray-dark tw-whitespace-normal">{{tabell.tekst}}</span>
                     </div>
                     <div class="tw-pb-0 tw-mb-0" v-collapse-content>
                         <div class="tw-overflow-x-auto tw-overflow-y-auto">
-                            <table v-bind:id="'table-'+item.id" v-if="ref.lineref" class="tw-w-full tw-text-xs mt-2">
-                                <template v-for="(line, part) in tabledata(ref)"
+                            <table v-if="tabell.lineref.count" v-bind:id="'table-'+item.id" class="tw-w-full tw-text-xs mt-2">
+                                <template v-for="(line, part) in tabledata(tabell)"
                                           class="tw-border-collapse tw-border">
                                     <thead v-if="part==='head'">
                                         <tr>
@@ -34,8 +34,12 @@
                                     </tbody>
                                 </template>
                             </table>
+
+                            <div v-else class="tw-mt-4">
+                                <img v-bind:src="tabell.bilde[0].url">
+                            </div>
                         </div>
-                        <Markdown v-bind:text="ref.beskrivelse" />
+                        <Markdown v-bind:text="tabell.beskrivelse" />
                     </div>
                 </v-collapse-wrapper>
 
