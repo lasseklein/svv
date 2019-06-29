@@ -2,16 +2,16 @@
 <template>
     <div class="app font-sans">
 
-        <header class="flex h-20 bg-gray-dark py-4 ">
+        <header class="tw-flex tw-h-20 tw-bg-gray-dark tw-py-4 ">
 
-            <div class=" px-2 flex">
+            <div class="tw-px-2 tw-flex">
 
-              <g-image class="w-24 ml-10 "
+              <g-image class="tw-w-24 tw-ml-10 "
                 src="https://www.vegvesen.no/_public/vegvesen.no/apps/felles/frontend-global/images/svg/svv-logo-graa-topp.svg"
                 height="150" />
-                <nav class="text-white ml-10 flex flex-row justify-left grow">
+                <nav class="tw-text-white tw-ml-10 tw-flex tw-flex-row tw-justify-left grow">
                   <!-- <g-link class="text-white mx-8 uppercase" to="/">{{ $static.metaData.siteName }}</g-link> -->
-                  <div class="text-left text-gray-medium underline mx-auto p-2 self-center rounded hover:bg-orange">
+                  <div class="tw-text-left tw-text-gray-medium tw-underline tw-mx-auto tw-p-2 tw-self-center tw-rounded hover:tw-bg-orange">
                       <a href="https://airtable.com/shrSAorwzd9q2MMOh" target="_blank">Gi tilbakemelding på prototypen</a>
                   </div>
 
@@ -21,10 +21,10 @@
 
 
 
-        <div class="container flex flex-col md:flex-row w-full">
+        <div class="tw-container tw-flex tw-flex-col md:tw-flex-row w-full">
 
             <div id="scrollablecontent"
-                 class="w-full px-4 md:px-8 py-8">
+                 class="tw-w-full tw-px-4 md:tw-px-8 py-8">
                 <slot name="content" />
             </div>
 

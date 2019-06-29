@@ -25,9 +25,9 @@
                    dark
                    color="#444f55"
         >
-            <span class="block lg:hidden"><v-toolbar-side-icon @click="drawer = !drawer" ></v-toolbar-side-icon></span>
-            <span class="title ml-3 mr-5"><a href="/" class="text-gray-light">SVV Håndbøker</a></span>
-            <span><a href="https://airtable.com/shrSAorwzd9q2MMOh" target="_blank" class="text-white underline">Gi tilbakemelding på prototypen</a></span>
+            <span class="tw-block lg:tw-hidden"><v-toolbar-side-icon @click="drawer = !drawer" ></v-toolbar-side-icon></span>
+            <span class="title tw-ml-3 tw-mr-5"><a href="/" class="tw-text-gray-light">SVV Håndbøker</a></span>
+            <span><a href="https://airtable.com/shrSAorwzd9q2MMOh" target="_blank" class="tw-text-white tw-underline">Gi tilbakemelding på prototypen</a></span>
             <v-spacer></v-spacer>
         </v-toolbar>
 

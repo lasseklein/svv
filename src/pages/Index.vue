@@ -3,17 +3,17 @@
 
       <template slot="content">
 
-        <div class="flex flex-row">
+        <div class="tw-flex tw-flex-row">
 
           <a v-for="edge in $page.allBook.edges" :key="edge.node.id"
              v-if="edge.node.booknr==='N100'||edge.node.booknr==='V121'"
              v-bind:href="'/'+edge.node.booknr+'/1'"
-             class="m-8 w-48"
+             class="tw-m-8 tw-w-48"
           >
 
             <img v-bind:src="edge.node.forside[0].url"  />
-            <div class="mt-4 text-center">{{edge.node.booknr}}</div>
-            <div class="mt-4 text-center">{{edge.node.tittel}}</div>
+            <div class="tw-mt-4 tw-text-center">{{edge.node.booknr}}</div>
+            <div class="tw-mt-4 tw-text-center">{{edge.node.tittel}}</div>
           </a>
 
         </div>

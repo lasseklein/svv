@@ -7,19 +7,19 @@
 
                     <v-collapse-wrapper :active="isActive">
                         <div v-bind:href="bilde.url"
-                             class="mt-3 header flex flex-row w-full cursor-pointer text-sm whitespace-no-wrap"
+                             class="tw-mt-3 tw-header tw-flex tw-flex-row tw-w-full tw-cursor-pointer tw-text-sm tw-whitespace-no-wrap"
                              v-bind:class="{'mt-6':isActive}"
                              v-collapse-toggle >
 
-                            <i class="fas fa-image text-xl text-gray-dark mr-2"></i>
+                            <i class="fas fa-image tw-text-xl tw-text-gray-dark tw-mr-2"></i>
                             {{name}} {{ref.navn }}:
-                            <span class="ml-2 text-gray-dark whitespace-normal">
+                            <span class="tw-ml-2 tw-text-gray-dark tw-whitespace-normal">
                                 {{ ref.tekst }}
                             </span>
                         </div>
                         <div class="my-content" v-collapse-content>
-                            <a v-bind:href="bilde.url" target="_blank" class=" object-contain">
-                                <img v-bind:src="bilde.url" class="h-64 max-w-full cursor-pointer mt-2"/>
+                            <a v-bind:href="bilde.url" target="_blank" class="tw-object-contain">
+                                <img v-bind:src="bilde.url" class="tw-h-64 tw-max-w-full tw-cursor-pointer tw-mt-2"/>
                             </a>
                         </div>
                     </v-collapse-wrapper>

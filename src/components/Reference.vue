@@ -1,14 +1,14 @@
 <template>
-    <div v-if="block.kravref.length" class="text-sm mt-2">
-        <div v-for="ref in block.kravref" :key="block.kravref.id" class="mt-2">
+    <div v-if="block.kravref.length" class="tw-text-sm tw-mt-2">
+        <div v-for="ref in block.kravref" :key="block.kravref.id" class="tw-mt-2">
 
             <div v-if="ref.type==='Krav'">
-                <a v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id" class="text-gray-dark underline cursor-pointer">
-                    <i class="fas fa-link text-md text-gray-dark mr-3"></i>{{ ref.booknr[0]}} Krav {{ ref.kravID }}</a>
-                <div v-if="showContent" class="ml-8 mt-2"><Markdown v-bind:text="ref.krav" /></div>
+                <a v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id" class="tw-text-gray-dark tw-underline tw-cursor-pointer">
+                    <i class="fas fa-link tw-text-md tw-text-gray-dark tw-mr-3"></i>{{ ref.booknr[0]}} Krav {{ ref.kravID }}</a>
+                <div v-if="showContent" class="tw-ml-8 tw-mt-2"><Markdown v-bind:text="ref.krav" /></div>
             </div>
-            <a v-else v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id" class="text-gray-dark underline cursor-pointer">
-                <i class="fas fa-link text-md text-gray-dark mr-3"></i>{{ ref.booknr[0]}} {{ ref.kapittel }}.{{ ref.avsnitt }}: {{ref.fagtema}}</a>
+            <a v-else v-bind:href="'/'+ref.booknr+'/'+ref.kapittel+'#'+ref.id" class="tw-text-gray-dark tw-underline tw-cursor-pointer">
+                <i class="fas fa-link tw-text-md tw-text-gray-dark tw-mr-3"></i>{{ ref.booknr[0]}} {{ ref.kapittel }}.{{ ref.avsnitt }}: {{ref.fagtema}}</a>
 
         </div>
     </div>

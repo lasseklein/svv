@@ -16,15 +16,15 @@ h3 { @apply text-2xl mt-16 mb-6; }
 h4 { @apply text-xl mt-16 mb-6;  }
 
 .activeitem {
-    @apply border-orange-svv border-l-4 font-bold;
+    @apply tw-border-orange-svv tw-border-l-4 tw-font-bold;
 }
 
 .menu-hidden {
-    @apply fixed w-0 z-50 top-0 left-0;
+    @apply fixed tw-w-0 tw-z-50 tw-top-0 tw-left-0;
 }
 
 .menu-sidebar {
-    @apply sticky top-0;
+    @apply sticky tw-top-0;
 }
 
 .v-collapse-content{

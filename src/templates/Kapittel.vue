@@ -6,7 +6,7 @@
         </template>
 
         <template slot="content">
-            <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="max-w-3xl mx-0 md:mx-10">
+            <div v-for="edge in $page.allKrav.edges" :key="edge.node.sequence" class="tw-max-w-3xl tw-mx-0 md:tw-mx-10">
 
                 <section v-bind:id="edge.node.id"></section>
                 <TitleBlock v-if="edge.node.type==='Kapittel'||edge.node.type ==='Tittel'" v-bind:block="edge.node"/>

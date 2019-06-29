@@ -1,46 +1,46 @@
 <template>
-    <div class="bg-white border border-gray-frame py-4" v-bind:class="isAttachedStyle">
+    <div class="tw-bg-white tw-border tw-border-gray-frame tw-py-4" v-bind:class="isAttachedStyle">
 
 
         <v-collapse-wrapper>
-            <div class="flex flex-row items-baseline justify-between flex-no-wrap text-xs text-gray-dark flex-initial mx-4">
-                <div class="flex uppercase grow">
-                    <svg viewBox="0 0 21 14" width="21" height="15" class="fill-current text-gray-dark mr-1" v-bind:class="isAttached">
+            <div class="tw-flex tw-flex-row tw-items-baseline tw-justify-between tw-flex-no-wrap tw-text-xs tw-text-gray-dark tw-flex-initial tw-mx-4">
+                <div class="tw-flex tw-uppercase tw-grow">
+                    <svg viewBox="0 0 21 14" width="21" height="15" class="tw-fill-current tw-text-gray-dark tw-mr-1" v-bind:class="isAttached">
                         <path d="M13.6,1.4c-0.1-0.1-0.4-0.1-0.5,0l-1.4,1.4c-0.1,0.1-0.1,0.4,0,0.5l3.2,3.2c0,0,0,0,0,0H3.2C3,6.6,2.8,6.4,2.8,6.2V1.7
         c0-0.2-0.2-0.4-0.4-0.4h-2C0.2,1.3,0,1.5,0,1.7V9c0,0.2,0.2,0.4,0.4,0.4h14.4c0,0,0,0,0,0l-3.3,3.3c-0.1,0.1-0.1,0.4,0,0.5l1.4,1.4
         c0.1,0.1,0.4,0.1,0.5,0l6.4-6.4c0.1-0.1,0.1-0.4,0-0.5L13.6,1.4z"></path>
                     </svg>
                     {{block.koblet?'Delkrav':'Krav'}} {{block.kravID}}
-                    <span class="pl-2 krav font-medium uppercase tracking-wide" v-bind:class="recclass">{{rectype}}</span>
+                    <span class="tw-pl-2 tw-krav tw-font-medium tw-uppercase tw-tracking-wide" v-bind:class="recclass">{{rectype}}</span>
                 </div>
-                <div class="flex text-right shrink">
-                    <span v-collapse-toggle class="self-center italic underline mr-4 cursor-pointer" >Versjon {{block.versjon}}</span>
+                <div class="tw-flex tw-text-right tw-shrink">
+                    <span v-collapse-toggle class="tw-self-center tw-italic tw-underline tw-mr-4 tw-cursor-pointer" >Versjon {{block.versjon}}</span>
 
-                    <i class="far fa-star text-lg" v-bind:class="{starred:isActive, far:isActive, fas:isActive}" v-on:click="toggleStar"></i>
+                    <i class="far fa-star tw-text-lg" v-bind:class="{starred:isActive, far:isActive, fas:isActive}" v-on:click="toggleStar"></i>
                 </div>
             </div>
             <div v-collapse-content>
-                <div class="bg-gray-light mt-2 arrow_box text-sm mx-4">
-                    <p class="px-4 py-2">Versjoner av dette kravet:</p>
-                    <p v-for="n in block.versjon*10-9" class="px-4 py-1">[Dato]:<a class="ml-2 underline" href="#">Versjon {{(Math.round(10*(block.versjon)-(n-1))/10).toFixed(1)}}</a></p>
+                <div class="tw-bg-gray-light tw-mt-2 tw-arrow_box tw-text-sm tw-mx-4">
+                    <p class="tw-px-4 tw-py-2">Versjoner av dette kravet:</p>
+                    <p v-for="n in block.versjon*10-9" class="tw-px-4 tw-py-1">[Dato]:<a class="tw-ml-2 tw-underline" href="#">Versjon {{(Math.round(10*(block.versjon)-(n-1))/10).toFixed(1)}}</a></p>
                 </div>
             </div>
         </v-collapse-wrapper>
 
 
 
-        <div v-html="compiledMarkdown" class="mt-4 mx-4 text-base" v-bind:class="isAttachedKrav"></div>
+        <div v-html="compiledMarkdown" class="tw-mt-4 tw-mx-4 tw-text-base" v-bind:class="isAttachedKrav"></div>
 
         <KravExplanation v-bind:text="block.veiledning" />
 
-        <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="references border-gray-light pt-1 border-t mx-4 mt-3">
+        <div v-if="block.figref.length || block.tabref.length || block.kravref.length" class="tw-border-gray-light tw-pt-1 tw-border-t tw-mx-4 tw-mt-3">
 
             <Thumbnail v-bind:item="block.figref" name="Figur" v-bind:isActive="false"/>
             <Table v-bind:item="block" name="Tabell" v-bind:isActive="false" />
             <Reference v-bind:block="block" v-bind:showContent="false" />
 
-            <div v-if="block.vedlegg.length" v-for="vl in block.vedlegg" :key="vl.filename" class="mt-3">
-                <a v-bind:href="vl.url" class="underline text-gray-dark text-sm "><i class="fas fa-paperclip mr-3"></i>{{vl.filename}}</a>
+            <div v-if="block.vedlegg.length" v-for="vl in block.vedlegg" :key="vl.filename" class="tw-mt-3">
+                <a v-bind:href="vl.url" class="tw-underline tw-text-gray-dark tw-text-sm "><i class="fas fa-paperclip tw-mr-3"></i>{{vl.filename}}</a>
             </div>
 
         </div>
@@ -86,9 +86,9 @@
             compiledMarkdown: function(){
                 return marked(this.block.krav, { sanitize: true })
                     .replace(/(\b(?:skal|bør|kan)\b)/gi, '<em>$1</em>')
-                    .replace(/<p>/g, '<p class="my-2">')
-                    .replace(/<ul>/g,'<ul class="pl-8 list-disc">')
-                    .replace(/<li>/g, '<li class="mt-1">')
+                    .replace(/<p>/g, '<p class="tw-my-2">')
+                    .replace(/<ul>/g,'<ul class="tw-pl-8 tw-list-disc">')
+                    .replace(/<li>/g, '<li class="tw-mt-1">')
                     .replace(/<a href/g, '<a class="underline font-medium" href')
             },
             rectype: function () {
@@ -108,13 +108,13 @@
                 return kravfarge[this.block.kravtype.charAt(0)];
             },
             isAttachedStyle: function() {
-                return (this.block.koblet)?'border-t-0':'mt-8';
+                return (this.block.koblet)?'tw-border-t-0':'tw-mt-8';
             },
             isAttachedKrav: function() {
-                return (this.block.koblet)?'pl-6':'';
+                return (this.block.koblet)?'tw-pl-6':'';
             },
             isAttached: function(){
-                return (this.block.koblet)?'':'hidden';
+                return (this.block.koblet)?'':'tw-hidden';
             },
 
         },
