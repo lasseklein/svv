@@ -14,7 +14,7 @@
                     </div>
                     <div class="tw-pb-0 tw-mb-0" v-collapse-content>
                         <div class="tw-overflow-x-auto tw-overflow-y-auto">
-                            <table v-if="tabell.lineref.count" v-bind:id="'table-'+item.id" class="tw-w-full tw-text-xs mt-2">
+                            <table v-if="tabell.lineref.length" v-bind:id="'table-'+item.id" class="tw-w-full tw-text-xs mt-2">
                                 <template v-for="(line, part) in tabledata(tabell)"
                                           class="tw-border-collapse tw-border">
                                     <thead v-if="part==='head'">
