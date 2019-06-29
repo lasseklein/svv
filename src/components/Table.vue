@@ -1,9 +1,9 @@
 <template>
-    <div v-if="item.tabref.length" class="">
+    <div v-if="item.tabref.length">
         <v-collapse-group :onlyOneActive="false">
             <div v-for="tabell in item.tabref" :key="item.tabref.id">
 
-                <v-collapse-wrapper :active="isActive">
+                <v-collapse-wrapper :active="isActive" v-bind:class="{'tw-mt-6':isTextField}">
                     <div class="tw-mt-3 tw-header tw-flex tw-flex-row tw-w-full tw-cursor-pointer tw-text-sm tw-whitespace-no-wrap"
                          v-bind:class="{'mt-8':isActive}"
                          v-collapse-toggle
@@ -56,7 +56,7 @@
 
     export default {
         name: 'Table',
-        props: ['item', 'name', 'isActive'],
+        props: ['item', 'name', 'isActive', 'isTextField'],
         components: {
             marked,
             Markdown,

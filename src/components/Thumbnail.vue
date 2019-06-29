@@ -5,7 +5,7 @@
 
                 <div v-for="bilde in ref.bilde" :key="item.navn" >
 
-                    <v-collapse-wrapper :active="isActive">
+                    <v-collapse-wrapper :active="isActive" v-bind:class="{'tw-mt-6':isTextField}">
                         <div v-bind:href="bilde.url"
                              class="tw-mt-3 tw-header tw-flex tw-flex-row tw-w-full tw-cursor-pointer tw-text-sm tw-whitespace-no-wrap"
                              v-bind:class="{'mt-6':isActive}"
@@ -35,7 +35,7 @@
 <script>
     export default {
         name: 'Thumbnail',
-        props: ['item', 'name', 'isActive'],
+        props: ['item', 'name', 'isActive', 'isTextField'],
     }
 </script>
 
