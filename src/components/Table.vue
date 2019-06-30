@@ -74,6 +74,7 @@
                         col++;
                         row=0;
                     }
+                    console.log('col:'+col+' row:'+row+' - '+line.rowtitle);
                     if(col===0) { table.rows.push([{ 'value': line.rowtitle, 'coltitle':ref.legend }]); }
                     table.rows[row++].push({ 'value': line.value, 'coltitle':line.coltitle });
                 });
