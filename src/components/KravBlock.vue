@@ -22,7 +22,7 @@
             <div v-collapse-content>
                 <div class="arrow_box tw-bg-gray-light tw-mt-2 tw-text-sm tw-mx-4">
                     <p class="tw-px-4 tw-py-2">Versjoner av dette kravet:</p>
-                    <p v-for="n in block.versjon*10-9" class="tw-px-4 tw-py-1">[Dato]:<a class="tw-ml-2 tw-underline" href="#">Versjon {{(Math.round(10*(block.versjon)-(n-1))/10).toFixed(1)}}</a></p>
+                    <p v-for="n in block.versjon*10-9" class="tw-px-4"><a class="tw-ml-2 tw-underline" href="#">Versjon {{(Math.round(10*(block.versjon)-(n-1))/10).toFixed(1)}}</a> – {{fakedate(n)}}</p>
                 </div>
             </div>
         </v-collapse-wrapper>
@@ -77,6 +77,11 @@
         },
 
         methods: {
+            fakedate: function(n){
+                var now = new Date;
+                var date = new Date(now.setMonth(now.getMonth() - (n*12 + Math.random()*12) ));
+                return date.getDate()+'.'+(date.getMonth()+1)+' '+date.getFullYear();
+            },
             toggleStar: function(){
                 this.isActive = !this.isActive;
             },
@@ -118,7 +123,6 @@
             },
 
         },
-
 
     };
 
