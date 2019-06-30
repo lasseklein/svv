@@ -1,4 +1,4 @@
-# Håndbøker for Vegvesenet
+# Prototype av digitale Håndbøker for Vegvesenet
 
 Håndbøkene vedlikeholdes ved oppdatering av tekster og bilder eller nytt innhold i Airtable. 
 
