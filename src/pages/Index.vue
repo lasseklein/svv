@@ -6,7 +6,7 @@
         <div class="tw-flex tw-flex-row">
 
           <a v-for="edge in $page.allBook.edges" :key="edge.node.id"
-             v-if="edge.node.booknr==='N100'||edge.node.booknr==='V121'"
+             v-if="edge.node.booknr==='N100'||edge.node.booknr==='V121'||edge.node.booknr==='V122'"
              v-bind:href="'/'+edge.node.booknr+'/1'"
              class="tw-m-8 tw-w-48"
           >

@@ -89,7 +89,7 @@
                     .replace(/<p>/g, '<p class="tw-my-2">')
                     .replace(/<ul>/g,'<ul class="tw-pl-8 tw-list-disc">')
                     .replace(/<li>/g, '<li class="tw-mt-1">')
-                    .replace(/<a href/g, '<a class="underline font-medium" href')
+                    .replace(/<a href/g, '<a class="tw-underline tw-font-medium" href')
             },
             rectype: function () {
                 let texts = {
@@ -101,9 +101,9 @@
             },
             recclass: function(){
                 let kravfarge = {
-                    'K':'text-green-dark',
-                    'B':'text-orange-dark',
-                    'S':'text-red-dark',
+                    'K':'tw-text-green-dark',
+                    'B':'tw-text-orange-dark',
+                    'S':'tw-text-red-dark',
                 };
                 return kravfarge[this.block.kravtype.charAt(0)];
             },

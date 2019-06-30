@@ -12,7 +12,7 @@ module.exports = function (api) {
 
     api.createPages(async ({graphql, createPage}) => {
 
-        const books = [ 'N100', 'V121' ];
+        const books = [ 'N100', 'V121', 'V122' ];
 
         books.forEach(async(book) => {
 
