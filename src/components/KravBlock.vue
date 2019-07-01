@@ -22,7 +22,8 @@
             <div v-collapse-content>
                 <div class="arrow_box tw-bg-gray-light tw-mt-2 tw-text-sm tw-mx-4">
                     <p class="tw-px-4 tw-py-2">Versjoner av dette kravet:</p>
-                    <p v-for="n in block.versjon*10-9" class="tw-px-4"><a class="tw-ml-2 tw-underline" href="#">Versjon {{(Math.round(10*(block.versjon)-(n-1))/10).toFixed(1)}}</a> – {{fakedate(n)}}</p>
+                    <p v-for="n in block.versjon*10-9" class="tw-px-4"><a class="tw-underline" href="#">Versjon {{(Math.round(10*(block.versjon)-(n-1))/10).toFixed(1)}}</a> – {{fakedate(n)}}</p>
+                    <p class="tw-px-4"><a href="https://www.vegvesen.no/fag/publikasjoner/handboker" target="_blank" class="tw-underline">Tidligere papir- og PDF-versjoner av håndbøkene</a><i class="fas fa-external-link-alt tw-text-gray-dark tw-ml-2"></i> </p>
                 </div>
             </div>
         </v-collapse-wrapper>
