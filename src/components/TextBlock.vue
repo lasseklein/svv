@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="tw-font-sans tw-text-base tw-my-4">
-            <Markdown v-bind:text="block.krav" />
+            <Markdown v-bind:text="block.tekst" />
         </div>
 
         <Reference v-bind:block="block" v-bind:showContent="true" />

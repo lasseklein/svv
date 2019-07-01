@@ -26,13 +26,13 @@
                                class="content-center" >
                                 <div class="tw-text-sm tw-text-black tw-self-center tw-px-4 tw-py-1 ">
                                     <span v-if="edge.node.kapittel.match(/[A-Z]/)">{{edge.node.kapittel}} </span>
-                                    {{edge.node.fagtema}}
+                                    {{edge.node.tekst}}
                                 </div>
                             </a>
                             <a v-bind:href="'#'+edge.node.id"
                                v-else-if="edge.node.type==='Tittel' && edge.node.avsnitt.length===1 && edge.node.kapittel===chapter && edge.node.booknr[0]===book"
                                class="scrollactive-item tw-flex tw-border-l tw-border-gray-medium tw-ml-5 tw-pl-2 tw-text-black tw-h-full">
-                                <div class="tw-text-sm tw-self-center">{{edge.node.fagtema}}</div>
+                                <div class="tw-text-sm tw-self-center">{{edge.node.tekst}}</div>
                             </a>
                         </v-list-tile-title>
                     </v-list-tile-content>
@@ -89,7 +89,7 @@
                     avsnitt
                     id
                     type
-                    fagtema
+                    tekst
                     booknr
                 }
             }

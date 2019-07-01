@@ -40,7 +40,7 @@ module.exports = function (api) {
                                 avsnitt
                                 id
                                 type
-                                fagtema
+                                tekst
                                 booknr
                                 book {
                                     tittel

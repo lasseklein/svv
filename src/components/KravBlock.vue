@@ -90,7 +90,7 @@
 
         computed: {
             compiledMarkdown: function(){
-                return marked(this.block.krav, { sanitize: true })
+                return marked(this.block.tekst, { sanitize: true })
                     .replace(/(\b(?:skal|bør|kan)\b)/gi, '<em>$1</em>')
                     .replace(/<p>/g, '<p class="tw-my-2">')
                     .replace(/<ul>/g,'<ul class="tw-pl-8 tw-list-disc">')

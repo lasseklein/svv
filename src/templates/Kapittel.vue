@@ -65,14 +65,13 @@
             edges {
                 node {
                     sequence
-                    krav
+                    tekst
                     kravID
                     kravtype
                     kapittel
                     avsnitt
                     id
                     type
-                    fagtema
                     versjon
                     veiledning
                     vedlegg {
@@ -102,10 +101,9 @@
                         id
                         booknr
                         kapittel
-                        fagtema
                         avsnitt
                         kravID
-                        krav
+                        tekst
                         type
                     }
                     figref {
