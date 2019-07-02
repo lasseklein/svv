@@ -16,7 +16,7 @@
                     class="tw-pt-0">
                 <div v-for="edge in $static.allKrav.edges" :key="edge.node.id">
                 <v-list-tile
-                        v-if="edge.node.type==='Kapittel'&&edge.node.booknr[0]===book||'Tittel'&&edge.node.avsnitt.length===1&&edge.node.kapittel===chapter&&edge.node.booknr[0]===book"
+                        v-if="edge.node.type==='Kapittel'&&edge.node.booknr[0]===book||'Tittel'&&edge.node.avsnitt.length<=2&&edge.node.kapittel===chapter&&edge.node.booknr[0]===book"
                         @click="">
                     <v-list-tile-content>
                         <v-list-tile-title>
