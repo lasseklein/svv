@@ -24,9 +24,24 @@
                    color="#444f55"
         >
             <span class="tw-block lg:tw-hidden"><v-toolbar-side-icon @click="drawer = !drawer" ></v-toolbar-side-icon></span>
-            <span class="title tw-ml-3 tw-mr-5"><a href="/" class="tw-text-gray-light">SVV Håndbøker</a></span>
-            <span><a href="https://airtable.com/shrSAorwzd9q2MMOh" target="_blank" class="tw-text-white tw-underline">Gi tilbakemelding på prototypen</a></span>
+            <v-toolbar-title>
+                <span class="title"><a href="/" class="tw-text-gray-light">SVV</a></span>
+            </v-toolbar-title>
+
             <v-spacer></v-spacer>
+            <v-toolbar-items>
+                <v-btn flat><a href="/" class="tw-text-gray-light tw-text-md">Håndbøker</a></v-btn>
+
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on }">
+                        <v-btn flat v-on="on" ><a href="#" class="tw-text-gray-light tw-text-md"><i class="fas fa-history tw-mr-2"></i>Gjeldende versjon</a></v-btn>
+                    </template>
+                    <span>Her kommer valg av tidligere versjonar av manualen</span>
+                </v-tooltip>
+
+            </v-toolbar-items>
+
+
         </v-toolbar>
 
 

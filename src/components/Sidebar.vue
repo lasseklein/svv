@@ -46,6 +46,8 @@
             </v-list>
             </scrollactive>
 
+            <span class="tw-ml-4 tw-mt-12 tw-pt-10"><a href="https://airtable.com/shrSAorwzd9q2MMOh" target="_blank" class="tw-text-sm tw-text-gray-dark tw-underline">Gi tilbakemelding på prototypen</a></span>
+
     </div>
 
 </template>
