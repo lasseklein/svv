@@ -8,7 +8,7 @@ Nye oppdateringer i Airtable publiseres enkelt ved å trykke "trigger deploy" i 
 ### Oppbygging av løsningen
 
 
-1. Håndboken bygges opp i Airtable (https://airtable.com/shrIsmzFqJdsKCbCW)
+1. Håndboken bygges opp i Airtable (https://airtable.com/shraJLYifQgqGV9ZJ)
 2. Gridsome leser feltene og genererer statisk site (JAM-stack med Vue.js, GraphQL og Tailwind CSS)
 3. Siten oppdateres på GitHub
 4. Netlify oppdaterer automatisk med nye endringer på svv.netlify.com
