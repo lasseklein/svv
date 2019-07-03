@@ -36,7 +36,7 @@
                     <template v-slot:activator="{ on }">
                         <v-btn flat v-on="on" ><a href="#" class="tw-text-gray-light tw-text-md"><i class="fas fa-history tw-mr-2"></i>Gjeldende versjon</a></v-btn>
                     </template>
-                    <span>Her kommer valg av tidligere versjonar av manualen</span>
+                    <span>Her kommer valg av tidligere versjoner av manualen</span>
                 </v-tooltip>
 
             </v-toolbar-items>
