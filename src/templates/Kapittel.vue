@@ -73,6 +73,7 @@
                     id
                     type
                     versjon
+                    gyldigFra
                     veiledning
                     vedlegg {
                         filename

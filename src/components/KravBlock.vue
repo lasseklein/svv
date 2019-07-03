@@ -14,7 +14,7 @@
                     <span class="tw-pl-2 tw-krav tw-font-medium tw-uppercase tw-tracking-wide" v-bind:class="recclass">{{rectype}}</span>
                 </div>
                 <div class="tw-flex tw-text-right tw-shrink">
-                    <span v-collapse-toggle class="tw-self-center tw-italic tw-underline tw-mr-4 tw-cursor-pointer" >Versjon {{block.versjon}}</span>
+                    <span v-collapse-toggle class="tw-self-center tw-italic tw-underline tw-mr-4 tw-cursor-pointer" >Gjeldende fra {{fraDato}}</span>
 
                     <i class="far fa-star tw-text-lg" v-bind:class="{starred:isActive, far:isActive, fas:isActive}" v-on:click="toggleStar"></i>
                 </div>
@@ -22,7 +22,7 @@
             <div v-collapse-content>
                 <div class="arrow_box tw-bg-gray-light tw-mt-2 tw-text-sm tw-mx-4">
                     <p class="tw-px-4 tw-py-2">Versjoner av dette kravet:</p>
-                    <p v-for="n in block.versjon*10-9" class="tw-px-4"><a class="tw-underline" href="#">Versjon {{(Math.round(10*(block.versjon)-(n-1))/10).toFixed(1)}}</a> – Gyldig fra {{fakedate(n)}}</p>
+                    <p v-for="n in block.versjon*10-9" class="tw-px-4"><a class="tw-underline" href="#">Versjon {{(Math.round(10*(block.versjon)-(n-1))/10).toFixed(1)}}</a> – Gjeldende fra {{fakedate(n)}} – [til dato]</p>
                     <p class="tw-px-4"><a href="https://www.vegvesen.no/fag/publikasjoner/handboker" target="_blank" class="tw-underline">Tidligere papir- og PDF-versjoner av håndbøkene</a><i class="fas fa-external-link-alt tw-text-gray-dark tw-ml-2"></i> </p>
                 </div>
             </div>
@@ -96,6 +96,10 @@
                     .replace(/<ul>/g,'<ul class="tw-pl-8 tw-list-disc">')
                     .replace(/<li>/g, '<li class="tw-mt-1">')
                     .replace(/<a href/g, '<a class="tw-underline tw-font-medium" href')
+            },
+            fraDato: function () {
+                var date = new Date(this.block.gyldigFra);
+                return date.getDate()+'.'+(date.getMonth()+1)+' '+date.getFullYear();
             },
             rectype: function () {
                 let texts = {

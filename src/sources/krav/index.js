@@ -126,6 +126,7 @@ module.exports = function (api, opts) {
                     type        : item.fields.Type,
                     //fagtema     : item.fields.Fagtema,
                     versjon     : item.fields.Versjon,
+                    gyldigFra   : item.fields.GyldigFra,
                     veiledning  : item.fields.Veiledning,
                     koblet      : item.fields.Koblet,
                     vedlegg     : item.fields.Vedlegg,
