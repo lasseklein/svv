@@ -7,7 +7,7 @@
 
           <a v-for="edge in $page.allBook.edges" :key="edge.node.id"
              v-if="edge.node.booknr==='N100'||edge.node.booknr==='V121'||edge.node.booknr==='V122'"
-             v-bind:href="'/'+edge.node.booknr+'/1'"
+             v-bind:href="'/'+edge.node.booknr+'/A'"
              class="tw-m-8 tw-w-48"
           >
 
