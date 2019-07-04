@@ -3,12 +3,12 @@
 
       <template slot="content">
 
-        <div class="tw-flex tw-flex-row">
+        <div class="tw-flex tw-flex-col md:tw-flex-row tw-justify-center">
 
           <a v-for="edge in $page.allBook.edges" :key="edge.node.id"
              v-if="edge.node.booknr==='N100'||edge.node.booknr==='V121'||edge.node.booknr==='V122'"
              v-bind:href="'/'+edge.node.booknr+'/A'"
-             class="tw-m-8 tw-w-48"
+             class="tw-m-8 tw-w-48 tw-mx-auto"
           >
 
             <img v-bind:src="edge.node.forside[0].url"  />

@@ -106,6 +106,7 @@
                         kravID
                         tekst
                         type
+                        koblet
                     }
                     figref {
                         tekst
