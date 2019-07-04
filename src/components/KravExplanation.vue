@@ -7,7 +7,7 @@
             </template>
             <v-card color="transparent">
                 <v-card-text>
-                    <Markdown v-bind:text="text" class="tw-mx-2" />
+                    <Markdown v-bind:text="text" class="" />
                 </v-card-text>
             </v-card>
         </v-expansion-panel-content>
@@ -26,19 +26,19 @@
 
         name: 'KravExplanation',
         props: ['text'],
- 
+
     }
 </script>
 
 
-<style scoped>
+<style>
 
     .v-expansion-panel{
         box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-        position: relative;
-        left: -10px; /* TODO: remove this hack to make vuejs align with tailwind */
     }
     .v-expansion-panel__header{
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
     li.v-expansion-panel__container{
@@ -52,7 +52,7 @@
 
     .v-expansion-panel__container,
     .v-expansion-panel__body {
-        background-color: transparent !important;
+        background-color: transparent;
     }
 
 </style>
